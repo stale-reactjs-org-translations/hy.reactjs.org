@@ -1,6 +1,6 @@
 ---
 id: rendering-elements
-title: Rendering Elements
+title: Էլեմենտների պատկերում
 permalink: docs/rendering-elements.html
 redirect_from:
   - "docs/displaying-data.html"
@@ -8,68 +8,67 @@ prev: introducing-jsx.html
 next: components-and-props.html
 ---
 
-Elements are the smallest building blocks of React apps.
+React հավելվածներում էլեմենտերը ամենափոքր բլոկներն են։ 
 
-An element describes what you want to see on the screen:
+Էլեմենտը նկարագրում է այն թե ի՞նչ էք ցանկանում տեսնել էկրանին։
 
 ```js
-const element = <h1>Hello, world</h1>;
+const element = <h1>Ողջույն, աշխարհ!</h1>;
 ```
 
-Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements.
+Ի տարբերություն զննարկիչի DOM էլեմենտների՝ React էլեմենտները իրենցից ներկայացնում են հասարակ օբյեկտներ և ռեսուրսատար չեն ստեղծման համար։
 
->**Note:**
+>**Նշում.**
 >
->One might confuse elements with a more widely known concept of "components". We will introduce components in the [next section](/docs/components-and-props.html). Elements are what components are "made of", and we encourage you to read this section before jumping ahead.
+>Հնարավոր է շփոթել էլեմենտները մեկ այլ, ավելի հայտնի հասկացողության՝ կոմպոնենտ-ի հետ։ Մենք կծանոթանանք կոմպոնենտներին [հաջորդ բաժնում](/docs/components-and-props.html)։ Կոմպոնենտները կազմված են էլեմենտներից և ցանկալի է, որ այս բաժինը կարդաք մինչ մյուս բաժիններին անցնելը։
 
-## Rendering an Element into the DOM {#rendering-an-element-into-the-dom}
+## Էլեմենտի նկարումը DOM-ում {#rendering-an-element-into-the-dom}
 
-Let's say there is a `<div>` somewhere in your HTML file:
-
+Ենթադրենք HTML ֆայլում որևէ տեղ ունենք հետևյալ `<div>` էլեմենտը։
 ```html
 <div id="root"></div>
 ```
 
-We call this a "root" DOM node because everything inside it will be managed by React DOM.
+Մենք այն անվանում ենք "root" DOM հանգույց, որովհետև ամեն ինչը նրա ներսում ղեկավարվելու է React DOM-ի կողմից.
 
-Applications built with just React usually have a single root DOM node. If you are integrating React into an existing app, you may have as many isolated root DOM nodes as you like.
+Սովորաբար React-ով ստեղծված հավելվածները ունեն մեկ DOM հանգույց որպես սկզբնաղբյուր (root)։
 
-To render a React element into a root DOM node, pass both to `ReactDOM.render()`:
+React էլեմենտը սկզբնաղբյուրում նկարելու համար պետք է երկուսն էլ փոխանցել `ReactDOM.render()`-ին։
 
 `embed:rendering-elements/render-an-element.js`
 
 [](codepen://rendering-elements/render-an-element)
 
-It displays "Hello, world" on the page.
+Այս օրինակով էջում կտեսնենք "Ողջույն, աշխարհ"։
 
-## Updating the Rendered Element {#updating-the-rendered-element}
+## Թարմացնում ենք նկարված էլեմենտը {#updating-the-rendered-element}
 
-React elements are [immutable](https://en.wikipedia.org/wiki/Immutable_object). Once you create an element, you can't change its children or attributes. An element is like a single frame in a movie: it represents the UI at a certain point in time.
+React էլեմենտները [փոփոխվող են](https://en.wikipedia.org/wiki/Immutable_object)։ Էլեմենտի ստեղծման պահից հետո դուք չեք կարող փոխել նրա հատկանիշները կամ զավակներին։ Էլելեմենտը նման է ֆիլմի մեկ կադր-ին ՝ այն ներկայացնում է UI-ը ժաանակին որոշակի պահին։
 
-With our knowledge so far, the only way to update the UI is to create a new element, and pass it to `ReactDOM.render()`.
+Այս պահի մեր գիտելիքներով UI-ը թարմացնելու միակ ձևը նոր էլեմենտ ստեղծելն ու փոխանցելն է `ReactDOM.render()`-ին։
 
-Consider this ticking clock example:
+Ուշադրություն դարցրեք այց ժամացույցի օրինակին՝
 
 `embed:rendering-elements/update-rendered-element.js`
 
 [](codepen://rendering-elements/update-rendered-element)
 
-It calls `ReactDOM.render()` every second from a [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) callback.
+Այն կանչում է `ReactDOM.render()`-ը [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) հետկանչ ֆունկցիայից՝ յուրաքանչյուր վարկյանը մեկ։
 
->**Note:**
+>**Նշում.**
 >
->In practice, most React apps only call `ReactDOM.render()` once. In the next sections we will learn how such code gets encapsulated into [stateful components](/docs/state-and-lifecycle.html).
+>Գործնականում, React հավելվածների մեծամասնությունը `ReactDOM.render()`-ը կանչում է մեկ անգամ։ Հաջորդ բաժիններում մենք կսովորենք թե ինչպես է նմանատիպ կոդը ինկապսուլացվում [stateful component](/docs/state-and-lifecycle.html)-ներով։
 >
->We recommend that you don't skip topics because they build on each other.
+>Խորհուրդ ենք տալիս բաց չթողնել թեմաները, քանի որ նրանք հիմնված են մեկը մյուսի վրա։
 
-## React Only Updates What's Necessary {#react-only-updates-whats-necessary}
+## React-ը Թարմացնում է միայն այն ինչը անհրաժեշտ է {#react-only-updates-whats-necessary}
 
-React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.
+React DOM-ը համեմատում է էլեմենտը և նրա զավակներին նախորդների հետ, և կիրառում է DOM-ի թարմացում միայն անհրաժեշտության դեպքում ՝ DOM-ը ցանկալի վիճակին հասցնելու համար։
 
-You can verify by inspecting the [last example](codepen://rendering-elements/update-rendered-element) with the browser tools:
+Դուք կարող եք համոզվել ստուգելով [նախորդ օրինակը](codepen://rendering-elements/update-rendered-element) զննարկիչի գործիքների օգնությամբ:
 
-![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
+![DOM դիտարկիչը ցուց է տալիս յուրաքանչյուր թարմացում](../images/docs/granular-dom-updates.gif)
 
-Even though we create an element describing the whole UI tree on every tick, only the text node whose contents has changed gets updated by React DOM.
+Չնայած նրան որ մեր ստեղծած էլեմենտը ներկայացնում է ողջ UI ծառը յուրաքանչյուր tick-ի ժամանակ, React Dom-ը թարմացնում է միայն այն տեքստային հանգույցը, որի կոնտենտը ենթարկվել է փոփոխության։
 
-In our experience, thinking about how the UI should look at any given moment rather than how to change it over time eliminates a whole class of bugs.
+Փորձը ցույց է տալիս, որ մտածելը թե ինչ տեսք պետք է ունենա UI-ը յուրաքանչյուր պահին` վերացնում է սխալների մի ամբողջ շարք, քան մտածելը թե ինչպես փոխել UI-ը ժամանակի ընթացքում։
