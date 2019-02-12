@@ -37,7 +37,7 @@ React էլեմենտը սկզբնաղբյուրում նկարելու համա�
 
 `embed:rendering-elements/render-an-element.js`
 
-[](codepen://rendering-elements/render-an-element)
+[Փորձել CodePen-ում](codepen://rendering-elements/render-an-element)
 
 Այս օրինակով էջում կտեսնենք "Ողջույն, աշխարհ"։
 
@@ -51,7 +51,7 @@ React էլեմենտները [փոփոխվող են](https://en.wikipedia.org/wi
 
 `embed:rendering-elements/update-rendered-element.js`
 
-[](codepen://rendering-elements/update-rendered-element)
+[Փորձել CodePen-ում](codepen://rendering-elements/update-rendered-element)
 
 Այն կանչում է `ReactDOM.render()`-ը [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) հետկանչ ֆունկցիայից՝ յուրաքանչյուր վարկյանը մեկ։
 
