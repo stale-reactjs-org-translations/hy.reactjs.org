@@ -1,6 +1,6 @@
 ---
 id: rendering-elements
-title: Էլեմենտների պատկերում
+title: Էլեմենտների Պատկերումը
 permalink: docs/rendering-elements.html
 redirect_from:
   - "docs/displaying-data.html"
