@@ -16,7 +16,7 @@
     - id: introducing-jsx
       title: Introducing JSX
     - id: rendering-elements
-      title: Էլեմենտների Պատկերում
+      title: Էլեմենտների Արտապատկերումը
     - id: components-and-props
       title: Components and Props
     - id: state-and-lifecycle
@@ -24,7 +24,7 @@
     - id: handling-events
       title: Handling Events
     - id: conditional-rendering
-      title: Պայմանական պատկերում
+      title: Պայմանական Արտապատկերում
     - id: lists-and-keys
       title: Lists and Keys
     - id: forms
