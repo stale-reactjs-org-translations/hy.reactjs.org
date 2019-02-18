@@ -1,6 +1,6 @@
 ---
 id: conditional-rendering
-title: Պայմանական Պատկերում
+title: Conditional Rendering
 permalink: docs/conditional-rendering.html
 prev: handling-events.html
 next: lists-and-keys.html
@@ -8,24 +8,23 @@ redirect_from:
   - "tips/false-in-jsx.html"
 ---
 
-React-ում դուք կարող եք ստեղծել միմյանցից զատ կոմպոնենտներ որոնք կինկապսուլացնեն ձեզ համար անհրաժեշտ պահվածքը, որից հետո կարող եք պատկերել նրանցից ոմանց ՝ ելենելով հավելվածի վիճակից։
+In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.
 
-React-ում պայմանական պատկերումը աշխատում է նույն ձեւով ինչ որ պայմանները JavaScript-ում։
-Օգտագործեք JavaScript-ի օպերատորներից [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)-ը կամ [պայմանական օպերատոր](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)-ը որպեսզի ստեղծեք էլեմենտեր, որոնք կներկայացնեն ներկա վիճակը և թույլ կտան React-ին թարմացնել UI-ը համապատասխանեցնելով իրենց։
+Conditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) or the [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) to create elements representing the current state, and let React update the UI to match them.
 
-Ուշադրություն դարձրեք այս երկու կոմպոնենտներին.
+Consider these two components:
 
 ```js
 function UserGreeting(props) {
-  return <h1>Բարի վերադարձ!</h1>;
+  return <h1>Welcome back!</h1>;
 }
 
 function GuestGreeting(props) {
-  return <h1>Խնդրում ենք Մուտ գործել!</h1>;
+  return <h1>Please sign up.</h1>;
 }
 ```
 
-Մենք կստեղծենք `Greeting` կոմպոնենտը, որը կպատկերի այս կոմպոնենտներից միայն մեկը ՝ կախված օգտագործող-ը մուտք է գործել համակարգ թե ոչ.
+We'll create a `Greeting` component that displays either of these components depending on whether a user is logged in:
 
 ```javascript{3-7,11,12}
 function Greeting(props) {
@@ -37,27 +36,27 @@ function Greeting(props) {
 }
 
 ReactDOM.render(
-  // Փորձեք փոխել isLoggedIn={true}:
+  // Try changing to isLoggedIn={true}:
   <Greeting isLoggedIn={false} />,
   document.getElementById('root')
 );
 ```
 
-[**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
+[**Try it on CodePen**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
 
-Այս օրինակը պատկերում է տարբեր `Greeting` կոմպոնենտներ ելնելով `isLoggedIn` հատկության արժեքից։
+This example renders a different greeting depending on the value of `isLoggedIn` prop.
 
-### Էլեմենտ փոփոխականներ {#element-variables}
+### Element Variables {#element-variables}
 
-Դուք կարող եք օգտագործել փոփոխականներ ՝ էլեմենտները պահելու համար։ Սա կարող է օգնել պայմանականորեն պատկերել կոմպոնենտի մեկ հատված մինչդեռ ելքային արժեքի մնացած մասը մնում է անփոփոխ։
+You can use variables to store elements. This can help you conditionally render a part of the component while the rest of the output doesn't change.
 
-Ուծադրություն դարձրեք այս երկու կոմպոնենտներին, որոնք ներկայացնում են Մուտք և Ելք կոճակները.
+Consider these two new components representing Logout and Login buttons:
 
 ```js
 function LoginButton(props) {
   return (
     <button onClick={props.onClick}>
-      Մուտք
+      Login
     </button>
   );
 }
@@ -65,14 +64,15 @@ function LoginButton(props) {
 function LogoutButton(props) {
   return (
     <button onClick={props.onClick}>
-      Ելք
+      Logout
     </button>
   );
 }
 ```
 
-Ստորև բերված օրինակում, մենք կստեղծենք `LoginControl` անունով [վիճակով կոմպոնենտ](/docs/state-and-lifecycle.html#adding-local-state-to-a-class)։
-Այն պետք է պատկերի `<LoginButton />` կամ `<LogoutButton />` ելնելով իր ներկա վիճակից։ Այն նաև կպատկերի `<Greeting />`-ը ՝ նախորդ օրինակից։
+In the example below, we will create a [stateful component](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) called `LoginControl`.
+
+It will render either `<LoginButton />` or `<LogoutButton />` depending on its current state. It will also render a `<Greeting />` from the previous example:
 
 ```javascript{20-25,29,30}
 class LoginControl extends React.Component {
@@ -116,13 +116,13 @@ ReactDOM.render(
 );
 ```
 
-[**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
+[**Try it on CodePen**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
 
-Իհարկե փոփոխականներ հայտարարելը և `if` օպերատորի օգնությամբ պայմանական նկարելը բավականին լավ տարբերակ է, սակայն կան ավելի կարճ տարբերակներ, որոնք նշված են ստորև օրինակնեում։
+While declaring a variable and using an `if` statement is a fine way to conditionally render a component, sometimes you might want to use a shorter syntax. There are a few ways to inline conditions in JSX, explained below.
 
-### Տրամաբանական && օպերատօրը if-ի փոխարեն {#inline-if-with-logical--operator}
+### Inline If with Logical && Operator {#inline-if-with-logical--operator}
 
-Դուք կարող եք [ներդնել ցանկացած JSX արտահայտություն](/docs/introducing-jsx.html#embedding-expressions-in-jsx) ձևաոր փակագծերի մեջ։ Այն ներառում է JavaScript-ի տրամաբանական `&&` օպերատորը։ Այն կարող է լինել հարմար պայմանկանորեն էլեմենտ ավելացնելու համար։
+You may [embed any expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
 
 ```js{6-10}
 function Mailbox(props) {
@@ -132,7 +132,7 @@ function Mailbox(props) {
       <h1>Hello!</h1>
       {unreadMessages.length > 0 &&
         <h2>
-          Դուք ունեք {unreadMessages.length} չկարդացված հաղորդագրություններ։
+          You have {unreadMessages.length} unread messages.
         </h2>
       }
     </div>
@@ -146,30 +146,31 @@ ReactDOM.render(
 );
 ```
 
-[**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
+[**Try it on CodePen**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
 
-Այն աշխատում է որովհետև JavaScript-ում, `true && արտահայտություն` միշտ արժեքավորվում է որպես `արտահայտություն`, և `false && արտահայտություն` միշտ արժեքավորվում է որպես `false`.
+It works because in JavaScript, `true && expression` always evaluates to `expression`, and `false && expression` always evaluates to `false`.
 
-Հետևաբար, եթե արտահայտությունը `true` է, նշանակում էլեմենտը `&&`-ից անմիջապես հետո պետք է պատկերվի ելքային արժեքում։ Եթե այն `false` է ՝ React-ը կանտեսի և բաց կթողնի այն։
+Therefore, if the condition is `true`, the element right after `&&` will appear in the output. If it is `false`, React will ignore and skip it.
 
-### Պայմանական օպերատորը if-else-ի փոխարեն {#inline-if-else-with-conditional-operator}
+### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
 
-Մեկ այլ միջոց, որը թույլ է տալիս պայմանականորեն պատկերել էլեմենտը, դա JavaScript-ի [`պայման ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) օպերատորի օգտագործումն է։
+Another method for conditionally rendering elements inline is to use the JavaScript conditional operator [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
-Ստորև բերված օրինակում մենք օգտագործում ենք պայմանական օպերատորը փոքր տեքստային բլոկ պատկերելու համար.
+In the example below, we use it to conditionally render a small block of text.
 
 ```javascript{5}
 render() {
   const isLoggedIn = this.state.isLoggedIn;
   return (
     <div>
-      Օգտագործողը մուտք գործած <b>{isLoggedIn ? 'է' : 'չէ'}</b>.
+      The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
     </div>
   );
 }
 ```
 
-Այն կարող է օգտագործվել նաև մեծ արտահայտություննրի դեպքում չնայած նրան որ այդքան էլ ակնհայտ չէ թե ինչ է կատարվում.
+It can also be used for larger expressions although it is less obvious what's going on:
+
 ```js{5,7,9}
 render() {
   const isLoggedIn = this.state.isLoggedIn;
@@ -185,13 +186,13 @@ render() {
 }
 ```
 
-Ինչպես JavaScript-ում, դուք եք ընտրում համապատասխան ոճը, հիմնվելով նրան թե որն եք դուք և ձեր թիմը համարում ավելի կարդացվող։ ԵՎ հիշեք որ եթե պայմանները դառնում են ավելի բարդ, ապա դա շատ լավ ժամանակ է [կոմպոնենտը բաժանել մասերի](/docs/components-and-props.html#extracting-components)։
+Just like in JavaScript, it is up to you to choose an appropriate style based on what you and your team consider more readable. Also remember that whenever conditions become too complex, it might be a good time to [extract a component](/docs/components-and-props.html#extracting-components).
 
-### Կանխում ենք կոմպոնենտի պատկերումը {#preventing-component-from-rendering}
+### Preventing Component from Rendering {#preventing-component-from-rendering}
 
-Միգուցե հազվադեպ դեպքերում ցանկանաք, որ կոմպոնենտը թաքցնի ինքն իրեն ՝ անգամ եթե այն պատկերվել է մեկ այլ կոմպօնենտի կողմից։ Այդ անելու համար ուղակի վերադարձրեք `null` իր ելքային արժեքի փոխարեն։
+In rare cases you might want a component to hide itself even though it was rendered by another component. To do this return `null` instead of its render output.
 
-Ստորև օրինակում `<WarningBanner />`-ը պատկերվում է կախված `warn` հատկության արժեքից։ Եթե նրա արժեքը `false` է, ապա կոմպոնենտը չի պատկերվի։
+In the example below, the `<WarningBanner />` is rendered depending on the value of the prop called `warn`. If the value of the prop is `false`, then the component does not render:
 
 ```javascript{2-4,29}
 function WarningBanner(props) {
@@ -224,7 +225,7 @@ class Page extends React.Component {
       <div>
         <WarningBanner warn={this.state.showWarning} />
         <button onClick={this.handleToggleClick}>
-          {this.state.showWarning ? 'Թաքցնել' : 'Ցույց տալ'}
+          {this.state.showWarning ? 'Hide' : 'Show'}
         </button>
       </div>
     );
@@ -237,6 +238,6 @@ ReactDOM.render(
 );
 ```
 
-[**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
+[**Try it on CodePen**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
 
-Կոմպոնենտի `render` մեթոդից `null` վերադարձնելու դեպքում կոմպոնենտի կըանքի ցիկլ-ի մեթոդները չեն կանչվելու։ Սակայն `componentDidUpdate`-ը կշարունակի կանչվել։
+Returning `null` from a component's `render` method does not affect the firing of the component's lifecycle methods. For instance `componentDidUpdate` will still be called.
