@@ -119,20 +119,21 @@ const todoItems = todos.map((todo) =>
 );
 ```
 
-When you don't have stable IDs for rendered items, you may use the item index as a key as a last resort:
+Եթե դուք չունեք հաստատուն ID-ներ էլեմենտների արտապատկերման համար, ապա որպես վերջին միջոց կարող էք օգտագործել էլեմենտի ինդեքսը. 
 
 ```js{2,3}
 const todoItems = todos.map((todo, index) =>
-  // Only do this if items have no stable IDs
+  // Սա արեք միայն այն դեպքում երբ էլեմենտը չունի հաստատուն ID
   <li key={index}>
     {todo.text}
   </li>
 );
 ```
 
-We don't recommend using indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state. Check out Robin Pokorny's article for an [in-depth explanation on the negative impacts of using an index as a key](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318). If you choose not to assign an explicit key to list items then React will default to using indexes as keys.
+Խորհուրդ չենք տալիս օգտագործել ինդեքները այն դեպքում երբ էլեմենտների դասավորությունը կարող է փոխվել։ Այն կարող է բացասական ազդեցություն ունենալ արտադրողականության վրա և խնդիրներ առաջացնել կոմպոնենտի վիճակի հետ։
+Կարդա Ռոբին Պոկորնեի [ինդեքսները որպես բանալի օգտագործելու բացասական ազդեցությունների խորը բացատրկան ](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) հոդվածը։ Եթե դուք որոշեք բացահայտորեն չփոխանցել բանալին ցուցակի էլեմենտներին, ապա React-ը ըստ նախնականի կօգտակործի ինդեքսները որպես բանալի։
 
-Here is an [in-depth explanation about why keys are necessary](/docs/reconciliation.html#recursing-on-children) if you're interested in learning more.
+Եթե հետաքրքրված եք սովորել ավելին, ապա [այստեղ կգտնեք խորը բացատրություն, թե ինչու են բանալիները կարևոր։](/docs/reconciliation.html#recursing-on-children)։
 
 ### Extracting Components with Keys {#extracting-components-with-keys}
 
