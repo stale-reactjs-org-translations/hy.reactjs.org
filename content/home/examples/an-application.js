@@ -9,11 +9,11 @@ class TodoApp extends React.Component {
   render() {
     return (
       <div>
-        <h3>TODO</h3>
+        <h3>Առաջադրանքներ</h3>
         <TodoList items={this.state.items} />
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="new-todo">
-            What needs to be done?
+            Ի՞նչ պետք է անել։
           </label>
           <input
             id="new-todo"
@@ -21,7 +21,7 @@ class TodoApp extends React.Component {
             value={this.state.text}
           />
           <button>
-            Add #{this.state.items.length + 1}
+            Ավելացնել #{this.state.items.length + 1}
           </button>
         </form>
       </div>

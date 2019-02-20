@@ -1,7 +1,7 @@
 ---
-title: A Stateful Component
+title: Վիճակով կոմպոնենտ
 order: 1
 domid: timer-example
 ---
 
-In addition to taking input data (accessed via `this.props`), a component can maintain internal state data (accessed via `this.state`). When a component's state data changes, the rendered markup will be updated by re-invoking `render()`.
+Բացի մուտքային տվյալները վերցնելուց (որոնք հասանելի են `this.props`-ով), կոմպոնենտը կարող է պահել ներքին վիճակի տվյալներ (որոնք հասանելի են `this.state`-ով)։ Երբ կոմպոնենտում վիճակի տվյալները փոխվեն, արտապատկերված նշարկումը կթարմամա `render()`-ի կանչով։
