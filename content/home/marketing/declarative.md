@@ -1,8 +1,8 @@
 ---
-title: Declarative
+title: Դեկլարատիվ
 order: 0
 ---
 
-React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+React-ը թույլ է տալիս հեշտորեն ստեղծել ինտերակտիվ UI-ներ։ Նախագծեք ներկայացումներ(views) ձեր ծրագրի ցանկացած վիճակի(state) համար, և React-ը արդյունավետորեն կթարմացնի և կարտապատկերի միայն այն կոմպոնենտները, որոնցում ձեր տվյալները ենթարկվել են փոփոխության։
 
-Declarative views make your code more predictable and easier to debug.
+Դեկլարատիվ ներկայացումները դարձնում են ձեր կոդը ավելի կանխատեսելի և հեշտ\` debug-ի համար։

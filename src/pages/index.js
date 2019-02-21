@@ -134,7 +134,7 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    A JavaScript library for building user interfaces
+                    JavaScript գրադարան` օգտագործողի ինտեֆեյսներ կառուցելու համար
                   </p>
                   <Flex
                     valign="center"
@@ -149,12 +149,12 @@ class Home extends Component {
                       <ButtonLink
                         to="/docs/getting-started.html"
                         type="primary">
-                        Get Started
+                        Սկսենք
                       </ButtonLink>
                     </CtaItem>
                     <CtaItem>
                       <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                        Take the Tutorial
+                        Ձեռնարկ
                       </ButtonLink>
                     </CtaItem>
                   </Flex>
@@ -286,12 +286,12 @@ class Home extends Component {
               <Flex valign="center">
                 <CtaItem>
                   <ButtonLink to="/docs/getting-started.html" type="primary">
-                    Get Started
+                    Սկսենք
                   </ButtonLink>
                 </CtaItem>
                 <CtaItem>
                   <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                    Take the Tutorial
+                    Ձեռնարկ
                   </ButtonLink>
                 </CtaItem>
               </Flex>
