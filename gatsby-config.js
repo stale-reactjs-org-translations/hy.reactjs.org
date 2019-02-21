@@ -8,10 +8,10 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'React: JavaScript գրադարան օգտագործողի ինտեֆեյսներ կառուցելու համար',
+    title: 'React: JavaScript գրադարան` օգտագործողի ինտեֆեյսներ կառուցելու համար',
     siteUrl: 'https://reactjs.org',
     rssFeedTitle: 'React',
-    rssFeedDescription: 'JavaScript գրադարան օգտագործողի ինտեֆեյսներ կառուցելու համար',
+    rssFeedDescription: 'JavaScript գրադարան` օգտագործողի ինտեֆեյսներ կառուցելու համար',
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': 'AuthorYaml',

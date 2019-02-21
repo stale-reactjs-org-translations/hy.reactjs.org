@@ -2,7 +2,7 @@ class MarkdownEditor extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    this.state = { value: 'Բարև, **աշխարհ**' };
+    this.state = { value: 'Ողջույն, **աշխարհ**' };
   }
 
   handleChange(e) {
@@ -17,7 +17,7 @@ class MarkdownEditor extends React.Component {
   render() {
     return (
       <div className="MarkdownEditor">
-        <h3>Մուտք</h3>
+        <h3>Մուտքային արժեք</h3>
         <label htmlFor="markdown-content">
           Մուտքագրեք որևէ markdown
         </label>
@@ -26,7 +26,7 @@ class MarkdownEditor extends React.Component {
           onChange={this.handleChange}
           defaultValue={this.state.value}
         />
-        <h3>Ելք</h3>
+        <h3>Ելքային արժեք</h3>
         <div
           className="content"
           dangerouslySetInnerHTML={this.getRawMarkup()}

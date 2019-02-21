@@ -134,7 +134,7 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    JavaScript գրադարան օգտագործողի ինտեֆեյսներ կառուցելու համար
+                    JavaScript գրադարան` օգտագործողի ինտեֆեյսներ կառուցելու համար
                   </p>
                   <Flex
                     valign="center"
