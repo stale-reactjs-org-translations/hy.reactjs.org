@@ -1,50 +1,47 @@
 ---
 id: hello-world
-title: Hello World
+title: Ողջույն աշխարհ
 permalink: docs/hello-world.html
 prev: cdn-links.html
 next: introducing-jsx.html
 ---
 
-The smallest React example looks like this:
+React-ի ամենափոքր օրինակը այսպիսի տեսք ունի.
 
 ```js
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <h1>Ողջույն, աշխարհ</h1>,
   document.getElementById('root')
 );
 ```
 
-It displays a heading saying "Hello, world!" on the page.
+Այն էջի վրա կպատկերի մի վերնագիր, որը ասում է «Ողջույն, աշխարհ»։
 
-[](codepen://hello-world)
+[Փորձել CodePen-ում](codepen://hello-world)
 
-Click the link above to open an online editor. Feel free to make some changes, and see how they affect the output. Most pages in this guide will have editable examples like this one.
+Անցիր վերևի հղումով\` բացելու համար օնլայն խմբագրիչը։ Եղիր ազատ կատարելու որոշ փոփոխություններ, և տես, թե ինչպես են նրանք ազդում ելքային արժեքի վրա։ Այս ուղեցույցում, էջերի մեծ մասը, կունենան փոփոխվող օրինակներ վերջինիս նման։
 
+## Ինչպես կարդալ այս ուղեցույցը {#how-to-read-this-guide}
 
-## How to Read This Guide {#how-to-read-this-guide}
+Այս ուղեցույցում, մենք կուսումնասիրենք React հավելվածների կառուցողական բլոկները. էլեմենտները և կոմպոնենտները։ Յուրացնելով նրանց, դուք կարող եք ստեղծել կոմպլեքս հավելվածներ փոքր, բազմակի օգտագործվող կտորներից։
 
-In this guide, we will examine the building blocks of React apps: elements and components. Once you master them, you can create complex apps from small reusable pieces.
-
->Tip
+>Հուշում
 >
->This guide is designed for people who prefer **learning concepts step by step**. If you prefer to learn by doing, check out our [practical tutorial](/tutorial/tutorial.html). You might find this guide and the tutorial complementary to each other.
+>Այս ուղեցույցը նախագծված է այն մարդկանց համար, ովքեր նախնտրում են **սովորել կոնցեպտները քայլ առ քայլ**։ Եթե դուք նախնտրում եք սովորել կիրառելով, ապա փորձեք մեր [պռակտիկ ուսումնական ձեռնարկը](/tutorial/tutorial.html)։ Կարելի է նկատել, որ ձեռնարկը և ուղեցույցը փոխլրացնող են։
 
-This is the first chapter in a step-by-step guide about main React concepts. You can find a list of all its chapters in the navigation sidebar. If you're reading this from a mobile device, you can access the navigation by pressing the button in the bottom right corner of your screen.
+Սա React-ի գլխավոր կոնցեպտների մասին քայլ-առ-քայլ ուղեցույցի առաջին գլուխն է։ Դուք կարող եք գտնել բոլոր գլուխների ցուցակը ուղղորդման գոտում(navigation sidebar)։ Եթե դուք կարդում եք բջջայինով, ապա ուղղորդման մենյուին հասանելիություն ստանալու համար կարող եք սեղմել էկրանի աջ ներքևի մասում գտնվող կոճակը։
 
-Every chapter in this guide builds on the knowledge introduced in earlier chapters. **You can learn most of React by reading the “Main Concepts” guide chapters in the order they appear in the sidebar.** For example, [“Introducing JSX”](/docs/introducing-jsx.html) is the next chapter after this one.
+Ցանկացած գլուխ այս ուղեցույցում կառուցված է նախորդ գլուխներում ներկայացված գիտելիքի հիման վրա։ **Դուք կարող եք սովերել React-ի մեծ մասը\` կարդալով "Գլխավոր կոնցեպտներ" ուղեցույցի գլուխները ուղղորդման գոտում ներկայացված հերթականությամբ**։ Օրինակ, [“Ծանոթություն JSX-ի հետ”](/docs/introducing-jsx.html)-ը հաջորդ գլուխն է։
 
-## Knowledge Level Assumptions {#knowledge-level-assumptions}
+## Գիտելիքների ենթադրյալ մակարդակ {#knowledge-level-assumptions}
 
-React is a JavaScript library, and so we'll assume you have a basic understanding of the JavaScript language. **If you don't feel very confident, we recommend [going through a JavaScript tutorial](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) to check your knowledge level** and enable you to follow along this guide without getting lost. It might take you between 30 minutes and an hour, but as a result you won't have to feel like you're learning both React and JavaScript at the same time.
+React-ը JavaScrip գրադարան է, և այդ իսկ պատճառով, մենք ենթադրում ենք, որ դուք ունեք տարրական պատկերացում JavaScript լեզվի մասին։ **Եթե Ձեզ վստահ չեք զգում, մենք խորհուռդ ենք տալիս [անցնել JavaScript ձեռնարկով](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)\` ստուգելու ձեր գիտելիքների մակարդակը**. այն կհեշտացնի ուղեցույցի կարդալը։ Դա կարող է տևել կես ժամից մի ժամ, բայց որպես արդյունք դուք չեք ունենա React-ը և JavaScript-ը միաժամանակ սովորելու զգացում։
 
->Note
+>Նշում
 >
->This guide occasionally uses some of the newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>Այս ուղեցույցը ժամանակ առ ժամանակ օրինակներում օգտագործում է JavaScript-ի որոշ ավելի նոր շարահյուսություն։ Եթե դուք չեք աշխատել JavaScript-ի հետ վերջին մի քանի տարին, ապա [այս երեք կետերը](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) կօգնեն Ձեզ։
 
 
-## Let's Get Started! {#lets-get-started}
+## Սկսենք! {#lets-get-started}
 
-Keep scrolling down, and you'll find the link to the [next chapter of this guide](/docs/introducing-jsx.html) right before the website footer.
-
-
+Էջի ներքևի մասում կգտնեք հղում դեպի [այս ուղեցույցի հաջորդ գլուխը](/docs/introducing-jsx.html)։
