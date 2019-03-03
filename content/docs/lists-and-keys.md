@@ -135,19 +135,19 @@ const todoItems = todos.map((todo, index) =>
 
 Եթե հետաքրքրված եք սովորել ավելին, ապա [այստեղ կգտնեք խորը բացատրություն, թե ինչու են բանալիները կարևոր։](/docs/reconciliation.html#recursing-on-children)։
 
-### Extracting Components with Keys {#extracting-components-with-keys}
+### Կոմպոնենտների տարանջատումը Բանալիներով {#extracting-components-with-keys}
 
-Keys only make sense in the context of the surrounding array.
+Բանալիները իմաստալի են միայն շրջապատող զանգվածի կոնտեքստում։
 
-For example, if you [extract](/docs/components-and-props.html#extracting-components) a `ListItem` component, you should keep the key on the `<ListItem />` elements in the array rather than on the `<li>` element in the `ListItem` itself.
+Օրինակ, եթե [տարանջատեք](/docs/components-and-props.html#extracting-components) `ListItem` կոմպոնենտը, ապա դուք պետք է բանալին փոխանցեք զանգվածի `<ListItem />` կոմպոնենտներին, ոչ թե `<ListItem />`-ի միջի `<li>` էլեմենտին։
 
-**Example: Incorrect Key Usage**
+**Բանալու սխալ օգտագործման օրինակ`**
 
 ```javascript{4,5,14,15}
 function ListItem(props) {
   const value = props.value;
   return (
-    // Wrong! There is no need to specify the key here:
+    // Սխալ` կարիք չկա նշել բանալին այստեղ:
     <li key={value.toString()}>
       {value}
     </li>
@@ -157,7 +157,7 @@ function ListItem(props) {
 function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
-    // Wrong! The key should have been specified here:
+    // Սխալ` բանալին պետք է նշված լինի այստեղ:
     <ListItem value={number} />
   );
   return (
@@ -174,18 +174,18 @@ ReactDOM.render(
 );
 ```
 
-**Example: Correct Key Usage**
+**Բանալու ճիշտ օգտագործոման օրինակ`**
 
 ```javascript{2,3,9,10}
 function ListItem(props) {
-  // Correct! There is no need to specify the key here:
+  // Ճիշտ` այստեղ կարիք չկա նշել բանալին:
   return <li>{props.value}</li>;
 }
 
 function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
-    // Correct! Key should be specified inside the array.
+    // Ճիշտ` բանալին պետք է նշված լինի զանգվածի մեջ։։
     <ListItem key={number.toString()}
               value={number} />
   );
@@ -205,11 +205,12 @@ ReactDOM.render(
 
 [**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
 
-A good rule of thumb is that elements inside the `map()` call need keys.
+Լավ կանոնն այն է, որ `map()`-ի կանչի մեջ էլեմենտները բանալիների կարիք ունեն։
 
-### Keys Must Only Be Unique Among Siblings {#keys-must-only-be-unique-among-siblings}
+### Բանալիները պետք է լինեն ունիկալ հարևանների շարքում {#keys-must-only-be-unique-among-siblings}
 
-Keys used within arrays should be unique among their siblings. However they don't need to be globally unique. We can use the same keys when we produce two different arrays:
+Բանալիները, որոնք օգտագործվում են զանգվածի մեջ, պետք է լինեն ունիկալ հարևանների մեջ։ Սակայն, նրանք պետք չէ որ լինեն գլոբալ ունիկալ։ Մենք կարող ենք օգտագործել նույն բանալիները երբ ներկայացնում ենք երկու տարբեր զանգվածներ`
+Keys used within arrays should be unique among their siblings. Սակայն, they don't need to be globally unique. We can use the same keys when we produce two different arrays:
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {
@@ -238,8 +239,8 @@ function Blog(props) {
 }
 
 const posts = [
-  {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
-  {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+  {id: 1, title: 'Ողջույն աշխարհ', content: 'Բարի գալուստ React-ի ուսուցմանը։'},
+  {id: 2, title: 'Տեղադրում', content: 'Դուք կարող եք React-ը տեղադրել npm-ից։'}
 ];
 ReactDOM.render(
   <Blog posts={posts} />,
@@ -249,7 +250,7 @@ ReactDOM.render(
 
 [**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
 
-Keys serve as a hint to React but they don't get passed to your components. If you need the same value in your component, pass it explicitly as a prop with a different name:
+Բանալիները React-ի համար ծառայում են որպես հուշում, սակաըն նրանք չեն փոխանցվում ձեր կոմպոնենտին։ Եթե դուք նույն արժեքի կարիքն ունեք ձեր կոմպոնենտում, ապա ուղղակի փոխանցեք այն որպես հատկություն մեկ այլ անվան տակ`
 
 ```js{3,4}
 const content = posts.map((post) =>
@@ -260,11 +261,11 @@ const content = posts.map((post) =>
 );
 ```
 
-With the example above, the `Post` component can read `props.id`, but not `props.key`.
+Վերոնշյալ օրինակում `Post` կոմպոնենտը կարող է կարդալ `props.id`-ին, բայց ոչ `props.key`-ը։
 
-### Embedding map() in JSX {#embedding-map-in-jsx}
+### Ներդնում ենք map()-ը JSX-ում {#embedding-map-in-jsx}
 
-In the examples above we declared a separate `listItems` variable and included it in JSX:
+Մինչ այս օրինակներում մենք հայտարարում էինք աչանձին `listItems` փոփոխական և տեղադրում այն JSX-ում`
 
 ```js{3-6}
 function NumberList(props) {
@@ -281,7 +282,7 @@ function NumberList(props) {
 }
 ```
 
-JSX allows [embedding any expression](/docs/introducing-jsx.html#embedding-expressions-in-jsx) in curly braces so we could inline the `map()` result:
+JSX-ը թույլ է տալիս ձևավոր փակագծերի մեջ [տեղադրել յուրաքանչյուր արտահայտություն](/docs/introducing-jsx.html#embedding-expressions-in-jsx), որով մենք կարող ենք `map()`-ից ստացած արդյունքը` 
 
 ```js{5-8}
 function NumberList(props) {
@@ -299,4 +300,5 @@ function NumberList(props) {
 
 [**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
 
-Sometimes this results in clearer code, but this style can also be abused. Like in JavaScript, it is up to you to decide whether it is worth extracting a variable for readability. Keep in mind that if the `map()` body is too nested, it might be a good time to [extract a component](/docs/components-and-props.html#extracting-components).
+
+Երբեմն, որպես արդյունք ունենում ենք ավելի մաքուր կոդ, սակայն այս ոճը կարող է չարաշահվել։ Ինչպես JavaScript-ում, ըստ ձեր հայացողության, դուք եք որոշում արժե տարանջատել փոփոխականը ավելի ընթերնելի դարձնելու համար, թե ոչ։ Մտապահեք այն, որ եթե `map()`-ի մարմինը բավականին ներդրված է,ապա դա [կոմպոնենտը տարանջատելու](/docs/components-and-props.html#extracting-components) շատ լավ ժամանակ է։
