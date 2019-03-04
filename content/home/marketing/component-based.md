@@ -1,8 +1,8 @@
 ---
-title: Component-Based
+title: Հիմնված կոմպոնենտների վրա
 order: 1
 ---
 
-Build encapsulated components that manage their own state, then compose them to make complex UIs.
+Կառուցեք ինկապսուլացված կոմպոնենտներ, որոնք կկառավարեն իրենց սեփական վիճակը, այնուհետև համախմբեք նրանց\` ստեղծելով բարդ UI-ներ։
 
-Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+Քանի որ կոմպոնենտի տրամաբանությունը գրված է JavaScript-ով, այլ ոչ թե ձևանմուշներով, դուք կարող եք հեշտությամբ փոխանցել մեծ տվյալներ ձեր հավելվածի միջով և պահել հավելվածի վիճակը DOM-ից դուրս։

@@ -2,13 +2,13 @@ class HelloMessage extends React.Component {
   render() {
     return (
       <div>
-        Hello {this.props.name}
+        Ողջույն {this.props.name}
       </div>
     );
   }
 }
 
 ReactDOM.render(
-  <HelloMessage name="Taylor" />,
+  <HelloMessage name="Պողոս" />,
   document.getElementById('hello-example')
 );

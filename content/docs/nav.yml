@@ -12,7 +12,7 @@
   isOrdered: true
   items:
     - id: hello-world
-      title: Hello World
+      title: Ողջույն աշխարհ
     - id: introducing-jsx
       title: Introducing JSX
     - id: rendering-elements
@@ -24,7 +24,7 @@
     - id: handling-events
       title: Handling Events
     - id: conditional-rendering
-      title: Conditional Rendering
+      title: Պայմանական Արտապատկերում
     - id: lists-and-keys
       title: Ցուցակներ և Բանալիներ
     - id: forms
