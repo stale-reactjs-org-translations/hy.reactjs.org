@@ -22,7 +22,7 @@
     - id: state-and-lifecycle
       title: State and Lifecycle
     - id: handling-events
-      title: Handling Events
+      title: Իրադարձությունների մշակում
     - id: conditional-rendering
       title: Պայմանական Արտապատկերում
     - id: lists-and-keys
