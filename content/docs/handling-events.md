@@ -8,6 +8,7 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 Իրադարձությունների մշակումը React֊ի էլեմենտներում շատ նման է իրադարձությունների մշակմանը DOM էլեմենտներում։ Կան որոշ շարահյուսական տարբերություններ։
+
 * React֊ում իրադարձությունների անունները փոքրատառի փոխարեն ուղտագիր են։
 * JSX֊ում դուք կարող եք վերագրել ֆունկցիան որպես իրադարձության մշակող, տողային ֆունկցիայի փոխարեն։
 
@@ -47,7 +48,7 @@ function ActionLink() {
 
   return (
     <a href="#" onClick={handleClick}>
-        Սեղմել այստեղ
+      Սեղմել այստեղ
     </a>
   );
 }
@@ -65,6 +66,7 @@ class Toggle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {isToggleOn: true};
+    
     // Այս կցումը պարտադիր է որպեսզի `this`֊ը աշխատի հետկանչում
     this.handleClick = this.handleClick.bind(this);
   }
