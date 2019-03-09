@@ -53,11 +53,11 @@ function ActionLink() {
 }
 ```
 
-Այստեղ `e`-ն արհեստական իրադարձություն է։ React-ը սահմանում է այս արհեստական իրադարձությունները համապատասխանաբար [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/)<sub>`ENG`</sub>-ին։ Այսպիսով դուք կարիք չունեք մտահոգվելու տարաբնույթ զննարկիչների համատեղելիության համար։ Տես\` [`SyntheticEvent`](/docs/events.html) ուղեցույցը ավելին իմանալու համար։
+Այստեղ `e`-ն արհեստական իրադարձություն է։ React-ը սահմանում է այս արհեստական իրադարձությունները համապատասխանաբար [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/)<sub>`eng`</sub>-ին։ Այսպիսով դուք կարիք չունեք մտահոգվելու տարաբնույթ զննարկիչների համատեղելիության համար։ Տես\` [`SyntheticEvent`](/docs/events.html) ուղեցույցը ավելին իմանալու համար։
 
 Երբ օգտագործում եք React, դուք սովորաբար կարիք չունեք կանչելու addEventListener, որպեսզի ավելացնեք listeners DOM էլեմնտներ վրա, վերջինիս ստեղծվելուց հետո։
 
-Երբ դուք ստեղծում եք կոմպոնտենտ\` օգտագործելով [ES6 կլաս](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes)<sub>`ENG`</sub>, դա նշանակում է, որ իրադարձությունների մշակողը պետք է լինի կլասի մեթոդ։ Օրինակ\` այս `Toggle` կոմպոնտենտը արտապատկերում է մի կոճակ, որը օգտվողին թույլ է տալիս անցել "ՄԻԱՑՆԵԼ"-ի և "ԱՆՋԱՏԵԼ"-ի միջև\` 
+Երբ դուք ստեղծում եք կոմպոնտենտ\` օգտագործելով [ES6 կլաս](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes)<sub>`eng`</sub>, դա նշանակում է, որ իրադարձությունների մշակողը պետք է լինի կլասի մեթոդ։ Օրինակ\` այս `Toggle` կոմպոնտենտը արտապատկերում է մի կոճակ, որը օգտվողին թույլ է տալիս անցել "ՄԻԱՑՆԵԼ"-ի և "ԱՆՋԱՏԵԼ"-ի միջև\` 
 
 ```js{6,7,10-14,18}
 class Toggle extends React.Component {
@@ -92,11 +92,11 @@ ReactDOM.render(
 
 [**Փորձել CodePen-ում**](https://codepen.io/anon/pen/mommWK?editors=0010)
 
-JSX-ի հետկանչում ուշադիր եղեք `this`-ի նշանակությանը։ JavaScript-ում կլասի մեթոդները լռությամբ [կցված](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind)<sub>`ENG`</sub> չեն կոնտեքստին։ Եթե դուք մոռանաք կցել `this.handleClick`-ը և փոխանցեք դա `onClick`-ում, `this`-ի արժեքը կլինի `undefined` երբ ֆունկցիան կանչվի։
+JSX-ի հետկանչում ուշադիր եղեք `this`-ի նշանակությանը։ JavaScript-ում կլասի մեթոդները լռությամբ [կցված](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind)<sub>`eng`</sub> չեն կոնտեքստին։ Եթե դուք մոռանաք կցել `this.handleClick`-ը և փոխանցեք դա `onClick`-ում, `this`-ի արժեքը կլինի `undefined` երբ ֆունկցիան կանչվի։
 
-Դա կապված չէ React-ի հետ։ Դա մաս է կազմում «[ինչպես են ֆունկցիաները աշխատում JavaScript-ում](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/)<sub>`ENG`</sub>»-ին։ Ընդհանուր առմամբ, եթե դուք հղվում եք մեթոդին առանց վերջում ավելացնելու `()`, օր.\` `onClick={this.handleClick}`, ապա դուք պետք է կցեք այն։
+Դա կապված չէ React-ի հետ։ Դա մաս է կազմում «[ինչպես են ֆունկցիաները աշխատում JavaScript-ում](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/)<sub>`eng`</sub>»-ին։ Ընդհանուր առմամբ, եթե դուք հղվում եք մեթոդին առանց վերջում ավելացնելու `()`, օր.\` `onClick={this.handleClick}`, ապա դուք պետք է կցեք այն։
 
-Եթե `bind`-ի տարբերակը ձանձրացնում է ձեզ, կա երկու ճանապարհ դա անելու համար։ Եթե դուք օգտագործում եք փորձարարական [հրապարակային կլասի հատկության շարահյուսությունը](https://babeljs.io/docs/plugins/transform-class-properties/)<sub>`ENG`</sub> դուք կարող եք օգտագործել կլասի հատկությունը հետկանչին ճիշտ ձևով կապելու համար\`
+Եթե `bind`-ի տարբերակը ձանձրացնում է ձեզ, կա երկու ճանապարհ դա անելու համար։ Եթե դուք օգտագործում եք փորձարարական [հրապարակային կլասի հատկության շարահյուսությունը](https://babeljs.io/docs/plugins/transform-class-properties/)<sub>`eng`</sub> դուք կարող եք օգտագործել կլասի հատկությունը հետկանչին ճիշտ ձևով կապելու համար\`
 
 
 ```js{2-6}
@@ -117,9 +117,9 @@ class LoggingButton extends React.Component {
 }
 ```
 
-Այս շարահյուսությունը լռությամբ միացված է [Ստեղծել React ծրագիր](https://github.com/facebookincubator/create-react-app)<sub>`ENG`</sub>-ում։
+Այս շարահյուսությունը լռությամբ միացված է [Ստեղծել React ծրագիր](https://github.com/facebookincubator/create-react-app)<sub>`eng`</sub>-ում։
 
-Եթե դուք չեք օգտագործում կլասի հատկության շարահյուսությունը, դուք կարող եք օգտագործել [սլաք ֆունկցիա](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)<sub>`ENG`</sub> ետկանչում\`
+Եթե դուք չեք օգտագործում կլասի հատկության շարահյուսությունը, դուք կարող եք օգտագործել [սլաք ֆունկցիա](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)<sub>`eng`</sub> ետկանչում\`
 
 ```js{7-9}
 class LoggingButton extends React.Component {
@@ -149,7 +149,7 @@ class LoggingButton extends React.Component {
 <button onClick={this.deleteRow.bind(this, id)}>Ջնջել տողը</button>
 ```
 
-Վերը նշված երկու տողերի աշխատանքները համարժեք են, դուք կարող եք օգտագործել թե [սլաք ֆունկցիաները](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)<sub>`ENG`</sub> և թե [`Function.prototype.bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)<sub>`ENG`</sub>-ը։
+Վերը նշված երկու տողերի աշխատանքները համարժեք են, դուք կարող եք օգտագործել թե [սլաք ֆունկցիաները](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)<sub>`eng`</sub> և թե [`Function.prototype.bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)<sub>`eng`</sub>-ը։
 
 Երկու դեպքում էլ `e` արգումենտը ներկայացնում է React-ի իրադարձությունը, որը պետք է փոխանցվի, որպես երկրորդ արգումենտ\` տողի հերթական համարից հետո։ Սլաք ֆունկցիայի դեպքում մենք ակնհայտորեն պետք է փոխանցենք դա, իսկ `bind`-ի դեպքում բոլոր հետագա արգումենտները ավտոմատ կերպով կփոխանցվեն։
 
