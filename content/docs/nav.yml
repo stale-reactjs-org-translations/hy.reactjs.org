@@ -133,10 +133,10 @@
     title: Implementation Notes
   - id: design-principles
     title: Design Principles
-- title: FAQ
+- title: ՀՏՀ
   items:
     - id: faq-ajax
-      title: AJAX and APIs
+      title: AJAX֊ը և API֊ները
     - id: faq-build
       title: Babel, JSX, and Build Steps
     - id: faq-functions
