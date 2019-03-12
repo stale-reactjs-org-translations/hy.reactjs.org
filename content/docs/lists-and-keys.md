@@ -1,14 +1,14 @@
 ---
 id: lists-and-keys
-title: Lists and Keys
+title: Ցուցակներ և Բանալիներ
 permalink: docs/lists-and-keys.html
 prev: conditional-rendering.html
 next: forms.html
 ---
 
-First, let's review how you transform lists in JavaScript.
+Նախ վերհիշենք, թե ինչպես ենք աշխատում ցուցակների հետ JavaScript-ում։
 
-Given the code below, we use the [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) function to take an array of `numbers` and double their values. We assign the new array returned by `map()` to the variable `doubled` and log it:
+Ստորև բերված կոդում, `թվեր`-ի զանգված վերցնելու և նրանց արժեքները կրկնապատկելու համար, մենք օգտագործում ենք [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)<sub>eng</sub> ֆունկցիան։ Այնուհետև, `doubled` փոփոխականին վերագրում ենք այն, ինչ վերադարձվել է `map()` ֆունկցիայի կողմից և տպում ենք այն։
 
 ```javascript{2}
 const numbers = [1, 2, 3, 4, 5];
@@ -16,15 +16,15 @@ const doubled = numbers.map((number) => number * 2);
 console.log(doubled);
 ```
 
-This code logs `[2, 4, 6, 8, 10]` to the console.
+Այս կոդը կոնսոլում տպում է `[2, 4, 6, 8, 10]`։
 
-In React, transforming arrays into lists of [elements](/docs/rendering-elements.html) is nearly identical.
+React-ում զանգվածների փոխակերպումը [էլեմենտների](/docs/rendering-elements.html) ցուցակների կատարվում է նման եղանակով։
 
-### Rendering Multiple Components {#rendering-multiple-components}
+### Մի Քանի Կոմպոնենտների Արտապաատկերում {#rendering-multiple-components}
 
-You can build collections of elements and [include them in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) using curly braces `{}`.
+Դուք կարող եք ստեղծել էլեմենտների հավաքածուներ և օգտագործելով ձևավոր փակագծերը `{}`\` [ներդնել դրանք JSX-ի մեջ](/docs/introducing-jsx.html#embedding-expressions-in-jsx)։
 
-Below, we loop through the `numbers` array using the JavaScript [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) function. We return a `<li>` element for each item. Finally, we assign the resulting array of elements to `listItems`:
+Ստորև, մենք, օգտագործելով JavaScript-ի [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)<sub>eng</sub> ֆունկցիան, անցնում ենք թվերի զանգվածի վրայով և զանգվածի յուրաքանչյուր էլեմենտի համար վերադարձնում ենք `<li>` էլեմենտ։ Եվ, ի վերջո, ստացված էլեմենտների զանգվածը վերագրում ենք `listItems`-ին։
 
 ```javascript{2-4}
 const numbers = [1, 2, 3, 4, 5];
@@ -33,7 +33,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-We include the entire `listItems` array inside a `<ul>` element, and [render it to the DOM](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
+Մենք ողջ `listItems` զանգվածը ներդնում ենք `<ul>` էլեմենտի մեջ և [արտապատկերում այն DOM-ում](/docs/rendering-elements.html#rendering-an-element-into-the-dom)։
 
 ```javascript{2}
 ReactDOM.render(
@@ -42,15 +42,15 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
+[**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
 
-This code displays a bullet list of numbers between 1 and 5.
+Այս կոդը ցույց է տալիս 1-ից 5-ը թվերի ցուցակ։
 
-### Basic List Component {#basic-list-component}
+### Հասարակ Ցուցակ-Կոմպոնենտ {#basic-list-component}
 
-Usually you would render lists inside a [component](/docs/components-and-props.html).
+Սովորաբար դուք արտապատկերելու եք ցուցակները ինչ-որ [կոմպոնենտի](/docs/components-and-props.html) մեջ։
 
-We can refactor the previous example into a component that accepts an array of `numbers` and outputs a list of elements.
+Մենք կարող ենք վերամշակել նախորդ օրինակը և ստանալ կոմպոնենտ, որը ընդունում է թվերի զանգված և որպես ելքային արժեք վերադարձնում է էլեմենտների ցուցակ։
 
 ```javascript{3-5,7,13}
 function NumberList(props) {
@@ -70,9 +70,9 @@ ReactDOM.render(
 );
 ```
 
-When you run this code, you'll be given a warning that a key should be provided for list items. A "key" is a special string attribute you need to include when creating lists of elements. We'll discuss why it's important in the next section.
+Երբ այս կոդը աշխատեցնեք, դուք կստանաք զգուշացում այն մասին, որ ցուցակի էլեմենտները պետք է ունենան բանալիներ։ «Բանալին» դա հատուկ տողային ատրիբուտ է, որը պետք է նշեք էլեմենտների ցուցակ ստեղծելիս։ Թե ինչի համար է դա կարևոր, կքննարկենք հաջորդ բաժնում։
 
-Let's assign a `key` to our list items inside `numbers.map()` and fix the missing key issue.
+Եկեք `numbers.map()`-ի մեջ մեր զանգվածի էլեմենտներին փոխանցենք `key` և ուղղենք բաց թողնված բանալու խնդիրը։
 
 ```javascript{4}
 function NumberList(props) {
@@ -94,11 +94,11 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
+[**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
 
-## Keys {#keys}
+## Բանալիներ {#keys}
 
-Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity:
+Բանալիները React-ին օգնում են տարբերել փոփոխված, ավելացված կամ հեռացված էլեմենտները։ Բանալիները պետք է փոխանցել էլեմենտներին ՝ նրանց կայուն տարբերակիչ տալու համար։
 
 ```js{3}
 const numbers = [1, 2, 3, 4, 5];
@@ -109,7 +109,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-The best way to pick a key is to use a string that uniquely identifies a list item among its siblings. Most often you would use IDs from your data as keys:
+Բանալի ընտրելու լավագույն տարբերակը դա այնպիսի տողային փոփոխականի օգտագործումն է, որը միարժեք կտարբերակի ցուցակի տարրին նրա հարևաններից։ Շատ հաճախ դուք կօգտագործեք ձեր տվյալների `ID`-ները, որպես բանալի։
 
 ```js{2}
 const todoItems = todos.map((todo) =>
@@ -119,34 +119,35 @@ const todoItems = todos.map((todo) =>
 );
 ```
 
-When you don't have stable IDs for rendered items, you may use the item index as a key as a last resort:
+Եթե դուք չունեք հաստատուն ID-ներ էլեմենտների արտապատկերման համար, ապա որպես վերջին միջոց կարող եք օգտագործել էլեմենտի ինդեքսը։ 
 
 ```js{2,3}
 const todoItems = todos.map((todo, index) =>
-  // Only do this if items have no stable IDs
+  // Սա արեք միայն այն դեպքում, երբ էլեմենտները չունեն հաստատուն ID-ներ
   <li key={index}>
     {todo.text}
   </li>
 );
 ```
 
-We don't recommend using indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state. Check out Robin Pokorny's article for an [in-depth explanation on the negative impacts of using an index as a key](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318). If you choose not to assign an explicit key to list items then React will default to using indexes as keys.
+Խորհուրդ չենք տալիս օգտագործել ինդեքսները որպես բանալիներ այն դեպքում երբ էլեմենտների դասավորությունը կարող է փոխվել։ Դա կարող է բացասաբար ազդել արտադրողականության վրա և կոմպոնենտի վիճակի հետ կապված խնդիրներ հարուցել։
+Կարդացեք Ռոբին Պոկորնեի հոդվածը\` [ինդեքսները, որպես բանալի օգտագործելու բացասական ազդեցության խորը բացատրության](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318)<sub>eng</sub> մասին։ Եթե դուք որոշեք ցուցակի էլեմենտներին բացահայտորեն բանալի չփոխանցել, ապա React-ը որպես բանալի լռելյայն կօգտագործի ինդեքսները։
 
-Here is an [in-depth explanation about why keys are necessary](/docs/reconciliation.html#recursing-on-children) if you're interested in learning more.
+Եթե հետաքրքրված եք սովորել ավելին, ապա [այստեղ կգտնեք խորը բացատրություն, թե ինչու են բանալիները կարևոր](/docs/reconciliation.html#recursing-on-children)։
 
-### Extracting Components with Keys {#extracting-components-with-keys}
+### Կոմպոնենտների Տարանջատումը Բանալիներով {#extracting-components-with-keys}
 
-Keys only make sense in the context of the surrounding array.
+Բանալիների կիրառությունը իմաստ ունի միայն զանգվածի կոնտեքստում։
 
-For example, if you [extract](/docs/components-and-props.html#extracting-components) a `ListItem` component, you should keep the key on the `<ListItem />` elements in the array rather than on the `<li>` element in the `ListItem` itself.
+Օրինակ, եթե [տարանջատեք](/docs/components-and-props.html#extracting-components) `ListItem` կոմպոնենտը, ապա դուք պետք է բանալին փոխանցեք `<ListItem />` կոմպոնենտներին, ոչ թե `<ListItem />`-ի միջ `<li>` էլեմենտին։
 
-**Example: Incorrect Key Usage**
+**Բանալու սխալ օգտագործման օրինակ.**
 
 ```javascript{4,5,14,15}
 function ListItem(props) {
   const value = props.value;
   return (
-    // Wrong! There is no need to specify the key here:
+    // Սխալ. կարիք չկա նշել բանալին այստեղ.
     <li key={value.toString()}>
       {value}
     </li>
@@ -156,7 +157,7 @@ function ListItem(props) {
 function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
-    // Wrong! The key should have been specified here:
+    // Սխալ. բանալին պետք է նշված լինի այստեղ.
     <ListItem value={number} />
   );
   return (
@@ -173,18 +174,18 @@ ReactDOM.render(
 );
 ```
 
-**Example: Correct Key Usage**
+**Բանալու ճիշտ օգտագործոման օրինակ.**
 
 ```javascript{2,3,9,10}
 function ListItem(props) {
-  // Correct! There is no need to specify the key here:
+  // Ճիշտ. այստեղ կարիք չկա նշել բանալին.
   return <li>{props.value}</li>;
 }
 
 function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
-    // Correct! Key should be specified inside the array.
+    // Ճիշտ. բանալին պետք է նշված լինի զանգվածի մեջ.
     <ListItem key={number.toString()}
               value={number} />
   );
@@ -202,13 +203,13 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
+[**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
 
-A good rule of thumb is that elements inside the `map()` call need keys.
+Որպես կանոն, որ `map()`-ի կանչի մեջ էլեմենտները բանալիների կարիք ունեն։
 
-### Keys Must Only Be Unique Among Siblings {#keys-must-only-be-unique-among-siblings}
+### Բանալիները Պետք է Լինեն Եզակի Միայն Հարևանների Շրջանում {#keys-must-only-be-unique-among-siblings}
 
-Keys used within arrays should be unique among their siblings. However they don't need to be globally unique. We can use the same keys when we produce two different arrays:
+Բանալիները, որոնք օգտագործվում են զանգվածի մեջ, պետք է լինեն ունիկալ հարևան էլեմենտների մեջ։ Սակայն, նրանք պետք չէ որ լինեն գլոբալ ունիկալ։ Մենք կարող ենք օգտագործել նույն բանալիները երբ ներկայացնում ենք երկու տարբեր զանգվածներ`
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {
@@ -237,8 +238,8 @@ function Blog(props) {
 }
 
 const posts = [
-  {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
-  {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+  {id: 1, title: 'Ողջույն աշխարհ', content: 'Բարի գալուստ React-ի ուսուցում։'},
+  {id: 2, title: 'Տեղադրում', content: 'Դուք կարող եք React-ը տեղադրել npm-ից։'}
 ];
 ReactDOM.render(
   <Blog posts={posts} />,
@@ -246,9 +247,9 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
+[**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
 
-Keys serve as a hint to React but they don't get passed to your components. If you need the same value in your component, pass it explicitly as a prop with a different name:
+Բանալիները React-ի համար ծառայում են որպես հուշում, սակայն նրանք չեն փոխանցվում ձեր կոմպոնենտին։ Եթե դուք նույն արժեքի կարիքն ունեք ձեր կոմպոնենտում, ապա ուղղակի փոխանցեք այն որպես հատկություն մեկ այլ անվան տակ.
 
 ```js{3,4}
 const content = posts.map((post) =>
@@ -259,11 +260,11 @@ const content = posts.map((post) =>
 );
 ```
 
-With the example above, the `Post` component can read `props.id`, but not `props.key`.
+Վերոնշյալ օրինակում `Post` կոմպոնենտը կարող է կարդալ `props.id`-ին, բայց ոչ `props.key`-ին։
 
-### Embedding map() in JSX {#embedding-map-in-jsx}
+### Ներդրված map() JSX-ում {#embedding-map-in-jsx}
 
-In the examples above we declared a separate `listItems` variable and included it in JSX:
+Մինչ այս օրինակներում մենք հայտարարում էինք առանձին `listItems` փոփոխական և տեղադրում այն JSX-ում`
 
 ```js{3-6}
 function NumberList(props) {
@@ -280,7 +281,7 @@ function NumberList(props) {
 }
 ```
 
-JSX allows [embedding any expression](/docs/introducing-jsx.html#embedding-expressions-in-jsx) in curly braces so we could inline the `map()` result:
+JSX-ը թույլ է տալիս ձևավոր փակագծերի մեջ [ներդնել ցանկացած արտահայտություն](/docs/introducing-jsx.html#embedding-expressions-in-jsx)<sub>eng</sub>, այսպիսով մենք կարող ենք տեղադրել `map()`-ից ստացած արդյունքը`
 
 ```js{5-8}
 function NumberList(props) {
@@ -296,6 +297,7 @@ function NumberList(props) {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
+[**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
 
-Sometimes this results in clearer code, but this style can also be abused. Like in JavaScript, it is up to you to decide whether it is worth extracting a variable for readability. Keep in mind that if the `map()` body is too nested, it might be a good time to [extract a component](/docs/components-and-props.html#extracting-components).
+
+Երբեմն սա բերում է ավելի մաքուր կոդի, սակայն այս ոճը նույնպես կարող է չարաշահվել։ Ինչպես JavaScript-ում, այստեղ նույնպես ձեր հայեցողության տակ է որոշելը\` տարանջատել փոփոխականը ավելի ընթեռնելի դարձնելու համար, թե\` ոչ։ Մտապահեք, որ եթե map()-ի մարմինը չափազանց ներդրված է, ապա գուցե կարիք կա [կոմպոնենտը տարանջատելու](/docs/components-and-props.html#extracting-components)։
