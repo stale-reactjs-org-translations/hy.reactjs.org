@@ -62,7 +62,7 @@ class CodeEditor extends Component {
     if (showBabelErrorMessage) {
       errorMessage = (
         <span>
-          Babel-ը չի կարողացել ներբեռնվել։
+          Babel-ին չի հաջողվել ներբեռնվել։
           <br />
           <br />
           Սրա պատճառը կարող է հանդիսացած լինել «հայտարարություն արգելափակողը»(ad blcoker)։

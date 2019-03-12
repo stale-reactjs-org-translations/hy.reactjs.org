@@ -61,7 +61,7 @@ class CodeExample extends Component {
         {loaded ? (
           <CodeEditor code={code} containerNodeID={containerNodeID} />
         ) : (
-          <h4>Ներբեռնվում է կոդի օրինակը...</h4>
+          <h4>Կոդի օրինակի ներբեռնում...</h4>
         )}
       </div>
     );
