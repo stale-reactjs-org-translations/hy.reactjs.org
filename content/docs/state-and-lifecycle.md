@@ -1,6 +1,6 @@
 ---
 id: state-and-lifecycle
-title: State and Lifecycle
+title: Վիճակ և կյանքի ցիկլ
 permalink: docs/state-and-lifecycle.html
 redirect_from:
   - "docs/interactivity-and-dynamic-uis.html"
@@ -8,15 +8,17 @@ prev: components-and-props.html
 next: handling-events.html
 ---
 
+Այս էջը ներկայացնում է վիճակի(state) և կյանքի ցիկի(lifecycle) գաղափարը React կոմպոնենտում։ Դուք կարող եք գտնել կոմպոնենտների մանրամասն API հղումները [այստեղ](/docs/react-component.html)։
 This page introduces the concept of state and lifecycle in a React component. You can find a [detailed component API reference here](/docs/react-component.html).
 
+Դիտարկենք «ժամացույցի» աշխատանքի օրինակը նկարագրված [վերջին մասից մեկում](/docs/rendering-elements.html#updating-the-rendered-element)։ [Էլեմենտների արտապատկերում](/docs/rendering-elements.html#rendering-an-element-into-the-dom)-ում, մենք UI-ը փարմացնելու միայն մեկ եղանակ ենք սովորել։ Մենք կանչում ենք `ReactDOM.render()`-ը\` փոփոխելու արտապատկերված ելքային արժեքը։
 Consider the ticking clock example from [one of the previous sections](/docs/rendering-elements.html#updating-the-rendered-element). In [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom), we have only learned one way to update the UI. We call `ReactDOM.render()` to change the rendered output:
 
 ```js{8-11}
 function tick() {
   const element = (
     <div>
-      <h1>Hello, world!</h1>
+      <h1>Ողջույն, աշխարհ</h1>
       <h2>It is {new Date().toLocaleTimeString()}.</h2>
     </div>
   );
@@ -29,18 +31,20 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/gwoJZk?editors=0010)
+[Փորձել CodePen-ում](https://codepen.io/gaearon/pen/gwoJZk?editors=0010)
 
+Այս մասում, մենք կսովերենք թե ինչպես պատրաստել `Clock` կոմպոնենտը իսկապես բազմակի օգտագործման ենթակա և ինկապսուլացված։ Այն կդնի իր սեփական Ժամաչափը(timer) և կթարմացնի ինքն իրեն ամեն վայրկյան։
 In this section, we will learn how to make the `Clock` component truly reusable and encapsulated. It will set up its own timer and update itself every second.
 
+Մանք կարող ենք սկսել\` դիտարկելով `Clock` կոմպոնենտը։ 
 We can start by encapsulating how the clock looks:
 
 ```js{3-6,12}
 function Clock(props) {
   return (
     <div>
-      <h1>Hello, world!</h1>
-      <h2>It is {props.date.toLocaleTimeString()}.</h2>
+      <h1>Ողջույն, աշխարհ</h1>
+      <h2>Ժամը {props.date.toLocaleTimeString()} -ն է։</h2>
     </div>
   );
 }
@@ -55,8 +59,9 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/dpdoYR?editors=0010)
+[Փորձել CodePen-ում](https://codepen.io/gaearon/pen/dpdoYR?editors=0010)
 
+Այնուամենայնիվ, բաց թողնված է առանցքային պահանջը. այն փաստը, որ `Clock`-ը տեղադրում է ժամապահ և թարմացնում է UI-ը ամեն վայրկյան, պետք է `Clock`-ի իրականացման մանրամասները լինեն։
 However, it misses a crucial requirement: the fact that the `Clock` sets up a timer and updates the UI every second should be an implementation detail of the `Clock`.
 
 Ideally we want to write this once and have the `Clock` update itself:
