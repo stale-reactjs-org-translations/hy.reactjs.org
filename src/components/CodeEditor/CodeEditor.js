@@ -62,12 +62,12 @@ class CodeEditor extends Component {
     if (showBabelErrorMessage) {
       errorMessage = (
         <span>
-          Babel could not be loaded.
+          Babel-ին չի հաջողվել ներբեռնվել։
           <br />
           <br />
-          This can be caused by an ad blocker. If you're using one, consider
-          adding reactjs.org to the whitelist so the live code examples will
-          work.
+          Սրա պատճառը կարող է հանդիսացած լինել «հայտարարություն արգելափակողը»(ad blcoker)։
+          Եթե դուք օգտագործում եք այն, ապա համոզվեք, որ ավելացրել եք hy.reactjs.org-ը
+          սպիտակ-ցուցակում(whitelist). այդպիսով կոդի ինտերակտիվ օրինակները կաշխատեն։
         </span>
       );
     } else if (error != null) {
@@ -105,7 +105,7 @@ class CodeEditor extends Component {
                 color: colors.white,
               }}>
               <MetaTitle onDark={true}>
-                Live JSX Editor
+                Ինտերակտիվ JSX Խմբագրիչ
                 <label
                   css={{
                     fontSize: 14,
@@ -119,7 +119,7 @@ class CodeEditor extends Component {
                     }
                     type="checkbox"
                   />{' '}
-                  JSX?
+                  JSX՞
                 </label>
               </MetaTitle>
             </div>
@@ -206,7 +206,7 @@ class CodeEditor extends Component {
                   padding: '0 10px',
                   backgroundColor: colors.divider,
                 }}>
-                <MetaTitle>Result</MetaTitle>
+                <MetaTitle>Արդյունք</MetaTitle>
               </div>
               <div
                 id={containerNodeID}
