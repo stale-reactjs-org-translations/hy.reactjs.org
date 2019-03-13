@@ -1,32 +1,32 @@
 ---
 id: faq-build
-title: Babel, JSX, and Build Steps
+title: Babel-ը, JSX-ը, և Կառուցման Ընթացքը
 permalink: docs/faq-build.html
 layout: docs
 category: FAQ
 ---
 
-### Do I need to use JSX with React? {#do-i-need-to-use-jsx-with-react}
+### Արդյո՞ք React-ում կարիք ունեմ օգտագործելու JSX {#do-i-need-to-use-jsx-with-react}
 
-No! Check out ["React Without JSX"](/docs/react-without-jsx.html) to learn more.
+Ո՛չ, ավելին իմանալու համար ընթերցեք՝ [«React-ն Առանց JSX-ի»](/docs/react-without-jsx.html)։
 
-### Do I need to use ES6 (+) with React? {#do-i-need-to-use-es6--with-react}
+### Արդյո՞ք React-ում կարիք ունեմ օգտագործելու ES6 (+) {#do-i-need-to-use-es6--with-react}
 
-No! Check out ["React Without ES6"](/docs/react-without-es6.html) to learn more.
+Ո՛չ, ավելին իմանալու համար ընթերցեք՝ [«React-ն Առանց ES6-ի»](/docs/react-without-es6.html)։
 
-### How can I write comments in JSX? {#how-can-i-write-comments-in-jsx}
+### Ինչպե՞ս կարող եք մեկնաբանություններ գրել JSX-ում {#how-can-i-write-comments-in-jsx}
 
 ```jsx
 <div>
-  {/* Comment goes here */}
-  Hello, {name}!
+  {/* Մեկնաբանություն */}
+  Բարև, {name}
 </div>
 ```
 
 ```jsx
 <div>
-  {/* It also works 
-  for multi-line comments. */}
-  Hello, {name}! 
+  {/* Կարող եք նաև այսպես
+  բազմատող մեկնաբանությունների համար */}
+  Բարև, {name}
 </div>
 ```
