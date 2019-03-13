@@ -12,13 +12,13 @@ React֊ում դուք կարող եք օգտագործել ձեր նախընտ�
 
 ### Կոմպոնենտի կյանքի ցիկլի ո՞ր հատվածում կարող եմ ստեղծել AJAX կանչ  {#where-in-the-component-lifecycle-should-i-make-an-ajax-call}
 
-You should populate data with AJAX calls in the [`componentDidMount`](/docs/react-component.html#mounting) lifecycle method. This is so you can use `setState` to update your component when the data is retrieved.
+Դուք պետք է ստանաք տվյալները AJAX հարցման միջոցով [`componentDidMount`](/docs/react-component.html#mounting) կյանքի ցիկլի մեթոդում։ Այնուհետև, տվյալները ստանալուց հետո դուք կարող եք օգտագործել `setState`\` կոմպոնենտը թարմացնելու համար։
 
 ### Օրինակ\` Սահմանել լոկալ state-ը՝ օգտագործելով AJAX-ի արդյունքները {#example-using-ajax-results-to-set-local-state}
 
-The component below demonstrates how to make an AJAX call in `componentDidMount` to populate local component state. 
+Ստորև ներկայացված կոմպոնենտը ցույց է տալիս, թե ինչպես կարելի է թարմացնել լոկալ state-ը կատարելով AJAX հարցում `componentDidMount`-ում։
 
-The example API returns a JSON object like this:
+Պատկերացնենք API-ը վերադարձնում է այսպիսի JSON օբյեկտ\`
 
 ```
 {
@@ -50,9 +50,9 @@ class MyComponent extends React.Component {
             items: result.items
           });
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
+        // Նշում՝ կարևոր է գտնել սխալները այստեղ,
+        // և ոչ թե «catch()» բլոկում, որպեսզի
+        // կոմպոնենտում բացառենք հնարավոր bug-երը։
         (error) => {
           this.setState({
             isLoaded: true,
