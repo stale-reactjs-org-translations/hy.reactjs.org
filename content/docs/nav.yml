@@ -18,7 +18,7 @@
     - id: rendering-elements
       title: Էլեմենտների Արտապատկերումը
     - id: components-and-props
-      title: Components and Props
+      title: Կոմպոնենտներ
     - id: state-and-lifecycle
       title: State and Lifecycle
     - id: handling-events
