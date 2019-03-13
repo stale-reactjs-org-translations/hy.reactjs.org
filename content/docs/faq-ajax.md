@@ -8,7 +8,7 @@ category: FAQ
 
 ### Ինչպե՞ս կարող եմ ստեղծել AJAX կանչ {#how-can-i-make-an-ajax-call}
 
-React֊ում դուք կարող եք օգտագործել ձեր նախընտրած ցանկացած AJAX գրադարան։ Ահա դրանցից մի քանի հանրաճանաչները\` [Axios](https://github.com/axios/axios)<sub>`eng`</sub>-ը, [jQuery AJAX](https://api.jquery.com/jQuery.ajax/)<sub>`eng`</sub>֊ը և զննարկիչի ներկառուցված [window.fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)<sub>`eng`</sub>-ը։
+React-ում դուք կարող եք օգտագործել ձեր նախընտրած ցանկացած AJAX գրադարան։ Ահա դրանցից մի քանի հանրաճանաչները\` [Axios](https://github.com/axios/axios)<sub>`eng`</sub>-ը, [jQuery AJAX](https://api.jquery.com/jQuery.ajax/)<sub>`eng`</sub>-ը և զննարկիչի ներկառուցված [window.fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)<sub>`eng`</sub>-ը։
 
 ### Կոմպոնենտի կյանքի ցիկլի ո՞ր հատվածում կարող եմ ստեղծել AJAX կանչ  {#where-in-the-component-lifecycle-should-i-make-an-ajax-call}
 
