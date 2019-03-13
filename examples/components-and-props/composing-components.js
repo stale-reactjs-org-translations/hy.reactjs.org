@@ -1,15 +1,18 @@
 function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
+  return <h1>Ողջույն, {props.name}</h1>;
 }
 
 function App() {
   return (
     <div>
-      <Welcome name="Sara" />
-      <Welcome name="Cahal" />
-      <Welcome name="Edite" />
+      <Welcome name="Պողոս" />
+      <Welcome name="Պետրոս" />
+      <Welcome name="Մարտիրոս" />
     </div>
   );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
