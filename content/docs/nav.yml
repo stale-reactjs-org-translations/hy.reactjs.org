@@ -136,7 +136,7 @@
 - title: ՀՏՀ
   items:
     - id: faq-ajax
-      title: AJAX֊ը և API֊ները
+      title: AJAX և API-ներ
     - id: faq-build
       title: Babel, JSX, and Build Steps
     - id: faq-functions
