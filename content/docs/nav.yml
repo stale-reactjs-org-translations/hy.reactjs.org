@@ -138,7 +138,7 @@
     - id: faq-ajax
       title: AJAX and APIs
     - id: faq-build
-      title: Babel-ը, JSX-ը, և Կառուցման Ընթացքը
+      title: Babel, JSX և կառուցման ընթացք
     - id: faq-functions
       title: Passing Functions to Components
     - id: faq-state
