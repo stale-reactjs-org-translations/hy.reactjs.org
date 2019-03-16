@@ -1,22 +1,22 @@
 ---
 id: faq-styling
-title: Styling and CSS
+title: Ձևավորում և CSS
 permalink: docs/faq-styling.html
 layout: docs
 category: FAQ
 ---
 
-### How do I add CSS classes to components? {#how-do-i-add-css-classes-to-components}
+### Ինչպե՞ս կարող եմ կոմպոնենտներին ավելացնել CSS կլասներ {#how-do-i-add-css-classes-to-components}
 
-Pass a string as the `className` prop:
+Փոխանցել տողշ\` որպես `className`-ի ատրիբուտ\`
 
 ```jsx
 render() {
-  return <span className="menu navigation-menu">Menu</span>
+  return <span className="menu navigation-menu">Մենյու</span>
 }
 ```
 
-It is common for CSS classes to depend on the component props or state:
+Սովորաբար CSS կլասները կախված են կոմպոնենտի props-ից կամ state-ից\`
 
 ```jsx
 render() {
@@ -24,28 +24,28 @@ render() {
   if (this.props.isActive) {
     className += ' menu-active';
   }
-  return <span className={className}>Menu</span>
+  return <span className={className}>Մենյու</span>
 }
 ```
 
->Tip
+>Խորհուրդ
 >
->If you often find yourself writing code like this, [classnames](https://www.npmjs.com/package/classnames#usage-with-reactjs) package can simplify it.
+>Եթե դուք հաճախ եք գրում նմանատիպ կոդ, [classnames](https://www.npmjs.com/package/classnames#usage-with-reactjs)<sub>eng</sub> հավելումը ավելի հեշտ կդարձնի այն։
 
-### Can I use inline styles? {#can-i-use-inline-styles}
+### Կարո՞ղ եմ օգտագործել ներկառուցված ձևավորումներ {#can-i-use-inline-styles}
 
-Yes, see the docs on styling [here](/docs/dom-elements.html#style).
+Այո, տես ձևավորման փաստաթղթավորումն [այտեղ](/docs/dom-elements.html#style)։
 
-### Are inline styles bad? {#are-inline-styles-bad}
+### Արդյո՞ք ներկառուցված ձևավորումները վատ են {#are-inline-styles-bad}
 
-CSS classes are generally better for performance than inline styles.
+CSS կլասներն ընդհանուր առմամբ ավելի լավ են արտադրողականության համար, քան\` ներկառուցված ձևավորումները։
 
-### What is CSS-in-JS? {#what-is-css-in-js}
+### Ի՞նչ է CSS-in-JS-ը {#what-is-css-in-js}
 
-"CSS-in-JS" refers to a pattern where CSS is composed using JavaScript instead of defined in external files. Read a comparison of CSS-in-JS libraries [here](https://github.com/MicheleBertoli/css-in-js).
+«CSS-in-JS»-ը օրինակ է, որտեղ CSS-ը արտաքին ֆայլերում գրելու փոխարեն այն ստեղծվում է JavaScript-ի միջոցով։ Կարդա CSS-in-JS գրադարանների համեմատությունն [այստեղ](https://github.com/MicheleBertoli/css-in-js)<sub>eng</sub>։
 
-_Note that this functionality is not a part of React, but provided by third-party libraries._ React does not have an opinion about how styles are defined; if in doubt, a good starting point is to define your styles in a separate `*.css` file as usual and refer to them using [`className`](/docs/dom-elements.html#classname).
+_Նկատի ունեցեք, որ այս գործառույթը React-ի մաս չի կազմում, այն տրամադրվում է կողմնակի գրադարանների կողմից։_ React-ը չգիտի, թե ինչպես են ձևավորումները սահմանված. եթե դեռ համոզված չեք, լավ սկիզբ է, ինչպես որ նախկինում\` սահմանել ձևավորումները առանձնացված `*.css` ֆայլում և կցել դրանք օգտագործելով [`className`](/docs/dom-elements.html#classname)։
 
-### Can I do animations in React? {#can-i-do-animations-in-react}
+### Կարո՞ղ եմ React-ում ստեղծել անմիացիաներ {#can-i-do-animations-in-react}
 
-React can be used to power animations. See [React Transition Group](https://reactcommunity.org/react-transition-group/) and [React Motion](https://github.com/chenglou/react-motion), for example.
+React-ը կարող է օգտագործվել անիմացիաներ ստեղծելու համար։ Օրինակ. տես\` [React Transition Group](https://reactcommunity.org/react-transition-group/)<sub>eng</sub>-ը և [React Motion](https://github.com/chenglou/react-motion)-ը։
