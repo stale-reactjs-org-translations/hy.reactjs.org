@@ -35,9 +35,9 @@ function Comment(props) {
 
 const comment = {
   date: new Date(),
-  text: 'I hope you enjoy learning React!',
+  text: 'Հուսով եմ` վայելում ես React-ի ուսուցումը',
   author: {
-    name: 'Hello Kitty',
+    name: 'Գող Փիսո',
     avatarUrl: 'https://placekitten.com/g/64/64',
   },
 };
