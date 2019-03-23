@@ -20,7 +20,7 @@
     - id: components-and-props
       title: Կոմպոնենտներ
     - id: state-and-lifecycle
-      title: State and Lifecycle
+      title: Վիճակ և կյանքի ցիկլ
     - id: handling-events
       title: Handling Events
     - id: conditional-rendering
