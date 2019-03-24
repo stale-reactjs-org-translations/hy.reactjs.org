@@ -10,7 +10,7 @@ permalink: warnings/legacy-factories.html
 var MyComponent = require('MyComponent');
 
 function render() {
-  return MyComponent({ foo: 'bar' });  // WARNING
+  return MyComponent({ foo: 'bar' });  // ԶԳՈւՇԱՑՈւՄ
 }
 ```
 
