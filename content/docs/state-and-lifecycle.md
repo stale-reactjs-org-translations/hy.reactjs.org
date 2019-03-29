@@ -72,13 +72,7 @@ ReactDOM.render(
 
 State-ը նման է props-ին, բայց այն private է և ամբողջությամբ կառավարվում է կոմպոնենտի կողմից։
 
-<<<<<<< HEAD
-Մենք [նախկինում](/docs/components-and-props.html#functional-and-class-components) նշել էինք, որ որպես կլասներ հայտարարված կոմպոնենտները, ունեն մի քանի լրացուցիչ հատկություններ։ Լոկալ state-ը հենց դա է. հատկություն հասանելի միայն կլասներում։
-
 ## Ֆունկցիայի փոխարկումը կլասի {#converting-a-function-to-a-class}
-=======
-## Converting a Function to a Class {#converting-a-function-to-a-class}
->>>>>>> d0f2db967a38e358bd59c65e981862cdf38f3d0b
 
 Դուք կարող եք փոխարկել `Clock`-ի նման ֆունկցիա-կոմպոնենտը կլասի հինգ քայլով.
 
