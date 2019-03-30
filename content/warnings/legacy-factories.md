@@ -1,22 +1,22 @@
 ---
-title: React Element Factories and JSX Warning
+title: React Էլեմենտների Factory-ներ և JSX զգուշացումներ
 layout: single
 permalink: warnings/legacy-factories.html
 ---
 
-You probably came here because your code is calling your component as a plain function call. This is now deprecated:
+Դուք հավանաբար եկել եք այստեղ, քանի որ ձեր կոդը կանչում է կոմպոնենտն ինչպես ֆունկցիա։ Սա այժմ առարկված(deprecated) է։
 
 ```javascript
 var MyComponent = require('MyComponent');
 
 function render() {
-  return MyComponent({ foo: 'bar' });  // WARNING
+  return MyComponent({ foo: 'bar' });  // ԶԳՈՒՇԱՑՈՒՄ
 }
 ```
 
 ## JSX {#jsx}
 
-React components can no longer be called directly like this. Instead [you can use JSX](/docs/jsx-in-depth.html).
+React կոմպոնենտներն այլևս չեն կարող ուղղակիորեն կանչվել այսպես։ Փոխարենը [կարող եք օգտագործել JSX](/docs/jsx-in-depth.html)։
 
 ```javascript
 var React = require('react');
@@ -27,9 +27,9 @@ function render() {
 }
 ```
 
-## Without JSX {#without-jsx}
+## Առանց JSX {#without-jsx}
 
-If you don't want to, or can't use JSX, then you'll need to wrap your component in a factory before calling it:
+Եթե դուք չեք ցանկանում կամ չեք կարող օգտագործել JSX, ապա պետք է փաթաթեք կոմպոնենտը factory-ի մեջ, մինչև կանչելը։
 
 ```javascript
 var React = require('react');
@@ -40,11 +40,11 @@ function render() {
 }
 ```
 
-This is an easy upgrade path if you have a lot of existing function calls.
+Եթե արդեն իսկ ունեք բազում ֆունկցիաների կանչեր, սա հեշտ բարելավման ուղի է։
 
-## Dynamic components without JSX {#dynamic-components-without-jsx}
+## Դինամիկ կոմպոնենտներ առանց JSX-ի {#dynamic-components-without-jsx}
 
-If you get a component class from a dynamic source, then it might be unnecessary to create a factory that you immediately invoke. Instead you can just create your element inline:
+Եթե ստանաք կլաս-կոմպոնենտ դինամիկ աղբյուրից, ապա միգուցե կարիք չլինի ստեղծել factory, որին անմիջապես կհղվեք։ Փոխարենը` կարող եք ուղղակիորեն ստեղծել ձեր էլեմենտը։
 
 ```javascript
 var React = require('react');
@@ -54,6 +54,6 @@ function render(MyComponent) {
 }
 ```
 
-## In Depth {#in-depth}
+## Խորացված  {#in-depth}
 
-[Read more about WHY we're making this change.](https://gist.github.com/sebmarkbage/d7bce729f38730399d28)
+[Կարդացեք ավելին, թե ինչու ենք մենք կատարում այս փոփոխությունները։](https://gist.github.com/sebmarkbage/d7bce729f38730399d28)
