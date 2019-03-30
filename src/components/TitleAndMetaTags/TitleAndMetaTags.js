@@ -8,7 +8,7 @@
 import Helmet from 'react-helmet';
 import React from 'react';
 
-const defaultDescription = 'JavaScript գրադարան` օգտագործողի ինտեֆեյսներ կառուցելու համար';
+const defaultDescription = 'JavaScript գրադարան` օգտագործողի ինտերֆեյսներ կառուցելու համար';
 
 type Props = {
   title: string,

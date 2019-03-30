@@ -50,7 +50,7 @@ class Home extends Component {
     return (
       <Layout location={location}>
         <TitleAndMetaTags
-          title="React &ndash; JavaScript գրադարան` օգտագործողի ինտեֆեյսներ կառուցելու համար"
+          title="React &ndash; JavaScript գրադարան` օգտագործողի ինտերֆեյսներ կառուցելու համար"
           ogUrl={createOgUrl('index.html')}
         />
         <div css={{width: '100%'}}>
@@ -133,7 +133,7 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    JavaScript գրադարան` օգտագործողի ինտեֆեյսներ կառուցելու համար
+                    JavaScript գրադարան` օգտագործողի ինտերֆեյսներ կառուցելու համար
                   </p>
                   <Flex
                     valign="center"
