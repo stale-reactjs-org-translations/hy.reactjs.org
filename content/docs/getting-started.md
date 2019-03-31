@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title: Getting Started
+title: Սկսենք
 permalink: docs/getting-started.html
 next: add-react-to-a-website.html
 redirect_from:
@@ -18,109 +18,109 @@ redirect_from:
   - "docs/environments.html"
 ---
 
-This page is an overview of the React documentation and related resources.
+Այս էջը React-ի փաստաթղթավորման և առնչվող ռեսուրսների ակնարկ է։
 
-**React** is a JavaScript library for building user interfaces. Learn what React is all about on [our homepage](/) or [in the tutorial](/tutorial/tutorial.html).
+**React-ը** JavaScript գրադարան է\` օգտագործողի ինտերֆեյսներ կառուցելու համար։ Տես, թե ինչ է իրենից ներկայացնում React-ը [մեր գլխավոր էջում](/) կամ [ձեռնարկում](/tutorial/tutorial.html)։
 
 ---
 
-- [Try React](#try-react)
-- [Learn React](#learn-react)
-- [Staying Informed](#staying-informed)
-- [Versioned Documentation](#versioned-documentation)
-- [Something Missing?](#something-missing)
+- [Փորձել React-ը](#try-react)
+- [Սովորել React](#learn-react)
+- [Լինել տեղեկացված](#staying-informed)
+- [Տարբերակված փաստաթղթավորում](#versioned-documentation)
+- [Ինչ-որ բան բա՞ց է թողնված](#something-missing)
 
-## Try React {#try-react}
+## Փորձել React-ը {#try-react}
 
-React has been designed from the start for gradual adoption, and **you can use as little or as much React as you need.** Whether you want to get a taste of React, add some interactivity to a simple HTML page, or start a complex React-powered app, the links in this section will help you get started.
+React-ը իսկզբանե նախագծված է եղել այնպես, որ հնարավոր լինի աստիճանաբար ինտեգրել, և **դուք կարող եք օգտագործել այնքան քիչ կամ այնքան շատ React, որքան ինքներդ կցանկանաք։** Անկախ այն բանից\` ցանկանում եք «համտեսել» React-ը, ավելացնել մի քիչ ինտերակտիվություն հասարակ HTML էջում, թե սկսել բարդ React հավելված\` այս բաժնի հղումները կօգնեն ձեզ անել առաջին քայլերը։
 
-### Online Playgrounds {#online-playgrounds}
+### Ինտերակտիվ օնլայն խմբագրիչներ {#online-playgrounds}
 
-If you're interested in playing around with React, you can use an online code playground. Try a Hello World template on [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), or [Glitch](https://glitch.com/edit/#!/remix/starter-react-template).
+Եթե ցանկանում եք խաղալ React-ի հետ, ապա կարող եք օգտագործել ինտերակտիվ օնլայն խմբագրիչներ։ Փորձիր «Ողջույն, աշխարհ» կաղապարը [CodePen-ում](codepen://hello-world), [CodeSandbox-ում](https://codesandbox.io/s/new) կամ [Glitch-ում](https://glitch.com/edit/#!/remix/starter-react-template)։
 
-If you prefer to use your own text editor, you can also [download this HTML file](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html), edit it, and open it from the local filesystem in your browser. It does a slow runtime code transformation, so we'd only recommend using this for simple demos.
+Եթե նախընտրում եք օգտագործել ձեր սեփական տեքստային խմբագրիչը, ապա կարող եք նաև [ներբեռնել այս HTML ֆայլը](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html), փոփոխել այն և բացել լոկալ ֆայլային համակարգից ձեր զննարկչի մեջ։ Այն, runtime, կոդի փոխակերպում է իրականացնում, որը դանդաղ է. այդ իսկ պատճառով մենք կառաջարկենք այն օգտագործել միայն հասարակ ցուցադրությունների համար։
 
-### Add React to a Website {#add-react-to-a-website}
+### Ավելացնել React-ը կայքում {#add-react-to-a-website}
 
-You can [add React to an HTML page in one minute](/docs/add-react-to-a-website.html). You can then either gradually expand its presence, or keep it contained to a few dynamic widgets.
+Դուք կարող եք [մեկ րոպեում ավելացնել React-ը HTML էջում](/docs/add-react-to-a-website.html)։ Հաջորդիվ, դուք կարող եք կամ աստիճանաբար ընդլայնել նրա մասնաբաժինը կամ պահել այն մի քանի դինամիկ widget-ների համար։
 
-### Create a New React App {#create-a-new-react-app}
+### Ստեղծել նոր React հավելված {#create-a-new-react-app}
 
-When starting a React project, [a simple HTML page with script tags](/docs/add-react-to-a-website.html) might still be the best option. It only takes a minute to set up!
+React նախագիծ սկսելիս, [հասարակ HTML էջը script թեգերի հետ](/docs/add-react-to-a-website.html) կարող է մնալ լավագույն տարբերակը։ Դրա տեղադրումը տևում է մեկ րոպե։
 
-As your application grows, you might want to consider a more integrated setup. There are [several JavaScript toolchains](/docs/create-a-new-react-app.html) we recommend for larger applications. Each of them can work with little to no configuration and lets you take full advantage of the rich React ecosystem.
+Ձեր հավելվածի զարգացմանը զուգընթաց, դուք կարող եք ցանկանալ դիտարկել ավելի ինտեգրված տեղադրում։ Կան մի քանի [JavaScript գործիքների հավաքածուներ](/docs/create-a-new-react-app.html), որոնք մենք խորհուրդ ենք տալիս ավելի մեծ հավելվածների համար։ Նրանցից յուրաքանչյուրը կարող է աշխատել գրեթե առանց կարգավորումների և թույլ կտա ձեզ ամբողջությամբ բացահայտել React-ի հարուստ էկոհամակարգը։
 
-## Learn React {#learn-react}
+## Սովորել React {#learn-react}
 
-People come to React from different backgrounds and with different learning styles. Whether you prefer a more theoretical or a practical approach, we hope you'll find this section helpful.
+Տարբեր նախագիտելիքներով և ուսուցման տարբեր ոճերով մարդիկ են «գալիս» React։ Անկախ այն բանից\` նախընտրում եք ավելի տեսական, թե ավելի պրակտիկ մոտեցում, հույս ունենք\` այս բաժինը օգտակար կգտնեք։
 
-* If you prefer to **learn by doing**, start with our [practical tutorial](/tutorial/tutorial.html).
-* If you prefer to **learn concepts step by step**, start with our [guide to main concepts](/docs/hello-world.html).
+* Եթե դուք նախընտրում եք **սովորել կիրառելով**, սկսեք մեր [գործնական ձեռնարկից](/tutorial/tutorial.html)։
+* Եթե դուք նախընտրում եք **սովորել գաղափարները քայլ առ քայլ**, սկսեք մեր [գլխավոր գաղափարների ուղեցույցից](/docs/hello-world.html)։
 
-Like any unfamiliar technology, React does have a learning curve. With practice and some patience, you *will* get the hang of it.
+Ինչպես ցանկացած այլ անծանոթ տեխնոլոգիա, React-ը ունի սովորելու կոր։ Վարժանքով և մի քիչ համբերատարությամբ, դուք *կհասկանաք* նրա իմաստը։
 
-### First Examples {#first-examples}
+### Առաջին օրինակները {#first-examples}
 
-The [React homepage](/) contains a few small React examples with a live editor. Even if you don't know anything about React yet, try changing their code and see how it affects the result.
+[Գլխավոր էջը](/) պարունակում է React-ի մի քանի փոքր օրինակներ\` ինտերակտիվ խմբագրիչով։ Նույնիսկ, եթե դուք դեռ ոչինչ չգիտեք React-ի մասին, փորձեք փոփոխել նրանց կոդը և տեսնել, թե ինչպես է դա ազդում արդյունքի վրա։
 
-### React for Beginners {#react-for-beginners}
+### React-ը սկսնակների համար {#react-for-beginners}
 
-If you feel that the React documentation goes at a faster pace than you're comfortable with, check out [this overview of React by Tania Rascia](https://www.taniarascia.com/getting-started-with-react/). It introduces the most important React concepts in a detailed, beginner-friendly way. Once you're done, give the documentation another try!
+Եթե դուք կարծում եք, որ React-ի փաստաթղթավորումը բարդ է ձեզ համար, փորձեք [React-ի այս ակնարկը Թանիա Ռասցիայի կողմից](https://www.taniarascia.com/getting-started-with-react/)։ Այն մանրամասն ներկայացնում է React-ի ամենակարևոր գաղափարները\` սկսնակին հարմար եղանակով։ Վերջինս կարդալուց հետո կարող եք ևս մեկ անգամ փորձել փաստաթղթավորումը։
 
-### React for Designers {#react-for-designers}
+### React-ը դիզայներների համար {#react-for-designers}
 
-If you're coming from a design background, [these resources](https://reactfordesigners.com/) are a great place to get started.
+Եթե դուք եկել եք դիզայների նախագիտելիքներով, [այս ռեսուրսները](https://reactfordesigners.com/) հարմար կետեր են մեկնարկի համար։
 
-### JavaScript Resources {#javascript-resources}
+### JavaScript ռեսուրսներ {#javascript-resources}
 
-The React documentation assumes some familiarity with programming in the JavaScript language. You don't have to be an expert, but it's harder to learn both React and JavaScript at the same time.
+React-ի փաստաթղթավորումը ենթադրում է որոշ ծանոթություն JavaScript լեզվով ծրագրավորման հետ։ Բոլորովին պարտադիր չէ, որ լինեք JavaScript լեզվի մասնագետ, սակայն React-ի և JavaScript-ի միաժամանակ սովորելն ավելի բարդ կլինի։
 
-We recommend going through [this JavaScript overview](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) to check your knowledge level. It will take you between 30 minutes and an hour but you will feel more confident learning React.
+Մենք խորհուրդ ենք տալիս անցնել [այս JavaScript ակնարկով](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)<sub>`eng`</sub>\` ձեր գիտելիքների մակարդակը ստուգելու համար։ Այն ձեզանից կխլի կես ժամից մինչև մեկ ժամ ժամանակ, բայց դուք կզգաք ձեզ ավելի վստահ React սովորելիս։
 
->Tip
+>Խորհուրդ
 >
->Whenever you get confused by something in JavaScript, [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [javascript.info](https://javascript.info/) are great websites to check. There are also [community support forums](/community/support.html) where you can ask for help.
+>Ամեն անգամ, երբ կհանդիպեք որևիցե շփոթեցնող բանի JavaScript-ում, [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript)<sub>`eng`</sub>-ը և [javascript.info](https://javascript.info/)<sub>`eng`</sub>-ն հիանալի կայքեր են ստուգելու համար։ Կան նաև [համայնքի աջակցման ֆորումներ](/community/support.html), որտեղ դուք կարող եք օգնություն խնդրել։
 
-### Practical Tutorial {#practical-tutorial}
+### Գործնական ձեռնարկ {#practical-tutorial}
 
-If you prefer to **learn by doing,** check out our [practical tutorial](/tutorial/tutorial.html). In this tutorial, we build a tic-tac-toe game in React. You might be tempted to skip it because you're not building games -- but give it a chance. The techniques you'll learn in the tutorial are fundamental to building *any* React apps, and mastering it will give you a much deeper understanding.
+Եթե դուք նախընտրում եք **սովորել կիրառելով,** ապա կարդացեք մեր [գործնական ձեռնարկը](/tutorial/tutorial.html)։ Այս ձեռնարկում, մենք կառուցում ենք tic-tac-toe խաղը React-ով։ Միգուցե ցանկանաք այն բաց թողնել, քանի որ երբևիցե խաղեր չեք կառուցել, բայց խորհուրդ կտանք փորձել այն։ Գործելակերպերը, որոնք դուք կսովորեք ձեռնարկում հիմքային են\` *ցանկացած* React հավելվածների համար, և նրանց տիրապետումը ձեզ կտա ավելի խորը պատկերացում։
 
-### Step-by-Step Guide {#step-by-step-guide}
+### Քայլ-առ-քայլ ուղեցույց {#step-by-step-guide}
 
-If you prefer to **learn concepts step by step,** our [guide to main concepts](/docs/hello-world.html) is the best place to start. Every next chapter in it builds on the knowledge introduced in the previous chapters so you won't miss anything as you go along.
+Եթե դուք նախընտրում եք **սովորել գաղափարները քայլ առ քայլ,** մեր [հիմնական գաղափարների ուղեցույցը](/docs/hello-world.html) լավագույն վայրն է սկսելու համար։ Դրանում ամեն հաջորդ գլուխ կառուցվում է նախորդներում ներկայացված գիտելիքների հիման վրա. այսպիսով, դուք չպետք է բաց թողնեք ինչ-որ բան սովորելու ընթացքում։
 
-### Thinking in React {#thinking-in-react}
+### React մտածելակերպ {#thinking-in-react}
 
-Many React users credit reading [Thinking in React](/docs/thinking-in-react.html) as the moment React finally "clicked" for them. It's probably the oldest React walkthrough but it's still just as relevant.
+Բազմաթիվ React օգտագործողներ [«React մտածելակերպ»](/docs/thinking-in-react.html) բաժինը համարում են հենց այն կետը, որից հետո React-ը դարձել է լիովին հասկանալի նրանց համար։ Սա հավանաբար ամենահին հոդվածն է, բայց այն մնում է ակտուալ։
 
-### Recommended Courses {#recommended-courses}
+### Առաջարկվող կուրսեր {#recommended-courses}
 
-Sometimes people find third-party books and video courses more helpful than the official documentation. We maintain [a list of commonly recommended resources](/community/courses.html), some of which are free.
+Երբեմն մարդիկ համարում են կողմնակի գրքերը և վիդեո կուրսերն ավելի օգտակար, քան պաշտոնական փաստաթղթավորումը։ Մենք աջակցում ենք [հիմնականում խորհուրդ տրվող ռեսուրսների ցուցակը](/community/courses.html), որից մի մասն անվճար է։
 
-### Advanced Concepts {#advanced-concepts}
+### Առաջադեմ գաղափարներ {#advanced-concepts}
 
-Once you're comfortable with the [main concepts](#main-concepts) and played with React a little bit, you might be interested in more advanced topics. This section will introduce you to the powerful, but less commonly used React features like [context](/docs/context.html) and [refs](/docs/refs-and-the-dom.html).
+Երբ արդեն հարմարավետ զգաք ձեզ [հիմնական գաղափարների հետ](#main-concepts) և որոշ չափով խաղացած լինեք React-ի հետ, դուք հավանաբար կցանկանաք ծանոթանալ ավելի առաջադեմ գաղափարների հետ։ Այս գլուխը կներկայացնի ձեզ React-ի հզոր, բայց ոչ հաճախ օգտագործվող հատկությունները, ինչպիսիք են օրինակ [context](/docs/context.html)-ը և [refs](/docs/refs-and-the-dom.html)-ը։
 
-### API Reference {#api-reference}
+### API Հղում {#api-reference}
 
-This documentation section is useful when you want to learn more details about a particular React API. For example, [`React.Component` API reference](/docs/react-component.html) can provide you with details on how `setState()` works, and what different lifecycle methods are useful for.
+Փաստաթղթավորման այս գլուխն օգտակար է, երբ դուք ցանկանում եք ավելի մանրամասն ծանոթանալ որևէ կոնկրետ React API-ի հետ։ Օրինակ, [`React.Component` API հղումը](/docs/react-component.html) կարող է ձեզ տրամադրել մանրամասն նկարագիր, թե ինչպես է աշխատում `setState()`-ը, և ինչի համար են օգտակար տարբեր կյանքի ցիկլի մեթոդները։
 
-### Glossary and FAQ {#glossary-and-faq}
+### Բառարան և ՀՏՀ {#glossary-and-faq}
 
-The [glossary](/docs/glossary.html) contains an overview of the most common terms you'll see in the React documentation. There is also a FAQ section dedicated to short questions and answers about common topics, including [making AJAX requests](/docs/faq-ajax.html), [component state](/docs/faq-state.html), and [file structure](/docs/faq-structure.html).
+[Բառարանը](/docs/glossary.html) պարունակում է ամենաշատ շրջանառվող տերմինների ակնարկը, որոնց կհանդիպեք React-ի փաստաթղթավորման մեջ։ Կա նաև ՀՏՀ(հաճախ տրվող հարցեր) բաժին\` նվիրված հիմնական թեմաներին վերաբերող կարճ հարցերին և պատասխաններին. ներառյալ [AJAX հարցման պատրաստում](/docs/faq-ajax.html), [կոմպոնենտի վիճակ](/docs/faq-state.html) և [ֆայլերի կառուցվածք](/docs/faq-structure.html)։
 
-## Staying Informed {#staying-informed}
+## Լինել տեղեկացված {#staying-informed}
 
-The [React blog](/blog/) is the official source for the updates from the React team. Anything important, including release notes or deprecation notices, will be posted there first.
+[React բլոգը](/blog/) դա React-ի թիմի կողմից տրված թարմացումների պաշտոնական աղբյուրն է։ Յուրաքանչյուր կարևոր բան\` ներառյալ թողարկման նշումներն(release notes) ու առարկման նշումները(deprecation notices), նախ և առաջ կհրապարակվեն այնտեղ։
 
-You can also follow the [@reactjs account](https://twitter.com/reactjs) on Twitter, but you won't miss anything essential if you only read the blog.
+Դուք նաև կարող եք հետևել [@reactjs էջին](https://twitter.com/reactjs) Twitter-ում, բայց ոչ մի կերևոր բան բաց չեք թողնի\` կարդալով միայն բլոգը։
 
-Not every React release deserves its own blog post, but you can find a detailed changelog for every release [in the `CHANGELOG.md` file in the React repository](https://github.com/facebook/react/blob/master/CHANGELOG.md), as well as on the [Releases](https://github.com/facebook/react) page.
+React-ի ոչ բոլոր թողարկումներն ունեն իրենց սեփական բլոգ փոստը, բայց դուք կարող եք գտնել մանրամասն changelog ամեն թողարկման համար\` [React-ի պահոցի `CHANGELOG.md` ֆայլում](https://github.com/facebook/react/blob/master/CHANGELOG.md), ինչպես նաև [Թողարկումներ](https://github.com/facebook/react) էջում։
 
-## Versioned Documentation {#versioned-documentation}
+## Տարբերակված փաստաթղթավորում {#versioned-documentation}
 
-This documentation always reflects the latest stable version of React. Since React 16, you can find older versions of the documentation [on a separate page](/versions). Note that documentation for past versions is snapshotted at the time of the release, and isn't being continuously updated.
+Այս փաստաթղթավորումը միշտ արտացոլում է React-ի վերջին կայուն տարբերակը։ Սկսած React 16-ից, դուք կարող եք գտնել փաստաթղթավորման հին տարբերակները [առանձին էջում](/versions)։ Նկատեք, որ նախորդ տարբերակների փաստաթղթավորումը ֆիքսված է թողարկման ժամանակով և շարունակաբար չի թարմացվում։
 
-## Something Missing? {#something-missing}
+## Ինչ-որ բան բա՞ց է թողնված {#something-missing}
 
-If something is missing in the documentation or if you found some part confusing, please [file an issue for the documentation repository](https://github.com/reactjs/reactjs.org/issues/new) with your suggestions for improvement, or tweet at the [@reactjs account](https://twitter.com/reactjs). We love hearing from you!
+Եթե ինչ-որ բան բաց է թողնված փաստաթղթավորման մեջ կամ եթե դուք գտել եք ինչ-որ շփոթեցնող բան, խնդրում ենք [բացել issue փաստաղթավորման պահոցում](https://github.com/reactjs/reactjs.org/issues/new)\` բարելավման ձեր առաջարկներով, կամ արեք tweet [@reactjs էջում](https://twitter.com/reactjs)։ Մենք սիրով կլսենք ձեզ։
