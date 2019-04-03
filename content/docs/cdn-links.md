@@ -1,37 +1,37 @@
 ---
 id: cdn-links
-title: CDN Links
+title: CDN հղումներ
 permalink: docs/cdn-links.html
 prev: create-a-new-react-app.html
 next: hello-world.html
 ---
 
-Both React and ReactDOM are available over a CDN.
+ԵՎ React-ը և ReactDOM-ը հասանելի են CDN-ից։
 
 ```html
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 ```
 
-The versions above are only meant for development, and are not suitable for production. Minified and optimized production versions of React are available at:
+Վերը նշված տարբերակները միայն կառուցման ընթացքի(development)-ի համար են և հարմար չեն production-ի համար։ React-ի մինիֆիկացված և օպտիմիզացված տարբերակները հասանելի են\`
 
 ```html
 <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 ```
 
-To load a specific version of `react` and `react-dom`, replace `16` with the version number.
+`react`-ի և `react-dom`-ի հատուկ տարբերակ ներբեռնելու համար, փոխարինեք `16`-ը տարբերակի համարով։
 
-### Why the `crossorigin` Attribute? {#why-the-crossorigin-attribute}
+### Ինչի՞ համար է `crossorigin` ատրիբուտը {#why-the-crossorigin-attribute}
 
-If you serve React from a CDN, we recommend to keep the [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) attribute set:
+Երբ դուք ներբեռնում եք React-ը CDN-ից, մենք խորհուրդ ենք տալիս պահել [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)<sub>`eng`</sub> ատրիբուտը։
 
 ```html
 <script crossorigin src="..."></script>
 ```
 
-We also recommend to verify that the CDN you are using sets the `Access-Control-Allow-Origin: *` HTTP header:
+Մենք նաև խորհուրդ ենք տալիս ստուգել, թե արդյոք ձեր օգտագործած CDN-ը տեղադրում է `Access-Control-Allow-Origin: *` HTTP header.
 
-![Access-Control-Allow-Origin: *](../images/docs/cdn-cors-header.png)
+![Access-Control-Allow-Origin: * ](../images/docs/cdn-cors-header.png)
 
-This enables a better [error handling experience](/blog/2017/07/26/error-handling-in-react-16.html) in React 16 and later.
+Այն թույլ է տալիս ունենալ [սխալների մշակման ավելի լավ փորձ](/blog/2017/07/26/error-handling-in-react-16.html) React 16-ում և հաջորդ տարբերակներում։
