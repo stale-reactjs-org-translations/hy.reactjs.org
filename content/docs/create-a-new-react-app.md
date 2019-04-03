@@ -1,6 +1,6 @@
 ---
 id: create-a-new-react-app
-title: Create a New React App
+title: Ստեղծել նոր React հավելված
 permalink: docs/create-a-new-react-app.html
 redirect_from:
   - "docs/add-react-to-a-new-app.html"
@@ -8,38 +8,38 @@ prev: add-react-to-a-website.html
 next: cdn-links.html
 ---
 
-Use an integrated toolchain for the best user and developer experience.
+Օգտագործիր ինտեգրված գործիքակազմ, օգտագործողի և ծրագրավորողի համար լավագույն փոխազդեցության փորձի համար։
 
-This page describes a few popular React toolchains which help with tasks like:
+Այս էջը նկարագրում է մի քանի հայտնի React գործիքակազմեր, որոնք կօգնեն հետևյան առաջադրանքները լուծելուց.
 
-* Scaling to many files and components.
-* Using third-party libraries from npm.
-* Detecting common mistakes early.
-* Live-editing CSS and JS in development.
-* Optimizing the output for production.
+* Ընդլայնում մինչև մեծ քանակի ֆայլեր և կոմպոնենտներ։
+* Կոմնակի գրադարանների օգտագործում npm-ից։
+* Հիմնական սխալների շուտ հայտնաբերում։
+* Կառուցման ժամանակ, CSS-ի և JS-ի ինտերակտիվ խմբագրում։
+* Վերջնական ելքային արժեքի օպտիմիզացիա։
 
-The toolchains recommended on this page **don't require configuration to get started**.
+Այս էջում խորհուրդ տրված գործիքակազմերը **սկսելու համար կարգավորումներ չեն պահանջում**։
 
-## You Might Not Need a Toolchain {#you-might-not-need-a-toolchain}
+## Դուք հնարավոր է գործիքակազմի կարիք չունենաք {#you-might-not-need-a-toolchain}
 
-If you don't experience the problems described above or don't feel comfortable using JavaScript tools yet, consider [adding React as a plain `<script>` tag on an HTML page](/docs/add-react-to-a-website.html), optionally [with JSX](/docs/add-react-to-a-website.html#optional-try-react-with-jsx).
+Եթե դուք փորձ չունեք վերը ներկայացված խնդիրների հետ կամ դեռ ձեզ հարմարավետ չեք զգում JavaScript գործիքներ օգտագործելիս, դիտարկեք [«ավելացնել React-ը ինչպես `<script>` թեգ HTML էջում»](/docs/add-react-to-a-website.html) և, ոչ պարտադիր, [«Փորձիր React-ը JSX-ի հետ»](/docs/add-react-to-a-website.html#optional-try-react-with-jsx) բաժինները։
 
-This is also **the easiest way to integrate React into an existing website.** You can always add a larger toolchain if you find it helpful!
+Սա նաև **հեշտագույն ճանապարհն է React-ը գոյություն ունեցով վեբկայքում ինտեգրելու համար։** Դուք միշտ կարող եք ավելացնել ավելի մեծ գործիքակազմ, եթե գտնեք դա օգտակար։
 
-## Recommended Toolchains {#recommended-toolchains}
+## Խորհուրդ տրվող գործիքակազմեր {#recommended-toolchains}
 
-The React team primarily recommends these solutions:
+React-ի թիմը նախ և առաջ խորհուրդ է տալիս այս լուծումները.
 
-- If you're **learning React** or **creating a new [single-page](/docs/glossary.html#single-page-application) app,** use [Create React App](#create-react-app).
-- If you're building a **server-rendered website with Node.js,** try [Next.js](#nextjs).
-- If you're building a **static content-oriented website,** try [Gatsby](#gatsby).
-- If you're building a **component library** or **integrating with an existing codebase**, try [More Flexible Toolchains](#more-flexible-toolchains).
+- Եթե դուք **սովորում եք** կամ **ստեղծում եք նոր [single-page](/docs/glossary.html#single-page-application) հավելված** օգտագործեք [Create React App](#create-react-app)-ը։
+- Եթե դուք կառուցում եք **սերվերում արտախատկերվող վեբկայք Node.js-ով**, ապա փորձեք [Next.js](#nextjs)-ը։
+- Եթե դուք կառուցում եք **ստատիկ բովանդակություն-կողմնորոշված վեբկայք**, ապա փորձեք [Gatsby](#gatsby)-ին։
+- Եթե դուք կառուցում եք **կոմպոնենտների գրադարան** կամ **ինտեգում եք գոյություն ունեցող կոդի հետ**, ապա փորձեք [ավելի ճկուն գործիքակազմ](#more-flexible-toolchains).
 
 ### Create React App {#create-react-app}
 
-[Create React App](https://github.com/facebookincubator/create-react-app) is a comfortable environment for **learning React**, and is the best way to start building **a new [single-page](/docs/glossary.html#single-page-application) application** in React.
+[Create React App](https://github.com/facebookincubator/create-react-app)<sub>`eng`</sub>-ը հարմար միջավայր է **React-ը սովորելու**  համար, և լավագույն տարբերակը React-ով **նոր [single-page](/docs/glossary.html#single-page-application) հավելված** կառուցելու համար։
 
-It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production. You’ll need to have Node >= 6 and npm >= 5.2 on your machine. To create a project, run:
+Այն տեղադրում է ձեր կառուցման միջավայրը\` թույլ տալով օգտագործել վերջին JavaScript հատկությունները, տրամադրում է գեղեցիկ փոխազդեցության փորձ ծրագրավորողի համար, և օպտիմիզացնում է ձեր հավելվածը production-ի համար։ Դուք պետք է ունենաք Node >= 6 և npm >= 5.2 ձեր մեքենայի վրա։ Պրոյեկտ ստեղծելու համար աշխատացրեք.
 
 ```bash
 npx create-react-app my-app
@@ -47,48 +47,48 @@ cd my-app
 npm start
 ```
 
->Note
+>Խորհուրդ
 >
->`npx` on the first line is not a typo -- it's a [package runner tool that comes with npm 5.2+](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
+>`npx`-ում տառասխալ չկա, սա [փաթեթ(package) աշխատացնող գործիք է, որը գալիս է npm-ի 5.2+ տարբերակների հետ](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)<sub>`eng`</sub>:
 
-Create React App doesn't handle backend logic or databases; it just creates a frontend build pipeline, so you can use it with any backend you want. Under the hood, it uses [Babel](https://babeljs.io/) and [webpack](https://webpack.js.org/), but you don't need to know anything about them.
+«Create React App»-ը չի մշակում backend-ի տրամաբանություն կամ դվյալների հենքեր. այն ընդհամենը ստեղծում է frontend-ի կառուցման քայլերը. այսպիսով կարող եք օգտագործել այն ձեր ցանկացած backend-ի հետ։ Իրականում այն իր հերթին օգտագործում է [Babel](https://babeljs.io/)<sub>`eng`</sub> և [webpack](https://webpack.js.org/)<sub>`eng`</sub>, բայց դուք կարիք չունեք իմանալ նրանց մասին։
 
-When you're ready to deploy to production, running `npm run build` will create an optimized build of your app in the `build` folder. You can learn more about Create React App [from its README](https://github.com/facebookincubator/create-react-app#create-react-app-) and the [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#table-of-contents).
+Երբ պատրաստ լինեք տեղակայելու production-ում, աշխատացրեք `npm run build`։ Այն `build` պանակում կստեղծի ձեր հավելվածի օպտիմիզացված տարբերակը։ «Create React App»-ի մասին կարող եք սովորել նրա [README-ից](https://github.com/facebookincubator/create-react-app#create-react-app-)<sub>`eng`</sub> և [օգտագործողի ձեռնարկից](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#table-of-contents)<sub>`eng`</sub>։
 
 ### Next.js {#nextjs}
 
-[Next.js](https://nextjs.org/) is a popular and lightweight framework for **static and server‑rendered applications** built with React. It includes **styling and routing solutions** out of the box, and assumes that you're using [Node.js](https://nodejs.org/) as the server environment.
+[Next.js](https://nextjs.org/)<sub>`eng`</sub>-ը հայտնի և թեթև framework է, React-ով ստեղծված, **ստատիկ և սերվերում արտապատկերվող հավելվածների** համար։ Այն ներառում է **ձևավորման և routing-ի լուծումներ** և ենթադրում է, որ դուք օգտագործում եք [Node.js](https://nodejs.org/)<sub>`eng`</sub>-ը որպես սերվերի միջավայր։
 
-Learn Next.js from [its official guide](https://nextjs.org/learn/).
+Սովորիր Next.js-ը նրա պաշտոնական [ձեռնարկից](https://nextjs.org/learn/)<sub>`eng`</sub>։
 
 ### Gatsby {#gatsby}
 
-[Gatsby](https://www.gatsbyjs.org/) is the best way to create **static websites** with React. It lets you use React components, but outputs pre-rendered HTML and CSS to guarantee the fastest load time.
+[Gatsby](https://www.gatsbyjs.org/)<sub>`eng`</sub>-ն լավագույն տարբերակն է React-ով **ստատիկ վեբկայքեր** ստեղծելու համար։ Դա թույլ է տալիս ձեզ օգտագործել React կոմպոնենտներ, բայց ելքային արժեքում ստանալ նախա-արտապատկերված HTML և CSS\` երաշխավորելու համար ամենաարագ ներբեռնումը։
 
-Learn Gatsby from [its official guide](https://www.gatsbyjs.org/docs/) and a [gallery of starter kits](https://www.gatsbyjs.org/docs/gatsby-starters/).
+Սովորիր Gatsby-ն նրա պաշտոնական [ձեռնարկից](https://www.gatsbyjs.org/docs/)<sub>`eng`</sub> և [այս մեկնարկային փաթեթների ցանկից](https://www.gatsbyjs.org/docs/gatsby-starters/)։
 
-### More Flexible Toolchains {#more-flexible-toolchains}
+### Ավելի ճկուն գործիքակազմեր {#more-flexible-toolchains}
 
-The following toolchains offer more flexiblity and choice. We recommend them to more experienced users:
+Ներկայացված գործիքակազմերը առաջարկում են ավելի մեծ ճկունություն և ընտրություն։ Վերջիններս մենք առաջարկում ենք ավելի փորձառու օգտագործողներին։
 
-- **[Neutrino](https://neutrinojs.org/)** combines the power of [webpack](https://webpack.js.org/) with the simplicity of presets, and includes a preset for [React apps](https://neutrinojs.org/packages/react/) and [React components](https://neutrinojs.org/packages/react-components/).
+- **[Neutrino](https://neutrinojs.org/)**<sub>`eng`</sub>-ն համատեղում է իր մեջ [webpack](https://webpack.js.org/)-ի հզորությունը և preset-ների պարզությունը. ներառում է preset [React հավելվածների](https://neutrinojs.org/packages/react/) և [React կոմպոնենտների](https://neutrinojs.org/packages/react-components/) համար։
 
-- **[nwb](https://github.com/insin/nwb)** is particularly great for [publishing React components for npm](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb). It [can be used](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb) for creating React apps, too. 
+- **[nwb](https://github.com/insin/nwb)**<sub>`eng`</sub>-ը հիանալի է կոնկրետ [npm-ի համար React կոմպոնենտեր հրապարակելու](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb)<sub>`eng`</sub> համար։ Այն [կարող է նաև օգտագործվել](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb)<sub>`eng`</sub> React հավելվածներ ստեղծելու համար։
 
-- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes.html#react).
+- **[Parcel](https://parceljs.org/)**<sub>`eng`</sub>-ն արագ է, զրո կարգավորումներով վեբ հավելվածների bundler է, որը աշխատում է [React-ի հետ](https://parceljs.org/recipes.html#react)<sub>`eng`</sub>։
 
-- **[Razzle](https://github.com/jaredpalmer/razzle)** is a server-rendering framework that doesn't require any configuration, but offers more flexibility than Next.js.
+- **[Razzle](https://github.com/jaredpalmer/razzle)**<sub>`eng`</sub>-ը սերվերում արտապատկերող framework է, որը չի պահանջում որևէ կարգավորում, բայց առաջարկում է ավելի մեծ ճկունություն քան Next.js-ը։
 
-## Creating a Toolchain from Scratch {#creating-a-toolchain-from-scratch}
+## Ստեղծել գործիքակազմ զրոյից {#creating-a-toolchain-from-scratch}
 
-A JavaScript build toolchain typically consists of:
+Սովորաբար JavaScript-ի կառուցման գործիքակազմը բաղկացած է.
 
-* A **package manager**, such as [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/). It lets you take advantage of a vast ecosystem of third-party packages, and easily install or update them.
+* **Փաթեթների մենեջերից**, ինչպիսիին է [Yarn](https://yarnpkg.com/)<sub>`eng`</sub>-ը կամ [npm](https://www.npmjs.com/)<sub>`eng`</sub>-ը։ Այն տալիս է հասանելիություն կողմնակի փաթեթների մեծ մասին և թույլ է տալիս հեշտությամբ տեղադրել կամ թարմացնել դրանք։
 
-* A **bundler**, such as [webpack](https://webpack.js.org/) or [Parcel](https://parceljs.org/). It lets you write modular code and bundle it together into small packages to optimize load time.
+* **bundler**-ից, ինչպիսին է [webpack](https://webpack.js.org/)<sub>`eng`</sub>-ը կամ [Parcel](https://parceljs.org/)<sub>`eng`</sub>-ը։ Այն թույլ է տալիս գրել մոդուլային կոդ և հավաքել այն միասին փոքր փաթեթների\` օպտիմիզացնելու համար ներբեռնման ժամանակը։
 
-* A **compiler** such as [Babel](https://babeljs.io/). It lets you write modern JavaScript code that still works in older browsers.
+* **Կոմպիլյատորից**, ինչպիսին է [Babel](https://babeljs.io/)-ը։ Այն թույլ է տալիս գրել ժամանակակից JavaScript կոդ, որը շարունակում է աշխատել հին զննարկիչներում։
 
-If you prefer to set up your own JavaScript toolchain from scratch, [check out this guide](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658) that re-creates some of the Create React App functionality.
+Եթե նախնտրում եք տեղադրել ձեր սեփական JavaScript գործիքակազմը զրոյից, ապա [նայեք այս ձեռնարկը](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658)<sub>`eng`</sub>, որը վերստեղծվում են «Create React App»-ի որոշ ֆունկցիոնալներ։
 
-Don't forget to ensure your custom toolchain [is correctly set up for production](/docs/optimizing-performance.html#use-the-production-build).
+Մի մոռացեք համոզվել, որ ձեր գործիքակազմը [ճիշտ է կարգավորված production-ի համար](/docs/optimizing-performance.html#use-the-production-build)։
