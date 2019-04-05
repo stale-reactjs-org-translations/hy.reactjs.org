@@ -1,40 +1,40 @@
 ---
 id: introducing-jsx
-title: Introducing JSX
+title: Ծանոթացում JSX-ի հետ
 permalink: docs/introducing-jsx.html
 prev: hello-world.html
 next: rendering-elements.html
 ---
 
-Consider this variable declaration:
+Դիտարկենք այս փոփոխականի հայտարարումը.
 
 ```js
-const element = <h1>Hello, world!</h1>;
+const element = <h1>Ողջույն, աշխարհ</h1>;
 ```
 
-This funny tag syntax is neither a string nor HTML.
+Այս հետաքրքիր շարահյուսությունը ոչ տող է ոչ HTML։
 
-It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.
+Այն կոչվում է JSX և հանդիսանում է JavaScript-ի շարահյուսական ընդլայնում։ Մենք խորհուրդ ենք տալիս օգտագործել այն React-ի հետ\` սահմանելու համար, թե ինչ տեսք պետք է ունենա UI-ը։ JSX-ը կարող է ձեզ հիշեցնել ձևանմուշային լեզու, բայց այն ներառում է JavaScript-ի ամբողջ հզորությունը։
 
-JSX produces React "elements". We will explore rendering them to the DOM in the [next section](/docs/rendering-elements.html). Below, you can find the basics of JSX necessary to get you started.
+JSX-ը «արտադրում» է React էլեմենտներ։ Այն, թե ինչպես են նրանք արտապատկերվում DOM-ում, մենք կբացահայտենք [հաջորդ գլխում](/docs/rendering-elements.html)։ Ստորև դուք կարող եք գտնել JSX-ի հետ աշխատել սկսելու համար անհրաժեշտ հիմքային գաղափարները։
 
-### Why JSX? {#why-jsx}
+### ինչու՞ JSX? {#why-jsx}
 
-React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
+React-ն ընդունում է այն գաղափարը, որ արտապատկերման տրամաբանությունը, ըստ էության, կապված է UI տրամաբանության հետ. այն, թե ինչպես են իրադարձությունները մշակվում, թե ինչպես է state-ը փոփոխվում ժամանակի ընթացքում, և, թե ինչպես են տվյալները պատրաստվում պատկերվելու համար։
 
-Instead of artificially separating *technologies* by putting markup and logic in separate files, React [separates *concerns*](https://en.wikipedia.org/wiki/Separation_of_concerns) with loosely coupled units called "components" that contain both. We will come back to components in a [further section](/docs/components-and-props.html), but if you're not yet comfortable putting markup in JS, [this talk](https://www.youtube.com/watch?v=x7cQ3mrcKaY) might convince you otherwise.
+Փոխանակ նշարկումն(markup) ու տրամաբանությունն(logic) առանձին ֆայլերում դնելով տեխնոլոգիաները արհեստականորեն բաժանելու\` React-ը կիրառում է [պատասխանատվության բաժանում](https://en.wikipedia.org/wiki/Separation_of_concerns)<sub>`eng`</sub>\` «կոմպոնենտներ» կոչվող, միմյանց հետ թույլ կապված բլոկների հետ, որոնք երկուսն էլ պարունակում են։ Մենք դեռ կանդրադառնանք կոմպոնենտներին [հաջորդ գլխում](/docs/components-and-props.html)։ Բայց եթե դեռ չեք հարմարվել նշարկումը JS-ի մեջ դնելու գաղափարի հետ, ապա գուցե [այս զեկույցը](https://www.youtube.com/watch?v=x7cQ3mrcKaY) համոզի ձեզ հակառակը։
 
-React [doesn't require](/docs/react-without-jsx.html) using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.
+React-ը [չի պահանջում](/docs/react-without-jsx.html) JSX-ի օգտագործումը, բայց շատ մարդիկ, որպես տեսողական օգնություն, համարում են դա օգտակար, երբ JavaScript կոդում աշխատում են UI-ի հետ։ Դա նաև թույլ է տալիս React-ին ցույց տալ ավելի օգտակար ծանուցումներ սխալների և զգուշացումների մասին։
 
-With that out of the way, let's get started!
+Սա հասկացանք, շարժվենք առաջ։
 
-### Embedding Expressions in JSX {#embedding-expressions-in-jsx}
+### Ներդրված արտահայտություններ JSX-ում {#embedding-expressions-in-jsx}
 
-In the example below, we declare a variable called `name` and then use it inside JSX by wrapping it in curly braces:
+Ստորև ներկայացված օրինակում մենք հայտարարում ենք `name` անունով փոփոխական և օգտագործում այն JSX-ի ներսում\` փաթաթելով այն ձևավոր փակագծերով.
 
 ```js{1,2}
-const name = 'Josh Perez';
-const element = <h1>Hello, {name}</h1>;
+const name = 'Պողոս Պողոսյան';
+const element = <h1>Ողջույն, {name}</h1>;
 
 ReactDOM.render(
   element,
@@ -42,9 +42,9 @@ ReactDOM.render(
 );
 ```
 
-You can put any valid [JavaScript expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) inside the curly braces in JSX. For example, `2 + 2`, `user.firstName`, or `formatName(user)` are all valid JavaScript expressions.
+JSX-ում\` ձևավոր փակագծերի ներսում, դուք կարող եք տեղադրել ցանկացած վավեր [JavaScript արտահայտություն](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions)<sub>`eng`</sub>։ Օրինակ. `2 + 2`, `user.firstName`, կամ `formatName(user)`. սրանք բոլորը վավեր JavaScript արտահայտություններ են։
 
-In the example below, we embed the result of calling a JavaScript function, `formatName(user)`, into an `<h1>` element.
+Իսկ այս մի օրինակում, մենք ներդնում ենք JavaScript ֆունկցիայի կանչի արդյունքը\` `formatName(user)`, `<h1>` էլեմենտի մեջ։
 
 ```js{12}
 function formatName(user) {
@@ -52,13 +52,13 @@ function formatName(user) {
 }
 
 const user = {
-  firstName: 'Harper',
-  lastName: 'Perez'
+  firstName: 'Պողոս',
+  lastName: 'Պողոսյան'
 };
 
 const element = (
   <h1>
-    Hello, {formatName(user)}!
+    Ողջույն, {formatName(user)}!
   </h1>
 );
 
@@ -68,69 +68,69 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://introducing-jsx)
+[Փորձել CodePen-ում](codepen://introducing-jsx)
 
-We split JSX over multiple lines for readability. While it isn't required, when doing this, we also recommend wrapping it in parentheses to avoid the pitfalls of [automatic semicolon insertion](https://stackoverflow.com/q/2846283).
+Մենք բաժանում ենք JSX-ը բազմաթիվ տողերի ընթեռնելիության համար։ Այդպիսի դեպքերում, չնայած դա պարտադիր չէ, մենք նաև խորհուրդ ենք տալիս դնել դրանց փակագծերի մեջ\` [կետ-ստորակետների ավտոմատ տեղադրման](https://stackoverflow.com/q/2846283)<sub>`eng`</sub> ժամանակ անկանխատեսելի խնդիրներից խուսափելու համար։
 
-### JSX is an Expression Too {#jsx-is-an-expression-too}
+### JSX-ը նույնպես արտահայտություն է {#jsx-is-an-expression-too}
 
-After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects.
+Կոմպիլյացիայից հետո JSX արտահայտությունները վերածվում են սովորական JavaScript ֆունկցիայի կանչերի և հաշվարկվում որպես JavaScript օբյեկտներ։
 
-This means that you can use JSX inside of `if` statements and `for` loops, assign it to variables, accept it as arguments, and return it from functions:
+Սա նշանակում է, որ դուք կարող եք օգտագործել JSX-ը `if` պայմանի կամ `for` ցիկլի ներսում, վերագրել այն փոփոխականների, ընդունել այն որպես արգումենտ և վերադարձնել այն ֆունկցիաներից.
 
 ```js{3,5}
 function getGreeting(user) {
   if (user) {
-    return <h1>Hello, {formatName(user)}!</h1>;
+    return <h1>Ողջույն, {formatName(user)}!</h1>;
   }
-  return <h1>Hello, Stranger.</h1>;
+  return <h1>Ողջույն, անծանոթ։</h1>;
 }
 ```
 
-### Specifying Attributes with JSX {#specifying-attributes-with-jsx}
+### Ատրիբուտների սահմանում JSX-ում {#specifying-attributes-with-jsx}
 
-You may use quotes to specify string literals as attributes:
+Դուք կարող եք օգտագործել ապաթարցեր\` հայտարարելու համար տողային լիտերալներ որպես ատրիբուտներ.
 
 ```js
 const element = <div tabIndex="0"></div>;
 ```
 
-You may also use curly braces to embed a JavaScript expression in an attribute:
+Դուք նաև կարող եք օգտագործել ձևավոր փակագծեր\` ներդնելու համար JavaScript արտահայտություններ ատրիբուտում.
 
 ```js
 const element = <img src={user.avatarUrl}></img>;
 ```
 
-Don't put quotes around curly braces when embedding a JavaScript expression in an attribute. You should either use quotes (for string values) or curly braces (for expressions), but not both in the same attribute.
+Մի դրեք ապաթարցեր ձևավոր փակագծերի շուրջ, երբ ներդնում եք JavaScript արտահայտություն ատրիբուտում։ Դուք պետք է կա՛մ օգտագործեք ապատարցեր (տողային արժեքների համար), կա՛մ ձևավոր փակագծեր (արտահայտությունների համար), բայց ոչ երկուսը միասին նույն ատրիբուտում։
 
->**Warning:**
+>**Զգուշացում.**
 >
->Since JSX is closer to JavaScript than to HTML, React DOM uses `camelCase` property naming convention instead of HTML attribute names.
+>Քանի որ JSX-ն ավելի մոտ է JavaScript-ին, քան HTML-ին, ReactDOM-ը HTML ատրիբուտների անուների փոխարեն օգտագործում է `ուղտաԳիր` հատկությունների անունների պայմանավորվածություն։
 >
->For example, `class` becomes [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) in JSX, and `tabindex` becomes [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex).
+>Օրինակ. `class`-ը JSX-ում դառնում է [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className)<sub>`eng`</sub>, `tabindex`-ը դառնում է [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex)<sub>`eng`</sub>։
 
-### Specifying Children with JSX {#specifying-children-with-jsx}
+### Զավակների հայտարարումը JSX-ում {#specifying-children-with-jsx}
 
-If a tag is empty, you may close it immediately with `/>`, like XML:
+Եթե թեգը դատարկ է, դուք կարող եք անմիջապես փակել այն սրանով `/>`, ինչպես XML-ում.
 
 ```js
 const element = <img src={user.avatarUrl} />;
 ```
 
-JSX tags may contain children:
+JSX թեգերը կարող են պարունակել զավակներ.
 
 ```js
 const element = (
   <div>
-    <h1>Hello!</h1>
-    <h2>Good to see you here.</h2>
+    <h1>Ողջույն!</h1>
+    <h2>Ուրախ ենք Ձեզ տեսնել այստեղ։</h2>
   </div>
 );
 ```
 
-### JSX Prevents Injection Attacks {#jsx-prevents-injection-attacks}
+### JSX-ը կանխում է ներարկման հարձակումները {#jsx-prevents-injection-attacks}
 
-It is safe to embed user input in JSX:
+Ապահով է ներդնել օգտագործողի input-ը JSX-ում.
 
 ```js
 const title = response.potentiallyMaliciousInput;
@@ -138,18 +138,18 @@ const title = response.potentiallyMaliciousInput;
 const element = <h1>{title}</h1>;
 ```
 
-By default, React DOM [escapes](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that's not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks.
+Լռությամբ, ReactDOM-ն [էկրանավորում](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html)<sub>`eng`</sub> է JSX-ում ներդրված ցանկացած արժեք մինչ նրանց արտապատկերումը։ Այդպիսով նա երաշխավորում է, որ դուք երբեք չեք կարող «ներարկել» այն, ինչ ակնհայտորեն գրված չէ ձեր հավելվածում։ Ամեն ինչ ձևափոխվում է տողի մինչ արտապատկերվելը։ Սա թույլ է տալիս կանխել [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting)<sub>`eng`</sub> հարձակումները։
 
-### JSX Represents Objects {#jsx-represents-objects}
+### JSX-ն իրենից ներկայացնում է օբյեկտներ {#jsx-represents-objects}
 
-Babel compiles JSX down to `React.createElement()` calls.
+Babel-ը կոմպիլացնում է JSX-ը `React.createElement()` կանչերի։
 
-These two examples are identical:
+Այս երկու օրինակները համարժեք են.
 
 ```js
 const element = (
   <h1 className="greeting">
-    Hello, world!
+    Ողջույն, աշխարհ
   </h1>
 );
 ```
@@ -158,27 +158,27 @@ const element = (
 const element = React.createElement(
   'h1',
   {className: 'greeting'},
-  'Hello, world!'
+  'Ողջույն, աշխարհ'
 );
 ```
 
-`React.createElement()` performs a few checks to help you write bug-free code but essentially it creates an object like this:
+`React.createElement()`-ը կատարում է մի քանի ստուգում\` օգնելու համար ձեզ գրել սխալներից ազատ կոդ, բայց, ըստ էության, այն ստեղծում է այսպիսի օբյեկտ.
 
 ```js
-// Note: this structure is simplified
+// Նշում. այս կառուցվածքը պարզեցված է
 const element = {
   type: 'h1',
   props: {
     className: 'greeting',
-    children: 'Hello, world!'
+    children: 'Ողջույն, աշխարհ'
   }
 };
 ```
 
-These objects are called "React elements". You can think of them as descriptions of what you want to see on the screen. React reads these objects and uses them to construct the DOM and keep it up to date.
+Այս օբյեկտները կոչվում են «React էլեմենտներ»։ Դուք կարող եք դրանք համարել այն բաների նկարագրություն, որոնք ցանկանում եք տեսնել էկրանին։ React-ը կարդում է այդ օբյեկտները և օգտագործում է նրանց DOM-ը կառուցելու և այն թարմ պահելու համար։
 
-We will explore rendering React elements to the DOM in the next section.
+Մենք կուսումնասիրենք React էլեմենտների արտապատկերումը DOM-ում հաջորդ գլխում։
 
->**Tip:**
+>**Խորհուրդ:**
 >
->We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted. This website uses the [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/) color scheme which is compatible with it.
+>Մենք խորհուրդ ենք տալիս օգտագործել [«Babel լեզվի սահմանում»](https://babeljs.io/docs/editors)-ը ձեր խմբագրիչի համար, որպեսզի ES6 և JSX կոդերն ընդգծվեն ինչպես հարկն է։ Այս վեբկայքն օգտագործում է [«Oceanic Next»](https://labs.voronianski.com/oceanic-next-color-scheme/) գունային սխեման, որը համատեղելի է դրա հետ։

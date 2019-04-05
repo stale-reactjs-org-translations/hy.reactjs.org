@@ -14,7 +14,7 @@
     - id: hello-world
       title: Ողջույն աշխարհ
     - id: introducing-jsx
-      title: Introducing JSX
+      title: Ծանոթացում JSX-ի հետ
     - id: rendering-elements
       title: Էլեմենտների արտապատկերում
     - id: components-and-props
