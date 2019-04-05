@@ -6,7 +6,7 @@ prev: create-a-new-react-app.html
 next: hello-world.html
 ---
 
-ԵՎ React-ը և ReactDOM-ը հասանելի են CDN-ից։
+Ե՛Վ React-ը, և՛ ReactDOM-ը հասանելի են CDN-ից։
 
 ```html
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
@@ -20,11 +20,11 @@ next: hello-world.html
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 ```
 
-`react`-ի և `react-dom`-ի հատուկ տարբերակ ներբեռնելու համար, փոխարինեք `16`-ը տարբերակի համարով։
+`react`-ի և `react-dom`-ի հատուկ տարբերակ բեռնելու համար, փոխարինեք `16`-ը տարբերակի համարով։
 
 ### Ինչի՞ համար է `crossorigin` ատրիբուտը {#why-the-crossorigin-attribute}
 
-Երբ դուք ներբեռնում եք React-ը CDN-ից, մենք խորհուրդ ենք տալիս պահել [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)<sub>`eng`</sub> ատրիբուտը։
+Եթե ներբեռնում եք React-ը CDN-ից, մենք խորհուրդ ենք տալիս պահել [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)<sub>`eng`</sub> ատրիբուտը։
 
 ```html
 <script crossorigin src="..."></script>
@@ -34,4 +34,4 @@ next: hello-world.html
 
 ![Access-Control-Allow-Origin: * ](../images/docs/cdn-cors-header.png)
 
-Այն թույլ է տալիս ունենալ [սխալների մշակման ավելի լավ փորձ](/blog/2017/07/26/error-handling-in-react-16.html) React 16-ում և հաջորդ տարբերակներում։
+Սա թույլ է տալիս ունենալ [սխալների մշակման ավելի լավ փորձ](/blog/2017/07/26/error-handling-in-react-16.html) React 16-ում և հաջորդ տարբերակներում։
