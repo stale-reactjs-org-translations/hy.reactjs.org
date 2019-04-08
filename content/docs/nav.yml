@@ -28,7 +28,7 @@
     - id: lists-and-keys
       title: Ցուցակներ և բանալիներ
     - id: forms
-      title: Forms
+      title: Ձևաթուղթ
     - id: lifting-state-up
       title: Lifting State Up
     - id: composition-vs-inheritance
