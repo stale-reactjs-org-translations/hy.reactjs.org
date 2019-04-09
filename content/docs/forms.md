@@ -1,6 +1,6 @@
 ---
 id: forms
-title: Forms
+title: Ձևաթուղթ
 permalink: docs/forms.html
 prev: lists-and-keys.html
 next: lifting-state-up.html
@@ -9,7 +9,7 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
-HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+HTML form էլեմենտները React-ում ուրիշ DOM էլեմենտների հետ համեմատած մի փոքր այլ կերպ են աշխատում, որովհետև form էլեմենտներն իրականում պահում են որոշ ներքին վիճակ։ Դիտարկենք form-ի հետևյալ օրինակը.
 
 ```html
 <form>
@@ -21,15 +21,15 @@ HTML form elements work a little bit differently from other DOM elements in Reac
 </form>
 ```
 
-This form has the default HTML form behavior of browsing to a new page when the user submits the form. If you want this behavior in React, it just works. But in most cases, it's convenient to have a JavaScript function that handles the submission of the form and has access to the data that the user entered into the form. The standard way to achieve this is with a technique called "controlled components".
+Այս form-ը լռությամբ ունի HTML form-ի պահվածք, այն է\` հաստատման(submit) ժամանակ գնալ նոր էջ։ Եթե ցանկանաք նման պահվածք React-ում, վերը նշված օրինակն ուղղակի կաշխատի։ Բայց հիմնականում, հարմար է ունենալ JavaScript ֆունկցիա, որը կմշակի form-ի հաստատումը և կունենա հասանելիություն օգտագործողի կողմից մուտքագրված տվյալներին։ Սրան հասնելու ստանդարտ միջոցը «կառավարվող կոմպոնենտներ»(controlled components) գործելակերպի օգտագործումն է։
 
-## Controlled Components {#controlled-components}
+## Կառավարվող կոմպոնենտներ {#controlled-components}
 
-In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with [`setState()`](/docs/react-component.html#setstate).
+HTML-ում, form էլեմենտները, ինչպիսիք են `<input>`-ը, `<textarea>`-ն կամ `<select>`-ը սովորաբար ղեկավարում են իրենց սեփական վիճակը և թարմացնում այն\` հիմնվելով օգտագործողի մուտքագրումների վրա։ React-ում փոփոխված վիճակը պահվում է կոմպոնենտի state հատկությունում և թարմացվում միայն [`setState()`](/docs/react-component.html#setstate)-ով։
 
-We can combine the two by making the React state be the "single source of truth". Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a "controlled component".
+Մենք կարող ենք համատեղել երկու մոտեցումները\` դարձնելով React-ի state-ը «ճշմարտության միակ աղբյուր»(single source of truth)։ Այդպիսով, React կոմպոնենտը, որն արտապատկերում է form-ը, նաև կկառավարի այդ form-ի պահվածքն ու վիճակը օգտագործողի հաջորդական մուտքագրումների ժամանակ։ Մուտքագրվող form էլեմենտը, որի արժեքը կառավարվում է React-ի կողմից այս կերպ, կոչվում է «կառավարվող կոմպոնենտ»։
 
-For example, if we want to make the previous example log the name when it is submitted, we can write the form as a controlled component:
+Օրինակ. եթե մենք ցանկանում եք, որ նախորդ օրինակը հաստատման ժամանակ նաև տպի օգտագործողի անունը, մենք կարող ենք գրել form-ը որպես կառավարվող կոմպոնենտ.
 
 ```javascript{4,10-12,24}
 class NameForm extends React.Component {
@@ -46,7 +46,7 @@ class NameForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    alert('Մուտքագրված անունն է` ' + this.state.value);
     event.preventDefault();
   }
 
@@ -66,9 +66,9 @@ class NameForm extends React.Component {
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
 
-Since the `value` attribute is set on our form element, the displayed value will always be `this.state.value`, making the React state the source of truth. Since `handleChange` runs on every keystroke to update the React state, the displayed value will update as the user types.
+Քանի որ `value` ատրիբուտը տեղադրված է մեր form էլեմենտի վրա, պատկերվող արժեքը միշտ կլինի `this.state.value`-ն\` դարձնելով React-ի վիճակը ճշմարտության աղբյուր։ Ու քանի որ օգտագործողի ամեն կոճակ սեղմելիս աշխատում է `handleChange`-ը, որը թարմացնում է React-ի state-ը, ապա պատկերվող արժեքը կթարմացվի հենց որ օգտագործողը սեղմի կոճակը։
 
-With a controlled component, every state mutation will have an associated handler function. This makes it straightforward to modify or validate user input. For example, if we wanted to enforce that names are written with all uppercase letters, we could write `handleChange` as:
+Կառավարվող կոմպոնենտներում վիճակի ցանկացած փոփոխության կապված է մշակող ֆունկցիա։ Դա կհեշտացնի օգտագործողի մուտքագրած արժեքի փոփոխումը կամ վավերացումը։ Օրինակ. եթե ցանկանում ենք, որ օգտագործողի կողմից գրված անունները ամբողջությամբ լինեն մեծատառ, մենք կարող ենք գրել `handleChange`-ն այսպես.
 
 ```javascript{2}
 handleChange(event) {
@@ -76,24 +76,24 @@ handleChange(event) {
 }
 ```
 
-## The textarea Tag {#the-textarea-tag}
+## textarea թեգ {#the-textarea-tag}
 
-In HTML, a `<textarea>` element defines its text by its children:
+HTML-ում, `<textarea>` էլեմենտի տեքստն են հանդիսանում իր զավակները.
 
 ```html
 <textarea>
-  Hello there, this is some text in a text area
+  Բարև Ձեզ, սա ինչ-որ տեքստ է textarea-ում
 </textarea>
 ```
 
-In React, a `<textarea>` uses a `value` attribute instead. This way, a form using a `<textarea>` can be written very similarly to a form that uses a single-line input:
+React-ում `<textarea>`-ն դրա փոխարեն օգտագործում է `value` ատրիբուտ։ Այդ իսկ պատճառով `<textarea>`-ի օգտագործումը կարող է նման լինել միատող input-ի օգտագործմանը.
 
 ```javascript{4-6,12-14,26}
 class EssayForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'Please write an essay about your favorite DOM element.'
+      value: 'Խնդրում ենք գրել շարադրություն ձեր նախընտրած DOM էլեմենտի մասին։'
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -105,7 +105,7 @@ class EssayForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('An essay was submitted: ' + this.state.value);
+    alert('Շարադրությունը հետևյալն է` ' + this.state.value);
     event.preventDefault();
   }
 
@@ -123,22 +123,22 @@ class EssayForm extends React.Component {
 }
 ```
 
-Notice that `this.state.value` is initialized in the constructor, so that the text area starts off with some text in it.
+Նկատեք, որ `this.state.value`-ն սկզբնարժեքավորված է կոստրուկտորում, այսինքն, textarea-ն պատկերվելու է արդեն իսկ ինչ-որ տեքստ պարունակելով։
 
-## The select Tag {#the-select-tag}
+## select թեգ {#the-select-tag}
 
-In HTML, `<select>` creates a drop-down list. For example, this HTML creates a drop-down list of flavors:
+HTML-ում `<select>`-ը ստեղծում է ներքև-բացվող ցուցակ։ Օրինակ\` այս HTML-ը կստեղծի «համերի» ներքև-բացվող ցուցակ.
 
 ```html
 <select>
-  <option value="grapefruit">Grapefruit</option>
-  <option value="lime">Lime</option>
-  <option selected value="coconut">Coconut</option>
-  <option value="mango">Mango</option>
+  <option value="grapefruit">Գրեյպֆրուտ</option>
+  <option value="lime">Լայմ</option>
+  <option selected value="coconut">Կոկոս</option>
+  <option value="mango">Մանգո</option>
 </select>
 ```
 
-Note that the Coconut option is initially selected, because of the `selected` attribute. React, instead of using this `selected` attribute, uses a `value` attribute on the root `select` tag. This is more convenient in a controlled component because you only need to update it in one place. For example:
+Նկատեք, որ «Կոկոս» տարբերակը իսկզբանե ընտրված է, քանի որ տեղադրված է `selected` ատրիբուտ։ React-ը `selected` ատրիբուտ օգտագործելու փոխարեն, օգտագործում է `value` ատրիբուտ անմիջապես `select` թեգի վրա։ Կառավարվող կոմպոնենտներում սա ավելի հարմար է, քանի որ դուք պետք է այն թարմացնենք միայն մեկ տեղում։ Օրինակ.
 
 ```javascript{4,10-12,24}
 class FlavorForm extends React.Component {
@@ -155,7 +155,7 @@ class FlavorForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('Your favorite flavor is: ' + this.state.value);
+    alert('Ձեր նախընտրած համն է` ' + this.state.value);
     event.preventDefault();
   }
 
@@ -165,10 +165,10 @@ class FlavorForm extends React.Component {
         <label>
           Pick your favorite flavor:
           <select value={this.state.value} onChange={this.handleChange}>
-            <option value="grapefruit">Grapefruit</option>
-            <option value="lime">Lime</option>
-            <option value="coconut">Coconut</option>
-            <option value="mango">Mango</option>
+            <option value="grapefruit">Գրեյպֆրուտ</option>
+            <option value="lime">Լայմ</option>
+            <option value="coconut">Կոկոս</option>
+            <option value="mango">Մանգո</option>
           </select>
         </label>
         <input type="submit" value="Submit" />
@@ -178,33 +178,33 @@ class FlavorForm extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
+[**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
 
-Overall, this makes it so that `<input type="text">`, `<textarea>`, and `<select>` all work very similarly - they all accept a `value` attribute that you can use to implement a controlled component.
+ԵՎ առհասարակ, այն դարձնում է `<input type="text">`-ը, `<textarea>`-ն և `<select>`-ն իրար նման\` աշխատանքի տեսանկյունից. նրանք բոլորն ընդունում են `value` ատրիբուտ, որը դուք կարող եք օգտագործել կառավարվող կոմպոնենտ իրականացնելու հարմար։
 
-> Note
+> Նշում
 >
-> You can pass an array into the `value` attribute, allowing you to select multiple options in a `select` tag:
+> `value` ատրիբուտին կարող եք փոխանցել զանգված, որը թույլ կտա ընտրել բազմաթիվ տարբերակներ `select` թեգում.
 >
 >```js
 ><select multiple={true} value={['B', 'C']}>
 >```
 
-## The file input Tag {#the-file-input-tag}
+## file input թեգ {#the-file-input-tag}
 
-In HTML, an `<input type="file">` lets the user choose one or more files from their device storage to be uploaded to a server or manipulated by JavaScript via the [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications).
+HTML-ում `<input type="file">`-ը օգտագործողին թույլ է տալիս սարքի պահոցից ընտրել մեկ կամ ավելի ֆայլեր, դրանք սերվեր վերբեռնելու կամ դրանց հետ JavaScript-ով ([File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications)<sub>`eng`</sub>-ի միջոցով) աշխատելու համար։
 
 ```html
 <input type="file" />
 ```
 
-Because its value is read-only, it is an **uncontrolled** component in React. It is discussed together with other uncontrolled components [later in the documentation](/docs/uncontrolled-components.html#the-file-input-tag).
+Քանի որ նրա արժեքը միայն կարդալու համար է(read-only), այն համարվում է **չկառավարվող** կոմպոնենտ React-ում։ Այն և ուրիշ այլ չկառավարվող կոմպոնենտներ կուսումնասիրվեն [ավելի ուշ](/docs/uncontrolled-components.html#the-file-input-tag)։
 
-## Handling Multiple Inputs {#handling-multiple-inputs}
+## Բազմաթիվ Input-ների մշակում {#handling-multiple-inputs}
 
-When you need to handle multiple controlled `input` elements, you can add a `name` attribute to each element and let the handler function choose what to do based on the value of `event.target.name`.
+Երբ դուք կարիք ունեք մշակելու բազմաթիվ կառավարվող `input` էլեմենտներ, դուք կարող եք ավելացնել `name` ատրիբուտ ամեն մի էլեմենտի վրա և թույլ տալ մշակող ֆունկցիային ընտրել, թե ինչ անել\` հիմնվելով `event.target.name` արժեքի վրա։
 
-For example:
+Օրինակ.
 
 ```javascript{15,18,28,37}
 class Reservation extends React.Component {
@@ -241,7 +241,7 @@ class Reservation extends React.Component {
         </label>
         <br />
         <label>
-          Number of guests:
+          Հյուրերի քանակ.
           <input
             name="numberOfGuests"
             type="number"
@@ -254,9 +254,9 @@ class Reservation extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/wgedvV?editors=0010)
+[**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/wgedvV?editors=0010)
 
-Note how we used the ES6 [computed property name](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names) syntax to update the state key corresponding to the given input name:
+Նկատեք, թե ինչպես ենք մենք օգտագործում ES6-ի [«computed property name»](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names)<sub>`eng`</sub> շարահյուսությունը\` վիճակի բանալին տրված մուտքային արժեքին համապատասխան թարմացնելու համար.
 
 ```js{2}
 this.setState({
@@ -264,7 +264,7 @@ this.setState({
 });
 ```
 
-It is equivalent to this ES5 code:
+Սա համարժեք է այս ES5 կոդին.
 
 ```js{2}
 var partialState = {};
@@ -272,13 +272,13 @@ partialState[name] = value;
 this.setState(partialState);
 ```
 
-Also, since `setState()` automatically [merges a partial state into the current state](/docs/state-and-lifecycle.html#state-updates-are-merged), we only needed to call it with the changed parts.
+Նաև, քանի որ `setState()`-ն ավտոմատ [համադրում է թարմացնող օբյեկտն ընթացիկ state-ի հետ](/docs/state-and-lifecycle.html#state-updates-are-merged), մենք պետք է կանչենք այն փոփոխված մասերով միայն։
 
-## Controlled Input Null Value {#controlled-input-null-value}
+## Կառավարվող Input-ի null արժեք {#controlled-input-null-value}
 
-Specifying the value prop on a [controlled component](/docs/forms.html#controlled-components) prevents the user from changing the input unless you desire so. If you've specified a `value` but the input is still editable, you may have accidentally set `value` to `undefined` or `null`.
+Սահմանելով value prop-ը [կառավարվող կոմպոնենտի](/docs/forms.html#controlled-components) վրա\` կանխվում են օգտագործողի փոփոխությունները input-ում, քանի դեռ դուք չեք ցանկացել հակառակը։ Եթե դուք սահմանել եք `value`-ն, բայց input-ը մնացել է խմբագրելի(editable), ապա միգուցե `value`-ին պատահմամբ փոխանցել եք `undefined` կամ `null`։
 
-The following code demonstrates this. (The input is locked at first but becomes editable after a short delay.)
+Հետևյալ կոդը ցուցադրում է վերը նշվածը։ (Այս input-ը սկզբում «կողպված» է, բայց փոքր-ինչ հետո այն կդառնա խմբագրելի։)
 
 ```javascript
 ReactDOM.render(<input value="hi" />, mountNode);
@@ -289,10 +289,10 @@ setTimeout(function() {
 
 ```
 
-## Alternatives to Controlled Components {#alternatives-to-controlled-components}
+## Այլընտրանքներ կառավարելի կոմպոնենտներին {#alternatives-to-controlled-components}
 
-It can sometimes be tedious to use controlled components, because you need to write an event handler for every way your data can change and pipe all of the input state through a React component. This can become particularly annoying when you are converting a preexisting codebase to React, or integrating a React application with a non-React library. In these situations, you might want to check out [uncontrolled components](/docs/uncontrolled-components.html), an alternative technique for implementing input forms.
+Կառավարելի կոմպոնենտների օգտագործումը կարող է լինել հոգնեցուցիչ, որովհետև դուք պետք է գրեք իրադարձություն մշակող(event handler) ձեր տվյալների յուրաքանչյուր հնարավոր փոփոխությունների համար և անցկացնեք ամբողջ մուտքագրված տվյալները React կոմպոնենտով։ Սա կարող է լինել հատկախես նյարդայնեցնող, երբ օրինակ փոխակերպեք արդեն իսկ գոյություն ունեցող կոդը React-ի կամ ինտեգրեք React հավելվածը ոչ-React գրադարանի հետ։ Այսպիսի դեպքերում, հնարավոր է ցանկանաք փորձել [չկառավարվող կոմպոնենտները](/docs/uncontrolled-components.html)\` ալտերնատիվ գործելակերպ մուտքային form-երի իրականացման համար։
 
-## Fully-Fledged Solutions {#fully-fledged-solutions}
+## Ամբողջական լուծումներ {#fully-fledged-solutions}
 
-If you're looking for a complete solution including validation, keeping track of the visited fields, and handling form submission, [Formik](https://jaredpalmer.com/formik) is one of the popular choices. However, it is built on the same principles of controlled components and managing state — so don't neglect to learn them.
+Եթե դուք փնտրում եք ամբողջական լուծում\` ներառյալ վավերացումը, այցելած դաշտերը հիշելը և form-ի հաստատման մշակումը, ապա [Formik](https://jaredpalmer.com/formik)<sub>`eng`</sub>-ը ամենահայտնի լուծումներից է։ Այնուամենայնիվ, այն կառուցված է նույն\` կառավարվող կոմպոնենտների ու վիճակի կառավարման գաղափարների վրա. այդպիսով բաց մի թողեք նրանց ուսուցումը։
