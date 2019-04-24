@@ -115,7 +115,11 @@ React-ի փաստաթղթավորումը ենթադրում է որոշ ծան�
 
 Դուք նաև կարող եք հետևել [@reactjs էջին](https://twitter.com/reactjs) Twitter-ում, բայց ոչ մի կերևոր բան բաց չեք թողնի\` կարդալով միայն բլոգը։
 
+<<<<<<< HEAD
 React-ի ոչ բոլոր թողարկումներն ունեն իրենց սեփական բլոգ փոստը, բայց դուք կարող եք գտնել մանրամասն changelog ամեն թողարկման համար\` [React-ի պահոցի `CHANGELOG.md` ֆայլում](https://github.com/facebook/react/blob/master/CHANGELOG.md), ինչպես նաև [Թողարկումներ](https://github.com/facebook/react) էջում։
+=======
+Not every React release deserves its own blog post, but you can find a detailed changelog for every release [in the `CHANGELOG.md` file in the React repository](https://github.com/facebook/react/blob/master/CHANGELOG.md), as well as on the [Releases](https://github.com/facebook/react/releases) page.
+>>>>>>> 6bc6e7b1411d4befc3ecfbe45b898ca474116020
 
 ## Տարբերակված փաստաթղթավորում {#versioned-documentation}
 
