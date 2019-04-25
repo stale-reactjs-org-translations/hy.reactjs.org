@@ -53,11 +53,7 @@ npm start
 
 «Create React App»-ը չի մշակում backend-ի տրամաբանություն կամ տվյալների հենքեր. այն ընդամենը ստեղծում է frontend-ի կառուցման քայլերը. այսպիսով կարող եք օգտագործել այն ձեր ցանկացած backend-ի հետ։ Իրականում, այն իր հերթին օգտագործում է [Babel](https://babeljs.io/)<sub>`eng`</sub> և [webpack](https://webpack.js.org/)<sub>`eng`</sub>, բայց դուք կարիք չունեք իմանալ նրանց մասին։
 
-<<<<<<< HEAD
-Երբ պատրաստ լինեք տեղակայելու production-ում, աշխատեցրեք `npm run build`։ Այն `build` պանակում կստեղծի ձեր հավելվածի օպտիմիզացված տարբերակը։ «Create React App»-ի մասին կարող եք իմանալ ավելին նրա [README-ից](https://github.com/facebookincubator/create-react-app#create-react-app-)<sub>`eng`</sub> և [օգտագործողի ձեռնարկից](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#table-of-contents)<sub>`eng`</sub>։
-=======
-When you're ready to deploy to production, running `npm run build` will create an optimized build of your app in the `build` folder. You can learn more about Create React App [from its README](https://github.com/facebookincubator/create-react-app#create-react-app--) and the [User Guide](https://facebook.github.io/create-react-app/).
->>>>>>> 6bc6e7b1411d4befc3ecfbe45b898ca474116020
+Երբ պատրաստ լինեք տեղակայելու production-ում, աշխատեցրեք `npm run build`։ Այն `build` պանակում կստեղծի ձեր հավելվածի օպտիմիզացված տարբերակը։ «Create React App»-ի մասին կարող եք իմանալ ավելին նրա [README-ից](https://github.com/facebookincubator/create-react-app#create-react-app--)<sub>`eng`</sub> և [օգտագործողի ձեռնարկից](https://facebook.github.io/create-react-app/)<sub>`eng`</sub>։
 
 ### Next.js {#nextjs}
 
@@ -73,11 +69,7 @@ When you're ready to deploy to production, running `npm run build` will create a
 
 ### Ավելի ճկուն գործիքակազմեր {#more-flexible-toolchains}
 
-<<<<<<< HEAD
-Ներկայացված գործիքակազմերը առաջարկում են ավելի մեծ ճկունություն և ընտրություն։ Վերջիններս մենք առաջարկում ենք ավելի փորձառու օգտագործողներին։
-=======
-The following toolchains offer more flexibility and choice. We recommend them to more experienced users:
->>>>>>> 6bc6e7b1411d4befc3ecfbe45b898ca474116020
+Ներկայացված գործիքակազմերը առաջարկում են ավելի մեծ ճկունություն և ընտրություն։ Վերջիններս մենք առաջարկում ենք ավելի փորձառու օգտագործողներին.
 
 - **[Neutrino](https://neutrinojs.org/)**<sub>`eng`</sub>-ն համատեղում է իր մեջ [webpack](https://webpack.js.org/)-ի հզորությունը և preset-ների պարզությունը. ներառում է preset [React հավելվածների](https://neutrinojs.org/packages/react/) և [React կոմպոնենտների](https://neutrinojs.org/packages/react-components/) համար։
 

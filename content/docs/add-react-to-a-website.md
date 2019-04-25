@@ -149,11 +149,7 @@ return (
 
 Այս երկու կոդի կտորները համարժեք են։ Չնայած **JSX-ը [ամենևին պարտադիր չէ](/docs/react-without-jsx.html)**, շատ մարդիկ օգտակար են համարում գրել UI կոդ\` React-ի հետ օգտագործելով այլ գրադարաներ։
 
-<<<<<<< HEAD
-Դուք կարող եք խաղալ JSX-ի հետ\` օգտագործելով [այս առցանց փոխարկիչը](https://babeljs.io/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=Q&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2%2Cstage-3&prettier=true&targets=Node-6.12&version=6.26.0&envVersion=)։
-=======
-You can play with JSX using [this online converter](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3).
->>>>>>> 6bc6e7b1411d4befc3ecfbe45b898ca474116020
+Դուք կարող եք խաղալ JSX-ի հետ\` օգտագործելով [այս առցանց փոխարկիչը](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3)։
 
 ### Արագ փորձել JSX-ը {#quickly-try-jsx}
 
