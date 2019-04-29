@@ -99,7 +99,11 @@ React-ի փաստաթղթավորումը ենթադրում է որոշ ծան�
 
 ### Առաջադեմ գաղափարներ {#advanced-concepts}
 
+<<<<<<< HEAD
 Երբ արդեն հարմարավետ զգաք ձեզ [հիմնական գաղափարների հետ](#main-concepts) և որոշ չափով խաղացած լինեք React-ի հետ, դուք հավանաբար կցանկանաք ծանոթանալ ավելի առաջադեմ գաղափարների հետ։ Այս գլուխը կներկայացնի ձեզ React-ի հզոր, բայց ոչ հաճախ օգտագործվող հատկությունները, ինչպիսիք են օրինակ [context](/docs/context.html)-ը և [refs](/docs/refs-and-the-dom.html)-ը։
+=======
+Once you're comfortable with the [main concepts](/docs/hello-world.html) and played with React a little bit, you might be interested in more advanced topics. This section will introduce you to the powerful, but less commonly used React features like [context](/docs/context.html) and [refs](/docs/refs-and-the-dom.html).
+>>>>>>> b8b3db7acbba117addeea8a7fb86957eb046d7ce
 
 ### API Հղում {#api-reference}
 
