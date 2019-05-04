@@ -30,7 +30,7 @@
     - id: forms
       title: Ձևաթուղթ
     - id: lifting-state-up
-      title: Lifting State Up
+      title: Վիճակի բարձրացում
     - id: composition-vs-inheritance
       title: Կոմպոզիցիան ընդդեմ ժառանգականության
     - id: thinking-in-react
