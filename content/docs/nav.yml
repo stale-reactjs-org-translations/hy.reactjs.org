@@ -34,7 +34,7 @@
     - id: composition-vs-inheritance
       title: Կոմպոզիցիան ընդդեմ ժառանգականության
     - id: thinking-in-react
-      title: Thinking In React
+      title: React մտածելակերպ
 - title: Խորացված ուղեցույց
   items:
     - id: accessibility
