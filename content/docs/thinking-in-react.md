@@ -1,6 +1,6 @@
 ---
 id: thinking-in-react
-title: Thinking in React
+title: React մտածելակերպ
 permalink: docs/thinking-in-react.html
 redirect_from:
   - 'blog/2013/11/05/thinking-in-react.html'
@@ -8,17 +8,17 @@ redirect_from:
 prev: composition-vs-inheritance.html
 ---
 
-React is, in our opinion, the premier way to build big, fast Web apps with JavaScript. It has scaled very well for us at Facebook and Instagram.
+React-ը, մեր կարծիքով, JavaScript-ով արագ և մեծ վեբ հավելվածներ կառուցելու լավագույն միջոցն է։ Այն շատ լավ է ընդլայնվել մեզ համար Facebook-ում և Instagram-ում։
 
-One of the many great parts of React is how it makes you think about apps as you build them. In this document, we'll walk you through the thought process of building a searchable product data table using React.
+React-ի հիանալի մասերից մեկն այն է, թե ինչպես է այն ուղղորդում մտածել հավելվածների մասին դրանց կառուցելիս։ Այս բաժնում մենք կանցնենք React-ով «ապրանքների որոնելի ցուցակ» կառուցելու մտածողության գործընթացով։
 
-## Start With A Mock {#start-with-a-mock}
+## Սկսենք մակետից {#start-with-a-mock}
 
-Imagine that we already have a JSON API and a mock from our designer. The mock looks like this:
+Պատկերացնենք, թե մենք արդեն ունենք JSON API և մակետ մեր դիզայներից։ Մակետը հետևյալ տեսքն ունի.
 
-![Mockup](../images/blog/thinking-in-react-mock.png)
+![Մակետը](../images/blog/thinking-in-react-mock.png)
 
-Our JSON API returns some data that looks like this:
+Մեր JSON API-ը վերադարձնում է հետևյալ տեսքի տվյալներ.
 
 ```
 [
@@ -31,27 +31,27 @@ Our JSON API returns some data that looks like this:
 ];
 ```
 
-## Step 1: Break The UI Into A Component Hierarchy {#step-1-break-the-ui-into-a-component-hierarchy}
+## Քայլ 1. տրոհել UI-ը կոմպոնենտների հիերարխիայի {#step-1-break-the-ui-into-a-component-hierarchy}
 
-The first thing you'll want to do is to draw boxes around every component (and subcomponent) in the mock and give them all names. If you're working with a designer, they may have already done this, so go talk to them! Their Photoshop layer names may end up being the names of your React components!
+Առաջին բանը, որ կցանկանաք անել, մակետում յուրաքանչյուր կոմպոնենտի (նաև ենթակոմպոնենտի) շուրջ սահմաններ գծելն ու նրանց անուններ տալն է։ Եթե դուք աշխատում եք դիզայների հետ, ապա նրանք միգուցե արդեն արել են դա. խոսեք նրանց հետ։ Նրանց Photoshop-ի layer-ի անունները հնարավոր է համապատասխանեն ձեր React կոմպոնենտների անունների հետ։
 
-But how do you know what should be its own component? Just use the same techniques for deciding if you should create a new function or object. One such technique is the [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents.
+Բայց ինչպե՞ս իմանալ, թե կոնկրետ ինչն է կոմպոնենտ։ Ուղղակի օգտագործեք նույն գործելակերպը, ինչ օգտագործում եք որոշելու համար, թե արդյոք պետք է ստեղծեք ֆունկցիա կամ օբյեկտ։ Նմանատիպ գործելակերպ է [միակ պատասխանատվության սկզբունքը](https://en.wikipedia.org/wiki/Single_responsibility_principle)<sub>`eng`</sub>. այն է\` կոմպոնենտը պետք է իրականում անի միայն մեկ գործողություն։ Եթե շատ է մեծանում, պետք է բաժանել ավելի փոքր ենթակոմպոնենտների։
 
-Since you're often displaying a JSON data model to a user, you'll find that if your model was built correctly, your UI (and therefore your component structure) will map nicely. That's because UI and data models tend to adhere to the same *information architecture*, which means the work of separating your UI into components is often trivial. Just break it up into components that represent exactly one piece of your data model.
+Քանի որ օգտագործողի համար հաճախ պատկերում եք JSON տվյալների մոդել, ապա կընդունեք, որ եթե ձեր մոդելը կառուցված է ճիշտ, ապա ձեր UI-ը նույնպես կլինի ճիշտ (հետևաբար նաև ձեր կոմպոնենտի կառուցվածքը)։ Դրա պատճառն այն է, որ UI-ն ու տվյալների մոդելները հակված են պահել նույն *ինֆորմացիոն ճարտարապետությունը*, ինչը նշանակում է, որ ձեր UI-ը կոմպոնենտերի տրոհելու աշխատանքը հաճախ տրիվյալ է։ Ուղղակի բաժանեք կոմպոնենտները այնպես, որ յուրաքանչյուրը ներկայացնի ճիշտ մեկ կտոր ձեր տվյալների մոդելից։
 
-![Component diagram](../images/blog/thinking-in-react-components.png)
+![Կոմպոնենտի դիագրամ](../images/blog/thinking-in-react-components.png)
 
-You'll see here that we have five components in our simple app. We've italicized the data each component represents.
+Այստեղ դուք կտեսնեք, որ մեր պարզ հավելվածում ունենք հինգ կոմպոնենտ։ Մենք սկզբնարժեքավորել ենք յուրաքանչյուր կոմպոնենտի ներկայացրած տվյալները։
 
-  1. **`FilterableProductTable` (orange):** contains the entirety of the example
-  2. **`SearchBar` (blue):** receives all *user input*
-  3. **`ProductTable` (green):** displays and filters the *data collection* based on *user input*
-  4. **`ProductCategoryRow` (turquoise):** displays a heading for each *category*
-  5. **`ProductRow` (red):** displays a row for each *product*
+  1. **`FilterableProductTable` (նարնջագույն):** ամբողջությամբ պարունակում է օրինակը
+  2. **`SearchBar` (կապույտ):** ստանում է *օգտագործողի բոլոր մուտքագրումները*
+  3. **`ProductTable` (կանաչ):** պատկերում և ֆիլտրում է *տվյալների բազմությունը*\` հիմնվելով *օգտագործողի մուտքագրումների* վրա
+  4. **`ProductCategoryRow` (երկնագույն):** յուրաքանչյուր *կատեգորիայի* համար պատկերում է գլխամասային վերնագիր
+  5. **`ProductRow` (կարմիր):** յուրաքանչյուր *ապրանքի* համար պատկերում է տող
 
-If you look at `ProductTable`, you'll see that the table header (containing the "Name" and "Price" labels) isn't its own component. This is a matter of preference, and there's an argument to be made either way. For this example, we left it as part of `ProductTable` because it is part of rendering the *data collection* which is `ProductTable`'s responsibility. However, if this header grows to be complex (i.e. if we were to add affordances for sorting), it would certainly make sense to make this its own `ProductTableHeader` component.
+Երբ դուք նայեք `ProductTable`-ին, կտեսնեք, որ նրա գլխամասային վերնագիրը (որը պարունակում է «Name» և «Price» պիտակները) ինքն իրենով առանձին կոմպոնենտ չէ։ Սա նախասիրության հարց է, սակայն կա արգումենտ այն պատրաստելու մյուս եղանակով։ Այս օրինակի պարագայում մենք թողեցինք այն որպես `ProductTable`-ի մաս, որովհետև այն *տվյալների բազմության* արտապատկերման մասն է կազմում, որն էլ `ProductTable`-ի պատասխանատվության տակ է։ Ինչև, եթե այս գլխամասային վերնագիրը բարդանա (օրինակ, եթե մեզ պետք լիներ ավելացնել հնարավորություն դասակարգման համար), ապա, իհարկե, իմաստ կունենար սարքել այն առանձին կոմպոնենտ\` `ProductTableHeader`։
 
-Now that we've identified the components in our mock, let's arrange them into a hierarchy. This is easy. Components that appear within another component in the mock should appear as a child in the hierarchy:
+Հիմա, երբ տարբերակել ենք մակետի կոմպոնենտները, եկեք դասավորենք նրանց հիերարխայի մեջ։ Սա հեշտ է։ Կոմպոնենտները, որոնք մակետում գտնվում են ուրիշ կոմպոնենտների մեջ, պետք է հանդիսանան զավակ կոմպոնենտ հիերարխայում.
 
   * `FilterableProductTable`
     * `SearchBar`
@@ -59,90 +59,90 @@ Now that we've identified the components in our mock, let's arrange them into a 
       * `ProductCategoryRow`
       * `ProductRow`
 
-## Step 2: Build A Static Version in React {#step-2-build-a-static-version-in-react}
+## Քայլ 2. կառուցել ստատիկ տարբերակ React-ում {#step-2-build-a-static-version-in-react}
 
-<p data-height="600" data-theme-id="0" data-slug-hash="BwWzwm" data-default-tab="js" data-user="lacker" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/gaearon/pen/BwWzwm">Thinking In React: Step 2</a> on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="600" data-theme-id="0" data-slug-hash="BwWzwm" data-default-tab="js" data-user="lacker" data-embed-version="2" class="codepen">Նայիր Pen-ը <a href="https://codepen.io/gaearon/pen/BwWzwm">React մտածելակերպ. քայլ 2</a> <a href="https://codepen.io">CodePen-ում</a>։</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-Now that you have your component hierarchy, it's time to implement your app. The easiest way is to build a version that takes your data model and renders the UI but has no interactivity. It's best to decouple these processes because building a static version requires a lot of typing and no thinking, and adding interactivity requires a lot of thinking and not a lot of typing. We'll see why.
+Հիմա, երբ արդեն ունեք կոմպոնենտների հիերարխիան, ժամանակն է իրականացնել ձեր հավելվածը։ Հեշտագույն ճանապարհն է կառուցել տարբերակ, որը կստանա ձեր տվյալների մոդելը և կարտապատկերի UI-ը, սակայն առանց ինտերակտիվության։ Շատ կարևոր է առանձնացնել այդ պրոցեսները, որովհետև ստատիկ տարբերակի կառուցումը պահանջում է երկար կոդ գրել և քիչ մտածել, իսկ ինտերակտիվության ավելացումը պահանջում է շատ մտածել և քիչ կոդ գրել։ Մենք կտեսնենք, թե ինչու։
 
-To build a static version of your app that renders your data model, you'll want to build components that reuse other components and pass data using *props*. *props* are a way of passing data from parent to child. If you're familiar with the concept of *state*, **don't use state at all** to build this static version. State is reserved only for interactivity, that is, data that changes over time. Since this is a static version of the app, you don't need it.
+Ձեր տվյալների մոդելն արտապատկերող հավելվածի ստատիկ տարբերակը կառուցելու համար պետք է կառուցել կոմպոնենտներ, որոնք վերա-օգտագործում են ուրիշ կոմպոնենտներ և փոխանցում են տվյալներ\` օգտագործելով *props*։ *prop*-երը ծնողից զավակ տվյալներ փոխանցելու եղանակ են։ Եթե դուք ծանոթ եք *state*-ի գաղափարին, ապա **բացարձակապես մի օգտագործեք state** այն ստատիկ տարբերակը կառուցելու համար։ State-ը միայն ինտերակտիվության համար է, այն է, տվյալներ, որոնք փոխվում են ժամանակի ընթացքում։ Քանի որ սա հավելվածի ստատիկ տարբերակն է, դուք դրա կարիքը չունեք։
 
-You can build top-down or bottom-up. That is, you can either start with building the components higher up in the hierarchy (i.e. starting with `FilterableProductTable`) or with the ones lower in it (`ProductRow`). In simpler examples, it's usually easier to go top-down, and on larger projects, it's easier to go bottom-up and write tests as you build.
+Դուք կարող եք կառուցումը սկսել վերևից-ներքև կամ ներքևից-վերև։ Այսինքն\` կամ սկսել կոմպոնենտների կառուցումը հիերարխիայում ավելի բարձրից (օրինակ, սկսենք `FilterableProductTable`-ից) կամ ավելի ներքևից (`ProductRow`)։ Ավելի պարզ օրինակներում սովորաբար ավելի հեշտ է գնալ վերևից-ներքև ճանապարհով, իսկ ավելի մեծ պրոյեկներում ավելի հեշտ է գնալ ներքևից-վերև ճանապարհով և գրել թեստեր կառուցման ընթացքում։
 
-At the end of this step, you'll have a library of reusable components that render your data model. The components will only have `render()` methods since this is a static version of your app. The component at the top of the hierarchy (`FilterableProductTable`) will take your data model as a prop. If you make a change to your underlying data model and call `ReactDOM.render()` again, the UI will be updated. It's easy to see how your UI is updated and where to make changes since there's nothing complicated going on. React's **one-way data flow** (also called *one-way binding*) keeps everything modular and fast.
+Այս քայլի վերջում դուք կունենաք վերա-օգտագործվող կոմպոնենտների գրադարան, որն արտապատկերում է ձեր տվյալների մոդելը։ Կոմպոնենտները կունենան միայն `render()` մեթոդ, քանի որ սա ձեր հավելվածի ստատիկ տարբերակն է։ Հիերարխիայի վերևում գտնվող կոմպոնենտը (`FilterableProductTable`) կստանա ձեր տվյալների մոդելը որպես prop։ Եթե դուք կատարեք փոփոխություն բազային տվյալների մոդելում և կրկին կանչեք `ReactDOM.render()`-ը, ապա ձեր UI-ը կթարմացվի։ Հեշտ է նկատել, թե ինչպես է ձեր UI-ը թարմացվել, քանի որ ոչ մի բարդ բան տեղի չի ունենում։ React-ի **միակողմանի տվյալների հոսքը** («one-way data flow», հայտնի ինչպես նաև «one-way binding») պահում է ամեն ինչ մոդուլյար և արագագործ է։
 
-Simply refer to the [React docs](/docs/) if you need help executing this step.
+Անցեք [React-ի փաստաթղթավորումով](/docs/), եթե կան հարցեր այս քայլի հետ կապված։
 
-### A Brief Interlude: Props vs State {#a-brief-interlude-props-vs-state}
+### Փոքրիկ շեղում. props-ի և state-ի տարբերությունը {#a-brief-interlude-props-vs-state}
 
-There are two types of "model" data in React: props and state. It's important to understand the distinction between the two; skim [the official React docs](/docs/interactivity-and-dynamic-uis.html) if you aren't sure what the difference is.
+React-ում կան երկու տեսակի տվյալների «մոդելներ». props և state։ Կարևոր է հասկանալ տարբերությունը այս երկուսի միջև. անցեք [React-ի պաշտոնական փաստաթղթավորումով](/docs/interactivity-and-dynamic-uis.html), եթե վստահ չեք, թե որն է տարբերությունը։
 
-## Step 3: Identify The Minimal (but complete) Representation Of UI State {#step-3-identify-the-minimal-but-complete-representation-of-ui-state}
+## Քայլ 3. սահմանել UI-ի state-ի մինիմալ (բայց ամբողջական) ներկայացումը {#step-3-identify-the-minimal-but-complete-representation-of-ui-state}
 
-To make your UI interactive, you need to be able to trigger changes to your underlying data model. React makes this easy with **state**.
+Որպեսզի դարձնեք ձեր UI-ը ինտերակտիվ, դուք պետք է իվիճակի լինեք կատարել փոփոխություններ ձեր բազային տվյալների մոդելում։ React-ը սա դարձնում է հեշտ **state**-ի օգնությամբ։
 
-To build your app correctly, you first need to think of the minimal set of mutable state that your app needs. The key here is [DRY: *Don't Repeat Yourself*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Figure out the absolute minimal representation of the state your application needs and compute everything else you need on-demand. For example, if you're building a TODO list, just keep an array of the TODO items around; don't keep a separate state variable for the count. Instead, when you want to render the TODO count, simply take the length of the TODO items array.
+Ձեր հավելվածը ճիշտ կառուցելու համար, նախ պետք է մտածեք այն մինիմալ փոփոխելի state-ի մասին, որի կարիքն ունի ձեր հավելվածը։ Կարևոր գաղափարն այստեղ\` [DRY: *Don't Repeat Yourself*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)<sub>`eng`</sub>-ն է։ Որոշեք ձեր հավելվածին անհրաժեշտ state-ի բացարձակ մինիմալ ներկայացումը և հաշվեք մնացած ամեն ինչն ըստ պահանջի։ Օրինակ, եթե դուք կառուցում եք TODO ցուցակ, ուղղակի պահեք TODO էլեմենտների զանգված. մի պահեք առանձին state-ի փոփոխական քանակի համար։ Փոխարենը, երբ ցանկանաք արտապատկերել TODO-ների քանակը, ուղղակի վերցրեք TODO էլեմենտների զանգվածի երկարությունը։
 
-Think of all of the pieces of data in our example application. We have:
+Եկեք դիտարկենք մեր հավելվածի տվյալների առանձին կտորները։ Մենք ունենք.
 
-  * The original list of products
-  * The search text the user has entered
-  * The value of the checkbox
-  * The filtered list of products
+  * Ապրանքների նախնական ցուցակ
+  * Օգտագործողի մուտքագրած որոնման տեքստ
+  * checkbox-ի արժեք
+  * Ապրանքների ֆիլտրված ցուցակ
 
-Let's go through each one and figure out which one is state. Simply ask three questions about each piece of data:
+Եկեք անցնենք յուրաքանչյուրով վրայով և հասկանանք, թե նրանցից որ մեկն է state-ի մաս։ Տվյալների յուրաքանչյուր կտորի մասին տվեք երեք հարց.
+  
+  1. Սա փոխանցվա՞ծ է ծնողից որպես prop։ Եթե այո, ապա այն, հավանաբար, state-ի մաս չէ։
+  2. Այն ժամանակի ընթացքում մնու՞մ է արդյոք անփոփոխ։ Եթե այո, ապա այն, հավանաբար, state-ի մաս չէ։
+  3. Կարո՞ղ եք այն հաշվարկել\` հիմնվելով state-ի այլ փոփոխականների կամ prop-երի վրա։ Եթե այո, ապա այն, հավանաբար, state-ի մաս չէ։
 
-  1. Is it passed in from a parent via props? If so, it probably isn't state.
-  2. Does it remain unchanged over time? If so, it probably isn't state.
-  3. Can you compute it based on any other state or props in your component? If so, it isn't state.
+Ապրանքների սկզբնական ցուցակը փոխանցված է որպես prop, այսինքն\` այն state-ի մաս չէ։ Որոնման տեքստը և checkbox-ի արժեքը կարծես թե state-ի մաս են, քանի որ նրանք փոփոխվում են ժամանակի ընթացքում և չեն կարող հաշվվել ինչ-որ բանից։ ԵՎ վերջապես, ապրանքների ֆիլտրված ցուցակը state-ի մաս չէ, որովհետև այն կարող է հաշվարկվել\` համատեղելով ապրանքների սկզբնական ցուցակը և որոնման տեքստն ու checkbox-ի արժեքը։
 
-The original list of products is passed in as props, so that's not state. The search text and the checkbox seem to be state since they change over time and can't be computed from anything. And finally, the filtered list of products isn't state because it can be computed by combining the original list of products with the search text and value of the checkbox.
+Այսպիսով, մեր state-ը հետևյալն է.
 
-So finally, our state is:
+  * Օգտագործողի մուտքագրած որոնման տեքստը
+  * checkbox-ի արժեքը
 
-  * The search text the user has entered
-  * The value of the checkbox
+## Քայլ 4. որոշել, թե որտեղ է ձեր state-ը լինելու {#step-4-identify-where-your-state-should-live}
 
-## Step 4: Identify Where Your State Should Live {#step-4-identify-where-your-state-should-live}
+<p data-height="600" data-theme-id="0" data-slug-hash="qPrNQZ" data-default-tab="js" data-user="lacker" data-embed-version="2" class="codepen">Նայիր Pen-ը <a href="https://codepen.io/gaearon/pen/qPrNQZ">React մտածելակերպ. քայլ 4</a> <a href="https://codepen.io">CodePen-ում</a>։</p>
 
-<p data-height="600" data-theme-id="0" data-slug-hash="qPrNQZ" data-default-tab="js" data-user="lacker" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/gaearon/pen/qPrNQZ">Thinking In React: Step 4</a> on <a href="https://codepen.io">CodePen</a>.</p>
+Լավ, մենք որոշել ենք, թե որն է հավելվածի state-ի փոփոխականների մինիմալ բազմությունը։ Հաջորդիվ, մենք պետք է որոշենք, թե որ կոմպոնենտն է փոփոխելու կամ *ունենալու* այս state-ը։
 
-OK, so we've identified what the minimal set of app state is. Next, we need to identify which component mutates, or *owns*, this state.
+Հիշեք. React-ն իրենից ներկայացնում է միակողմանի տվյալների հոսք կոմպոնենտների հիերարխիայով։ Կարող է անմիջապես ակնհայտ չլինել, թե որ կոմպոնենտը պետք է state ունենա։ **Նորեկների համար սա հաճախ ամենաբարդ հասկացվող մասերից մեկն է**. լուծում գտնելու համար հետևեք այս քայլերին.
 
-Remember: React is all about one-way data flow down the component hierarchy. It may not be immediately clear which component should own what state. **This is often the most challenging part for newcomers to understand,** so follow these steps to figure it out:
+Ձեր հավելվածի state-ի ցանկացած կտորի համար\`
 
-For each piece of state in your application:
+  * Տարբերակիր ցանկացած կոմպոնենտ, որն արտապատկերում է ինչ-որ բան\` հիմնվելով այդ state-ի վրա։
+  * Գտիր ընդհանուր պատկան կոմպոնենտ (մի կոմպոնենտ, որը հիերարխիայում գտնվում է բարձր այն կոմպոնենտերից, որոնք ունեն տվյալ state-ի կարիքը)։
+  * Կամ ընդհանուր պատկան, կամ մեկ ուրիշ կոմպոնենտ\` ավելի բարձր հիերարխիայում, պետք է ունենա state-ը։
+  * Եթե չեք գտնում կոմպոնենտ, որտեղ տրամաբանական կլինի պահել state-ը, ստեղծեք նոր կոմպոնենտ հենց state-ը պահելու համար և տեղադրեք այն հիերարխիայում պատկան կոմպոնենտից բարձր։
 
-  * Identify every component that renders something based on that state.
-  * Find a common owner component (a single component above all the components that need the state in the hierarchy).
-  * Either the common owner or another component higher up in the hierarchy should own the state.
-  * If you can't find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component.
+Եկեք կիրառենք այս ռազմավարությունը մեր հավելվածի վրա.
 
-Let's run through this strategy for our application:
+  * `ProductTable` պետք է ֆիլտրի ապրանքների ցուցակը\` հիմնվելով state-ի վրա, իսկ `SearchBar`-ը պետք է պատկերի որոնման տեքստի և checkbox-ի վիճակը։
+  * Ընդհանուր պատկան կոմպոնենտը `FilterableProductTable`-ն է։
+  * Ըստ էության, տրամաբանական է ֆիլտրման տեքստը և checkbox-ի արժեքը պահել `FilterableProductTable`-ում։
 
-  * `ProductTable` needs to filter the product list based on state and `SearchBar` needs to display the search text and checked state.
-  * The common owner component is `FilterableProductTable`.
-  * It conceptually makes sense for the filter text and checked value to live in `FilterableProductTable`
+Շատ բարի, այսպիսով մենք որոշել ենք, որ մեր state-ը լինի `FilterableProductTable`-ում։ Նախ, `FilterableProductTable`-ի `constructor`-ում ավելացրեք `this.state = {filterText: '', inStockOnly: false}`\` ձեր հավելավածի սկզբնական վիճակը արտացոլելու համար։ Այնուհետև փոխանցեք `filterText`-ը և `inStockOnly`-ը `ProductTable`-ին ու `SearchBar`-ին որպես prop։ ԵՎ վերջապես, օգտագործեք այդ prop-երը `ProductTable`-ի տողերը ֆիլտրելու ու `SearchBar`-ի դաշտերը արժեքներով լրացնելու համար։
 
-Cool, so we've decided that our state lives in `FilterableProductTable`. First, add an instance property `this.state = {filterText: '', inStockOnly: false}` to `FilterableProductTable`'s `constructor` to reflect the initial state of your application. Then, pass `filterText` and `inStockOnly` to `ProductTable` and `SearchBar` as a prop. Finally, use these props to filter the rows in `ProductTable` and set the values of the form fields in `SearchBar`.
+Դուք կնկատեք փոփոխություն ձեր հավելվածի պահվածքի մեջ. `filterText`-ին տվեք `"ball"` արժեքը և թարմացրեք (refresh) հավելվածը։ Դուք կտեսնեք, որ ապրանքների ցուցակը թարմացել է ճիշտ կերպով։
 
-You can start seeing how your application will behave: set `filterText` to `"ball"` and refresh your app. You'll see that the data table is updated correctly.
+## Քայլ 5. ավելացնել տվյալների հակառակ ուղղության հոսք {#step-5-add-inverse-data-flow}
 
-## Step 5: Add Inverse Data Flow {#step-5-add-inverse-data-flow}
+<p data-height="600" data-theme-id="0" data-slug-hash="LzWZvb" data-default-tab="js,result" data-user="rohan10" data-embed-version="2" data-pen-title="Thinking In React: Step 5" class="codepen">Նայիր Pen-ը <a href="https://codepen.io/gaearon/pen/LzWZvb">React մտածելակերպ. քայլ 5</a> <a href="https://codepen.io">CodePen-ում</a>։</p>
 
-<p data-height="600" data-theme-id="0" data-slug-hash="LzWZvb" data-default-tab="js,result" data-user="rohan10" data-embed-version="2" data-pen-title="Thinking In React: Step 5" class="codepen">See the Pen <a href="https://codepen.io/gaearon/pen/LzWZvb">Thinking In React: Step 5</a> on <a href="https://codepen.io">CodePen</a>.</p>
+Մինչ այս, մենք կառուցել ենք հավելված, որն արտապատկերում է կախված հիերարխիայով դեպի ներքև հոսող props-ից ու state-ից։ Հիմա ժամանակն է ապահովել տվյալների հոսք մյուս ուղղությամբ. հիերարխիայի խորքում գտնվող `SearchBar`-ի կոմպոնենտները կարիք ունեն `FilterableProductTable`-ի state-ը թարմացնելու։
 
-So far, we've built an app that renders correctly as a function of props and state flowing down the hierarchy. Now it's time to support data flowing the other way: the form components deep in the hierarchy need to update the state in `FilterableProductTable`.
+React-ը դարձնում է այս տվյալների հոսքը բացահայտ, որպեսզի հեշտ լինի հասկանալ, թե ինչպես է աշխատում ձեր հավելվածը։ Բայց մեզ պետք կգա մի փոքր ավել կոդ գրել ավանդական երկկողմանի տվյալների կապվածությունը ստանալու համար։
 
-React makes this data flow explicit to make it easy to understand how your program works, but it does require a little more typing than traditional two-way data binding.
+Եթե դուք փորձեք գրել կամ սեղմել checkbox-ը օրինակի ընթացիկ տարբերակում, ապա կտեսնեք, որ React-ն անտեսում է ձեր մուտքագրումները։ Սա կանխամտածված է, քանի որ մենք `input`-ում `value` prop-ին տվել էինք `FilterableProductTable`-ից փոխանցված `state`-ի արժեքը։
 
-If you try to type or check the box in the current version of the example, you'll see that React ignores your input. This is intentional, as we've set the `value` prop of the `input` to always be equal to the `state` passed in from `FilterableProductTable`.
+Եկեք մտածենք, թե ինչ ենք ուզում, որ տեղի ունենա։ Մենք ցանկանում ենք լինել վստահ, որ ցանկացած պահի, երբ օգտագործողը փոփոխի form-ը, մենք կթարմացնենք state-ը\` օգտագործողի մուտքագրումն արտացոլելու համար։ Քանի որ կոմպոնենտները պետք է թարմացնեն միայն իրենց state-երը, `FilterableProductTable`-ը կփոխանցի հետկանչի ֆունկցիա `SearchBar`-ին, որը կկանչի, երբ state-ը պետք լինի թարմացնել։ Մենք կարող ենք օգտագործել `onChange` իրադարձությունը դրա մասին տեղեկանալու համար։ `FilterableProductTable`-ի կողմից փոխանցված հետկանչի ֆունկցիաները կկանչեն `setState()`, և հավելվածը կթարմանա։
 
-Let's think about what we want to happen. We want to make sure that whenever the user changes the form, we update the state to reflect the user input. Since components should only update their own state, `FilterableProductTable` will pass callbacks to `SearchBar` that will fire whenever the state should be updated. We can use the `onChange` event on the inputs to be notified of it. The callbacks passed by `FilterableProductTable` will call `setState()`, and the app will be updated.
+Չնայած սա բարդ է թվում, սակայն սա ընդամենը մի քանի տող կոդ է։ ԵՎ իրապես բացահայտ է, թե ինչպես են ձեր տվյալները հոսում հավելվածի միջով։
 
-Though this sounds complex, it's really just a few lines of code. And it's really explicit how your data is flowing throughout the app.
+## Ահա և վերջ {#and-thats-it}
 
-## And That's It {#and-thats-it}
-
-Hopefully, this gives you an idea of how to think about building components and applications with React. While it may be a little more typing than you're used to, remember that code is read far more than it's written, and it's extremely easy to read this modular, explicit code. As you start to build large libraries of components, you'll appreciate this explicitness and modularity, and with code reuse, your lines of code will start to shrink. :)
+Հուսով ենք, որ սա կտա ձեր գաղափար, թե ինչպես մտածեք React-ով կոմպոնենտներ և հավելվածներ կառուցելու մասին։ Չնայած սա պահանջում է մի փոքր ավելի երկար կոդ գրել, քան դուք արել եք, սակայն միշտ հիշեք, որ կոդը ավելի շատ կարդալու համար է, քան\` գրելու. չափազանց հեշտ է կարդալ այս մոդուլային, բացահայտ կոդը։ Երբ սկսեք կառուցել կոմպոնենտների մեծ գրադարաններ, դուք իրապես կգնահատեք այս  բացահայտությունը և մոդուլայնությունը, իսկ կոդի վերա-օգտագործումը կդարձնի ձեր կոդն ավելի կարճ։ :)
