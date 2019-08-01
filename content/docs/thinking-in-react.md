@@ -76,11 +76,7 @@ React-ի հիանալի մասերից մեկն այն է, թե ինչպես է 
 
 ### Փոքրիկ շեղում. props-ի և state-ի տարբերությունը {#a-brief-interlude-props-vs-state}
 
-<<<<<<< HEAD
-React-ում կան երկու տեսակի տվյալների «մոդելներ». props և state։ Կարևոր է հասկանալ տարբերությունը այս երկուսի միջև. անցեք [React-ի պաշտոնական փաստաթղթավորումով](/docs/interactivity-and-dynamic-uis.html), եթե վստահ չեք, թե որն է տարբերությունը։
-=======
-There are two types of "model" data in React: props and state. It's important to understand the distinction between the two; skim [the official React docs](/docs/state-and-lifecycle.html) if you aren't sure what the difference is. See also [FAQ: What is the difference between state and props?](/docs/faq-state.html#what-is-the-difference-between-state-and-props)
->>>>>>> eef56ffdcfa995e3478f85cd9d02f4be01f65b79
+React-ում կան երկու տեսակի տվյալների «մոդելներ». props և state։ Կարևոր է հասկանալ տարբերությունը այս երկուսի միջև. անցեք [React-ի պաշտոնական փաստաթղթավորումով](/docs/state-and-lifecycle.html), եթե վստահ չեք, թե որն է տարբերությունը։ Նայեք նաև [ՀՏՀ. Որն է տարբերությունը «state»-ի և «props»-ի միջև](/docs/faq-state.html#what-is-the-difference-between-state-and-props)։
 
 ## Քայլ 3. սահմանել UI-ի state-ի մինիմալ (բայց ամբողջական) ներկայացումը {#step-3-identify-the-minimal-but-complete-representation-of-ui-state}
 
