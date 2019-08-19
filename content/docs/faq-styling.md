@@ -48,4 +48,8 @@ _Նկատի ունեցեք, որ այս գործառույթը React-ի մաս �
 
 ### Կարո՞ղ եմ React-ում ստեղծել անիմացիաներ {#can-i-do-animations-in-react}
 
+<<<<<<< HEAD
 React-ը կարող է օգտագործվել անիմացիաներ ստեղծելու համար։ Օրինակ. տես\` [React Transition Group](https://reactcommunity.org/react-transition-group/)<sub>eng</sub>-ը և [React Motion](https://github.com/chenglou/react-motion)-ը։
+=======
+React can be used to power animations. See [React Transition Group](https://reactcommunity.org/react-transition-group/) and [React Motion](https://github.com/chenglou/react-motion) or [React Spring](https://github.com/react-spring/react-spring), for example.
+>>>>>>> de497e250340ff597ce4964279369f16315b8b4b
