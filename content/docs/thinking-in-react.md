@@ -49,7 +49,11 @@ React-ի հիանալի մասերից մեկն այն է, թե ինչպես է 
   4. **`ProductCategoryRow` (երկնագույն):** յուրաքանչյուր *կատեգորիայի* համար պատկերում է գլխամասային վերնագիր
   5. **`ProductRow` (կարմիր):** յուրաքանչյուր *ապրանքի* համար պատկերում է տող
 
+<<<<<<< HEAD
 Երբ դուք նայեք `ProductTable`-ին, կտեսնեք, որ նրա գլխամասային վերնագիրը (որը պարունակում է «Name» և «Price» պիտակները) ինքն իրենով առանձին կոմպոնենտ չէ։ Սա նախասիրության հարց է, սակայն կա արգումենտ այն պատրաստելու մյուս եղանակով։ Այս օրինակի պարագայում մենք թողեցինք այն որպես `ProductTable`-ի մաս, որովհետև այն *տվյալների բազմության* արտապատկերման մասն է կազմում, որն էլ `ProductTable`-ի պատասխանատվության տակ է։ Ինչև, եթե այս գլխամասային վերնագիրը բարդանա (օրինակ, եթե մեզ պետք լիներ ավելացնել հնարավորություն դասակարգման համար), ապա, իհարկե, իմաստ կունենար սարքել այն առանձին կոմպոնենտ\` `ProductTableHeader`։
+=======
+If you look at `ProductTable`, you'll see that the table header (containing the "Name" and "Price" labels) isn't its own component. This is a matter of preference, and there's an argument to be made either way. For this example, we left it as part of `ProductTable` because it is part of rendering the *data collection* which is `ProductTable`'s responsibility. However, if this header grows to be complex (e.g., if we were to add affordances for sorting), it would certainly make sense to make this its own `ProductTableHeader` component.
+>>>>>>> 986381c56879983269c52863d9c205c7a7ba0174
 
 Հիմա, երբ տարբերակել ենք մակետի կոմպոնենտները, եկեք դասավորենք նրանց հիերարխայի մեջ։ Կոմպոնենտները, որոնք մակետում գտնվում են ուրիշ կոմպոնենտների մեջ, պետք է հանդիսանան զավակ կոմպոնենտ հիերարխայում.
 
