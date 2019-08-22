@@ -125,10 +125,7 @@
         title: Hooks API Reference
       - id: hooks-faq
         title: Hooks FAQ
-<<<<<<< HEAD
-- title: Աջակցում
-=======
-- title: Testing
+- title: Թեստավորում
   items:
     - id: testing 
       title: Testing Overview
@@ -136,8 +133,7 @@
       title: Testing Recipes
     - id: testing-environments
       title: Testing Environments
-- title: Contributing
->>>>>>> ddbd064d41d719f9ec0c2f6a4227f797a5828310
+- title: Աջակցում
   items:
   - id: how-to-contribute
     title: How to Contribute
