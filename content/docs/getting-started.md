@@ -119,7 +119,11 @@ React-ի ոչ բոլոր թողարկումներն ունեն իրենց սեփ
 
 ## Տարբերակված փաստաթղթավորում {#versioned-documentation}
 
+<<<<<<< HEAD
 Այս փաստաթղթավորումը միշտ արտացոլում է React-ի վերջին կայուն տարբերակը։ Սկսած React 16-ից, դուք կարող եք գտնել փաստաթղթավորման հին տարբերակները [առանձին էջում](/versions)։ Նկատեք, որ նախորդ տարբերակների փաստաթղթավորումը ֆիքսված է թողարկման ժամանակով և շարունակաբար չի թարմացվում։
+=======
+This documentation always reflects the latest stable version of React. Since React 16, you can find older versions of the documentation on a [separate page](/versions). Note that documentation for past versions is snapshotted at the time of the release, and isn't being continuously updated.
+>>>>>>> 6dcb963479953586f462ce31fddf35158c0598a0
 
 ## Ինչ-որ բան բա՞ց է թողնված {#something-missing}
 
