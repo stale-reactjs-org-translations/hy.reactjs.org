@@ -144,7 +144,6 @@ const Header = ({location}: {location: Location}) => (
             title="Համայնք"
             to="/community/support.html"
           />
-=======
           {navHeader.items.map(link => (
             <HeaderLink
               key={link.title}
@@ -153,7 +152,6 @@ const Header = ({location}: {location: Location}) => (
               to={link.to}
             />
           ))}
->>>>>>> 8b30ae43439818009213da86eca872a3d869c5eb
         </nav>
 
         <DocSearch />

@@ -1,38 +1,38 @@
 community:
-  title: Community
+  title: Համայնք
 
 docs:
-  title: Docs
+  title: Փաստաթղթավորում
 
 more:
-  title: More
+  title: Ավելին
   items:
-    - title: Tutorial
+    - title: Ձեռնարկ
       to: /tutorial/tutorial.html
-    - title: Blog
+    - title: Բլոգ
       to: /blog
-    - title: Acknowledgements
+    - title: Շնորհակալությունները
       to: /acknowledgements.html
     - title: React Native
       to: https://facebook.github.io/react-native/
       external: true
 
 channels:
-  title: Channels
+  title: Ալիքներ
   items:
-    - title: GitHub
+    - title: Github
       to: https://github.com/facebook/react
       external: true
     - title: Stack Overflow
       to: https://stackoverflow.com/questions/tagged/reactjs
       external: true
-    - title: Discussion Forums
-      to: https://reactjs.org/community/support.html#popular-discussion-forums
+    - title: Քննարկումների ֆորում
+      to: https://hy.reactjs.org/community/support.html#popular-discussion-forums
       external: true
     - title: Reactiflux Chat
       to: https://discord.gg/0ZcbPKXt5bZjGY5n
       external: true
-    - title: DEV Community
+    - title: Համայնք DEV-ում
       to: https://dev.to/t/react
       external: true
     - title: Facebook
