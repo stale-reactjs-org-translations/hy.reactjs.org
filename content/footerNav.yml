@@ -30,7 +30,7 @@ channels:
       to: https://hy.reactjs.org/community/support.html#popular-discussion-forums
       external: true
     - title: Reactiflux Chat
-      to: https://discord.gg/0ZcbPKXt5bZjGY5n
+      to: https://discord.gg/reactiflux
       external: true
     - title: Համայնք DEV-ում
       to: https://dev.to/t/react
