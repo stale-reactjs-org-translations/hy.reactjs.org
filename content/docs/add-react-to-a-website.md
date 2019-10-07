@@ -69,13 +69,21 @@ React-ը իսկզբանե նախագծված է եղել այնպես, որ հն
 
 Ստեղծեք `like_button.js` անունով ֆայլ\` ձեր HTML էջի հարևանությամբ։
 
+<<<<<<< HEAD
 Բացեք **[այս սկզբնական կոդը](https://cdn.rawgit.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** և տեղադրեք այն ֆայլում, որը ստեղծեցիք։
+=======
+Open **[this starter code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** and paste it into the file you created.
+>>>>>>> 5c371e5e3fd8f92e1d06dfdf1f28edc50fb5d83f
 
 >Խորհուրդ
 >
 >Այս կոդը հայտարարում է `LikeButton` անունով React կոմպոնենտ։ Մի անհանգստացեք, եթե դուք դեռ չեք հասկանում այն. մենք կծածկենք React-ի կառուցողական բլոկները ավելի ուշ մեր [ձեռնարկում](/tutorial/tutorial.html) և [հիմանական գաղափարների ուղեցույցում](/docs/hello-world.html)։ Հիմա, եկեք ուղղակի նայենք, թե ինչպես է այն պատկերվում էկրանին։
 
+<<<<<<< HEAD
 **[Սկզբնական կոդից](https://cdn.rawgit.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** հետո ավելացրեք ևս երկու տող `like_button.js`-ի վերջում.
+=======
+After **[the starter code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, add two lines to the bottom of `like_button.js`:
+>>>>>>> 5c371e5e3fd8f92e1d06dfdf1f28edc50fb5d83f
 
 ```js{3,4}
 // ... տեղադրված սկզբնական կոդը ...
@@ -195,7 +203,11 @@ npx babel --watch src --out-dir . --presets react-app/prod
 
 Մի սպասեք սրա ավարտին. այս հրամանը JSX-ի համար միացնում է ավտոմատ «դիտորդ»(watcher)։
 
+<<<<<<< HEAD
 Եթե դուք հիմա ստեղծեք `src/like_button.js` անունով ֆայլ, այս **[JSX-ի սկզբնական կոդով](https://cdn.rawgit.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js)**, դիտորդը կստեղծի նախապրոցեսավորված `like_button.js` մաքուր JavaScript կոդով\` հարմար զննարկչին։ Երբ դուք խմբագրեք(edit) JSX կոդով ֆայլը, փոխակերպումն ավտոմատ կաշխատի։
+=======
+If you now create a file called `src/like_button.js` with this **[JSX starter code](https://gist.github.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js)**, the watcher will create a preprocessed `like_button.js` with the plain JavaScript code suitable for the browser. When you edit the source file with JSX, the transform will re-run automatically.
+>>>>>>> 5c371e5e3fd8f92e1d06dfdf1f28edc50fb5d83f
 
 Որպես բոնուս, սա նաև թույլ կտա ձեզ օգտագործել ժամանակակից JavaScript շարահյուսության հատկություններ, ինչպիսիք են կլասները, առանց անհանգստանալու հին զննարկիչների համար։ Գործիքը, որը հենց նոր օգտագործեցինք, կոչվում է Babel. կարող եք սովորել ավելին [նրա փաստաթղթավորումից](https://babeljs.io/docs/en/babel-cli/)։
 
