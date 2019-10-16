@@ -324,6 +324,6 @@ class Calculator extends React.Component {
 
 Եթե ինչ-որ բան կարող է ստացվել/հաշվարկվել props-ից կամ state-ից, ապա, հավանաբար, այն չպետք է լինի state-ում։ Օրինակ, `celsiusValue`-ը և `fahrenheitValue`-ը պահելու փոխարեն, պահում ենք միայն վերջին խմբագրված `temperature`-ը և նրա `scale`-ը։ Մյուս input-ի արժեքը միշտ կարող է հաշվվել նրանցից `render()` մեթոդում։ Դա թույլ է տալիս մեզ մաքրել կամ կիրառել կլորեցում մյուս դաշտի վրա\` առանց կորցնելու որևէ ճշտություն օգտագործողի մուտքագրումից։
 
-Երբ տեսնում ենք ինչ-որ սխալ բան UI-ում, ապա կարող եք օգտագործել [React Developer Tools](https://github.com/facebook/react-devtools)<sub>`eng`</sub>\` դիտարկելու prop-երը և տեղաշարժվելու ծառով, մինչ գտնեք այն կոմպոնենտը, որը պատասխանատու է վիճակի թարմացման համար։ Սա թույլ կտա հետևել սխալներին մինչև սկզբնաղբյուրը.
+Երբ տեսնում ենք ինչ-որ սխալ բան UI-ում, ապա կարող եք օգտագործել [React Developer Tools](https://github.com/facebook/react/tree/master/packages/react-devtools)<sub>`eng`</sub>\` դիտարկելու prop-երը և տեղաշարժվելու ծառով, մինչ գտնեք այն կոմպոնենտը, որը պատասխանատու է վիճակի թարմացման համար։ Սա թույլ կտա հետևել սխալներին մինչև սկզբնաղբյուրը.
 
 <img src="../images/docs/react-devtools-state.gif" alt="Monitoring State in React DevTools" max-width="100%" height="100%">
