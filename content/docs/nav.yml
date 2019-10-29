@@ -7,15 +7,10 @@
     - id: create-a-new-react-app
       title: Ստեղծել նոր React հավելված
     - id: cdn-links
-<<<<<<< HEAD
       title: CDN հղումներ
-- title: Հիմնական գաղափարներ
-=======
-      title: CDN Links
     - id: release-channels
-      title: Release Channels
-- title: Main Concepts
->>>>>>> 081bb31226919062938ef924472ba1b4170facfc
+      title: Թողարկման Ալիքներ
+- title: Հիմնական գաղափարներ
   isOrdered: true
   items:
     - id: hello-world
@@ -113,8 +108,7 @@
       title: JS Environment Requirements
     - id: glossary
       title: Glossary
-<<<<<<< HEAD
-- title: Հուկեր (նոր)
+- title: Հուկեր
   isOrdered: true
   items:
       - id: hooks-intro
@@ -134,28 +128,6 @@
       - id: hooks-faq
         title: Hooks FAQ
 - title: Թեստավորում
-=======
-- title: Hooks
-  isOrdered: true
-  items:
-    - id: hooks-intro
-      title: Introducing Hooks
-    - id: hooks-overview
-      title: Hooks at a Glance
-    - id: hooks-state
-      title: Using the State Hook
-    - id: hooks-effect
-      title: Using the Effect Hook
-    - id: hooks-rules
-      title: Rules of Hooks
-    - id: hooks-custom
-      title: Building Your Own Hooks
-    - id: hooks-reference
-      title: Hooks API Reference
-    - id: hooks-faq
-      title: Hooks FAQ
-- title: Testing
->>>>>>> 081bb31226919062938ef924472ba1b4170facfc
   items:
     - id: testing
       title: Testing Overview
@@ -163,20 +135,7 @@
       title: Testing Recipes
     - id: testing-environments
       title: Testing Environments
-<<<<<<< HEAD
-- title: Աջակցում
-  items:
-  - id: how-to-contribute
-    title: How to Contribute
-  - id: codebase-overview
-    title: Codebase Overview
-  - id: implementation-notes
-    title: Implementation Notes
-  - id: design-principles
-    title: Design Principles
-- title: ՀՏՀ
-=======
-- title: Concurrent Mode (Experimental)
+- title: համաժամանակային ռեժիմ (էքսպերիմենտալ)
   isOrdered: true
   items:
     - id: concurrent-mode-intro
@@ -189,18 +148,17 @@
       title: Adopting Concurrent Mode
     - id: concurrent-mode-reference
       title: Concurrent Mode API Reference
-- title: Contributing
+- title: Աջակցում
   items:
-    - id: how-to-contribute
-      title: How to Contribute
-    - id: codebase-overview
-      title: Codebase Overview
-    - id: implementation-notes
-      title: Implementation Notes
-    - id: design-principles
-      title: Design Principles
-- title: FAQ
->>>>>>> 081bb31226919062938ef924472ba1b4170facfc
+  - id: how-to-contribute
+    title: How to Contribute
+  - id: codebase-overview
+    title: Codebase Overview
+  - id: implementation-notes
+    title: Implementation Notes
+  - id: design-principles
+    title: Design Principles
+- title: ՀՏՀ
   items:
     - id: faq-ajax
       title: AJAX և API-ներ
