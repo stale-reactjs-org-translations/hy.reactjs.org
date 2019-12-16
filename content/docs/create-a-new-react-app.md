@@ -73,9 +73,13 @@ npm start
 
 - **[Neutrino](https://neutrinojs.org/)**<sub>`eng`</sub>-ն համատեղում է իր մեջ [webpack](https://webpack.js.org/)-ի հզորությունը և preset-ների պարզությունը. ներառում է preset [React հավելվածների](https://neutrinojs.org/packages/react/) և [React կոմպոնենտների](https://neutrinojs.org/packages/react-components/) համար։
 
+<<<<<<< HEAD
 - **[nwb](https://github.com/insin/nwb)**<sub>`eng`</sub>-ը հիանալի է մասնավորապես [npm-ի համար React կոմպոնենտեր հրապարակելու](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb)<sub>`eng`</sub> համար։ Այն [կարող է օգտագործվել](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb)<sub>`eng`</sub> նաև React հավելվածներ ստեղծելու համար։
 
 - **[Parcel](https://parceljs.org/)**<sub>`eng`</sub>-ն արագ, զրո կարգավորումներով վեբ հավելվածների bundler է, որն աշխատում է [React-ի հետ](https://parceljs.org/recipes.html#react)<sub>`eng`</sub>։
+=======
+- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes.html#react).
+>>>>>>> 401b97e9591ac573eaf35c7cf57e5f145276d140
 
 - **[Razzle](https://github.com/jaredpalmer/razzle)**<sub>`eng`</sub>-ը սերվերում արտապատկերող framework է, որը չի պահանջում որևէ կարգավորում, բայց առաջարկում է ավելի մեծ ճկունություն, քան Next.js-ը։
 
