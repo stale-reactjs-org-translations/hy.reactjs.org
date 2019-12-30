@@ -55,11 +55,7 @@ function ActionLink() {
 
 Այստեղ `e`-ն արհեստական իրադարձություն է։ React-ը սահմանում է այս արհեստական իրադարձությունները համաձայն [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/)<sub>`eng`</sub>-ին։ Այսպիսով դուք կարիք չունեք մտահոգվելու տարաբնույթ զննարկիչների համատեղելիության համար։ Տես\` [`SyntheticEvent`](/docs/events.html) ուղեցույցը ավելին իմանալու համար։
 
-<<<<<<< HEAD
 Երբ օգտագործում եք React, դուք սովորաբար կարիք չունեք կանչելու addEventListener, որպեսզի ավելացնեք listener-ներ DOM էլեմնտներ վրա, վերջինիս ստեղծվելուց հետո։
-=======
-When using React, you generally don't need to call `addEventListener` to add listeners to a DOM element after it is created. Instead, just provide a listener when the element is initially rendered.
->>>>>>> 5b6ad388804aaa5cf5504ccd04329f52960e17ae
 
 Երբ դուք ստեղծում եք կոմպոնտենտ\` օգտագործելով [ES6 կլաս](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes)<sub>`eng`</sub>, դա նշանակում է, որ իրադարձությունների մշակողը պետք է լինի կլասի մեթոդ։ Օրինակ\` այս `Toggle` կոմպոնտենտը արտապատկերում է մի կոճակ, որը օգտվողին թույլ է տալիս կատարել վիճակի փոփոխություն «ՄԻԱՑՆԵԼ»-ի և «ԱՆՋԱՏԵԼ»-ի միջև\` 
 
@@ -146,11 +142,7 @@ class LoggingButton extends React.Component {
 
 ## Փոխանցել արգումենտներ  իրադարձություն մշակողներին {#passing-arguments-to-event-handlers}
 
-<<<<<<< HEAD
 Ցիկլի ներսում սովորաբար անհրաժեշտ է լինում իրադարձություն մշակողներին փոխանցել հավելյալ պարամետրներ։ Օրինակ, եթե `id`-ն տողի տարբերակիչն է, ապա և՛ առաջին տարբերակը կաշխատի, և՛ երկրորդը\`
-=======
-Inside a loop, it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
->>>>>>> 5b6ad388804aaa5cf5504ccd04329f52960e17ae
 
 ```js
 <button onClick={(e) => this.deleteRow(id, e)}>Ջնջել տողը</button>
