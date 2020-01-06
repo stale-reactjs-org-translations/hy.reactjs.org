@@ -181,8 +181,4 @@ const element = {
 
 >**Խորհուրդ:**
 >
-<<<<<<< HEAD
->Մենք խորհուրդ ենք տալիս օգտագործել [«Babel լեզվի սահմանում»](https://babeljs.io/docs/editors)-ը ձեր խմբագրիչի համար, որպեսզի ES6 և JSX կոդերն ընդգծվեն ինչպես հարկն է։ Այս վեբկայքն օգտագործում է [«Oceanic Next»](https://github.com/voronianski/oceanic-next-color-scheme) գունային սխեման, որը համատեղելի է դրա հետ։
-=======
->We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
->>>>>>> 071f5b0e1622465fb6fe5cf6c1cbd2aaef7c5ef4
+>Մենք խորհուրդ ենք տալիս օգտագործել [«Babel լեզվի սահմանում»](https://babeljs.io/docs/editors)-ը ձեր խմբագրիչի համար, որպեսզի ES6 և JSX կոդերն ընդգծվեն ինչպես հարկն է։

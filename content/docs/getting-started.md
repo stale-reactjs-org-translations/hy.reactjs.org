@@ -48,11 +48,7 @@ React-ը իսկզբանե նախագծված է եղել այնպես, որ հն
 
 React նախագիծ սկսելիս, [հասարակ HTML էջը script թեգերի հետ](/docs/add-react-to-a-website.html) կարող է մնալ լավագույն տարբերակը։ Դրա տեղադրումը տևում է մեկ րոպե։
 
-<<<<<<< HEAD
-Ձեր հավելվածի զարգացմանը զուգընթաց, դուք կարող եք ցանկանալ դիտարկել ավելի ինտեգրված տեղադրում։ Կան մի քանի [JavaScript գործիքների հավաքածուներ](/docs/create-a-new-react-app.html), որոնք մենք խորհուրդ ենք տալիս ավելի մեծ հավելվածների համար։ Նրանցից յուրաքանչյուրը կարող է աշխատել գրեթե առանց կարգավորումների և թույլ կտա ձեզ ամբողջությամբ բացահայտել React-ի հարուստ էկոհամակարգը։
-=======
-As your application grows, you might want to consider a more integrated setup. There are several JavaScript toolchains we recommend for larger applications. Each of them can work with little to no configuration and lets you take full advantage of the rich React ecosystem. [Learn how.](/docs/create-a-new-react-app.html)
->>>>>>> 071f5b0e1622465fb6fe5cf6c1cbd2aaef7c5ef4
+Ձեր հավելվածի զարգացմանը զուգընթաց, դուք կարող եք ցանկանալ դիտարկել ավելի ինտեգրված տեղադրում։ Կան մի քանի JavaScript գործիքների հավաքածուներ, որոնք մենք խորհուրդ ենք տալիս ավելի մեծ հավելվածների համար։ Նրանցից յուրաքանչյուրը կարող է աշխատել գրեթե առանց կարգավորումների և թույլ կտա ձեզ ամբողջությամբ բացահայտել React-ի հարուստ էկոհամակարգը։ [Սովորի՛ր ինչպես](/docs/create-a-new-react-app.html)։
 
 ## Սովորել React {#learn-react}
 
