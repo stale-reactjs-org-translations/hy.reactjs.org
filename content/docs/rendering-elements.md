@@ -71,6 +71,10 @@ React DOM-ը համեմատում է էլեմենտը և նրա զավակներ
 
 ![DOM դիտարկիչը ցուց է տալիս յուրաքանչյուր թարմացում](../images/docs/granular-dom-updates.gif)
 
+<<<<<<< HEAD
 Չնայած նրան որ մեր ստեղծած էլեմենտը նկարագրում է ողջ UI ծառը յուրաքանչյուր tick-ի ժամանակ, React DOM-ը թարմացնում է միայն այն տեքստային հանգույցը, որի կոնտենտը ենթարկվել է փոփոխության։
+=======
+Even though we create an element describing the whole UI tree on every tick, only the text node whose contents have changed gets updated by React DOM.
+>>>>>>> 2ab1ca5007a37ca509863a212293f1c6b26d0afc
 
 Փորձը ցույց է տալիս, որ մտածելը թե ինչ տեսք պետք է ունենա UI-ը յուրաքանչյուր պահին` վերացնում է սխալների մի ամբողջ դաս, քան մտածելը թե ինչպես փոխել UI-ը ժամանակի ընթացքում։
