@@ -9,8 +9,12 @@ redirect_from:
 ---
 Իրադարձությունների մշակումը React-ի էլեմենտներում շատ նման է իրադարձությունների մշակմանը DOM էլեմենտներում։ Կան որոշ շարահյուսական տարբերություններ։
 
+<<<<<<< HEAD
 * React-ում իրադարձությունների անունները փոքրատառի փոխարեն ուղտաԳիր են։
 * JSX-ում  տողային ֆունկցիայի փոխարեն, որպես իրադարձություն մշակող դուք փոխանցում եք ֆունկցիա։
+=======
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+>>>>>>> f81b909ce97dc253998a192f367551cb2b40d66f
 
 Օրինակ, HTML-ը\`
 
@@ -130,8 +134,13 @@ class LoggingButton extends React.Component {
   render() {
     // Այս շարահյուսությունը ապահովում է `this`-ի կցված լինելը handleClick-ին
     return (
+<<<<<<< HEAD
       <button onClick={(e) => this.handleClick(e)}>
         Սեղմել այստեղ
+=======
+      <button onClick={() => this.handleClick()}>
+        Click me
+>>>>>>> f81b909ce97dc253998a192f367551cb2b40d66f
       </button>
     );
   }
