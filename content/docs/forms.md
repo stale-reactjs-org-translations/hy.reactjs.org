@@ -68,6 +68,7 @@ class NameForm extends React.Component {
 
 Քանի որ `value` ատրիբուտը տեղադրված է մեր form էլեմենտի վրա, պատկերվող արժեքը միշտ կլինի `this.state.value`-ն\` դարձնելով React-ի վիճակը ճշմարտության աղբյուր։ Ու քանի որ օգտագործողի ամեն կոճակ սեղմելիս աշխատում է `handleChange`-ը, որը թարմացնում է React-ի state-ը, ապա պատկերվող արժեքը կթարմացվի հենց որ օգտագործողը սեղմի կոճակը։
 
+<<<<<<< HEAD
 Կառավարվող կոմպոնենտներում վիճակի ցանկացած փոփոխության կապված է մշակող ֆունկցիա։ Դա կհեշտացնի օգտագործողի մուտքագրած արժեքի փոփոխումը կամ վավերացումը։ Օրինակ. եթե ցանկանում ենք, որ օգտագործողի կողմից գրված անունները ամբողջությամբ լինեն մեծատառ, մենք կարող ենք գրել `handleChange`-ն այսպես.
 
 ```javascript{2}
@@ -75,6 +76,9 @@ handleChange(event) {
   this.setState({value: event.target.value.toUpperCase()});
 }
 ```
+=======
+With a controlled component, the input's value is always driven by the React state. While this means you have to type a bit more code, you can now pass the value to other UI elements too, or reset it from other event handlers.
+>>>>>>> b4b59062e59d56da37274c6de1fa4a134d2d8f49
 
 ## textarea թեգ {#the-textarea-tag}
 
@@ -220,7 +224,7 @@ class Reservation extends React.Component {
 
   handleInputChange(event) {
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.name === 'isGoing' ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
