@@ -44,7 +44,11 @@ class Welcome extends React.Component {
 
 Վերը նշված երկու կոմպոնենտները React-ի տեսանկյունից համարժեք են։
 
+<<<<<<< HEAD
 Կլասներն ունեն մի քանի լրացուցիչ հնարավորություններ, որոնց մասին մենք կխոսենք [հաջորդ բաժնում](/docs/state-and-lifecycle.html)։ Մինչ այդ, մենք կօգտագործենք ֆունկցիա-կոմպոնենտներ նրանց հակիրճության համար։
+=======
+Function and Class components both have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html).
+>>>>>>> b4b59062e59d56da37274c6de1fa4a134d2d8f49
 
 ## Կոմպոնենտի արտապատկերում {#rendering-a-component}
 
@@ -60,7 +64,11 @@ const element = <div />;
 const element = <Welcome name="Անահիտ»" />;
 ```
 
+<<<<<<< HEAD
 Երբ React-ը տեսնում է էլեմենտ, որն իրենից ներկայացնում է օգտագործողի կողմից հայտարարված կոմպոնենտ, ապա փոխանցում է JSX ատրիբուտներ այդ կոմպոնենտին որպես մեկ օբյեկտ։ Մենք անվանում ենք այդ օբյեկտը «props»։
+=======
+When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object "props".
+>>>>>>> b4b59062e59d56da37274c6de1fa4a134d2d8f49
 
 Օրինակ, այս կոդը կարտապատկերի «Ողջույն, Անահիտ».
 
