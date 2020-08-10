@@ -122,7 +122,11 @@ ReactDOM.render(
 
 ### Տրամաբանական && օպերատօրը if-ի փոխարեն {#inline-if-with-logical--operator}
 
+<<<<<<< HEAD
 Դուք կարող եք [ներդնել ցանկացած JSX արտահայտություն](/docs/introducing-jsx.html#embedding-expressions-in-jsx) ձևավոր փակագծերի մեջ։ Այն ներառում է JavaScript-ի տրամաբանական `&&` օպերատորը։ Այն կարող է լինել հարմար էլեմենտը պայմանկանորեն ավելացնելու համար։
+=======
+You may [embed expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+>>>>>>> 80c16779a751ef997373adf95c47dbc9b1592eb6
 
 ```js{6-10}
 function Mailbox(props) {
@@ -175,11 +179,10 @@ render() {
   const isLoggedIn = this.state.isLoggedIn;
   return (
     <div>
-      {isLoggedIn ? (
-        <LogoutButton onClick={this.handleLogoutClick} />
-      ) : (
-        <LoginButton onClick={this.handleLoginClick} />
-      )}
+      {isLoggedIn
+        ? <LogoutButton onClick={this.handleLogoutClick} />
+        : <LoginButton onClick={this.handleLoginClick} />
+      }
     </div>
   );
 }
