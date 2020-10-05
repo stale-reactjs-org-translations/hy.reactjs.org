@@ -3,7 +3,7 @@ id: cdn-links
 title: CDN հղումներ
 permalink: docs/cdn-links.html
 prev: create-a-new-react-app.html
-next: hello-world.html
+next: release-channels.html
 ---
 
 Ե՛Վ React-ը, և՛ ReactDOM-ը հասանելի են CDN-ից։
