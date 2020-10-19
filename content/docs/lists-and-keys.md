@@ -185,9 +185,14 @@ function ListItem(props) {
 function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
+<<<<<<< HEAD
     // Ճիշտ. բանալին պետք է նշված լինի զանգվածի մեջ.
     <ListItem key={number.toString()}
               value={number} />
+=======
+    // Correct! Key should be specified inside the array.
+    <ListItem key={number.toString()} value={number} />
+>>>>>>> 4e6cee1f82737aa915afd87de0cd4a8393de3fc8
   );
   return (
     <ul>
