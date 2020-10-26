@@ -36,7 +36,11 @@ React-ը իսկզբանե նախագծված է եղել այնպես, որ հն
 
 ### Ինտերակտիվ օնլայն խմբագրիչներ {#online-playgrounds}
 
+<<<<<<< HEAD
 Եթե ցանկանում եք խաղալ React-ի հետ, ապա կարող եք օգտագործել ինտերակտիվ օնլայն խմբագրիչներ։ Փորձիր «Ողջույն, աշխարհ» կաղապարը [CodePen-ում](codepen://hello-world), [CodeSandbox-ում](https://codesandbox.io/s/new) կամ [Glitch-ում](https://glitch.com/edit/#!/remix/starter-react-template)։
+=======
+If you're interested in playing around with React, you can use an online code playground. Try a Hello World template on [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), [Glitch](https://glitch.com/edit/#!/remix/starter-react-template), or [Stackblitz](https://stackblitz.com/fork/react).
+>>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
 
 Եթե նախընտրում եք օգտագործել ձեր սեփական տեքստային խմբագրիչը, ապա կարող եք նաև [ներբեռնել այս HTML ֆայլը](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html), փոփոխել այն և բացել լոկալ ֆայլային համակարգից ձեր զննարկչի մեջ։ Այն, runtime, կոդի փոխակերպում է իրականացնում, որը դանդաղ է. այդ իսկ պատճառով մենք կառաջարկենք այն օգտագործել միայն հասարակ ցուցադրությունների համար։
 
@@ -83,7 +87,11 @@ React-ի փաստաթղթավորումը ենթադրում է որոշ ծան�
 
 ### Գործնական ձեռնարկ {#practical-tutorial}
 
+<<<<<<< HEAD
 Եթե դուք նախընտրում եք **սովորել կիրառելով,** ապա կարդացեք մեր [գործնական ձեռնարկը](/tutorial/tutorial.html)։ Այս ձեռնարկում, մենք կառուցում ենք tic-tac-toe խաղը React-ով։ Միգուցե ցանկանաք այն բաց թողնել, քանի որ երբևիցե խաղեր չեք կառուցել, բայց խորհուրդ կտանք փորձել այն։ Գործելակերպերը, որոնք դուք կսովորեք ձեռնարկում հիմքային են\` *ցանկացած* React հավելվածների համար, և նրանց տիրապետումը ձեզ կտա ավելի խորը պատկերացում։
+=======
+If you prefer to **learn by doing,** check out our [practical tutorial](/tutorial/tutorial.html). In this tutorial, we build a tic-tac-toe game in React. You might be tempted to skip it because you're not into building games -- but give it a chance. The techniques you'll learn in the tutorial are fundamental to building *any* React apps, and mastering it will give you a much deeper understanding.
+>>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
 
 ### Քայլ-առ-քայլ ուղեցույց {#step-by-step-guide}
 
