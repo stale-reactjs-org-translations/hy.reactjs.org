@@ -92,7 +92,7 @@ function getGreeting(user) {
 Դուք կարող եք օգտագործել ապաթարցեր\` հայտարարելու համար տողային լիտերալներ որպես ատրիբուտներ.
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <div tabIndex={0}></div>;
 ```
 
 Դուք նաև կարող եք օգտագործել ձևավոր փակագծեր\` ներդնելու համար JavaScript արտահայտություններ ատրիբուտում.
@@ -177,8 +177,16 @@ const element = {
 
 Այս օբյեկտները կոչվում են «React էլեմենտներ»։ Դուք կարող եք դրանք համարել այն բաների նկարագրություն, որոնք ցանկանում եք տեսնել էկրանին։ React-ը կարդում է այդ օբյեկտները և օգտագործում է նրանց DOM-ը կառուցելու և այն թարմ պահելու համար։
 
+<<<<<<< HEAD
 Մենք կուսումնասիրենք React էլեմենտների արտապատկերումը DOM-ում հաջորդ գլխում։
+=======
+We will explore rendering React elements to the DOM in the [next section](/docs/rendering-elements.html).
+>>>>>>> 5e437a10ed4e89cd5eaf990ce4f43e0857592b53
 
 >**Խորհուրդ:**
 >
+<<<<<<< HEAD
 >Մենք խորհուրդ ենք տալիս օգտագործել [«Babel լեզվի սահմանում»](https://babeljs.io/docs/editors)-ը ձեր խմբագրիչի համար, որպեսզի ES6 և JSX կոդերն ընդգծվեն ինչպես հարկն է։
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> 5e437a10ed4e89cd5eaf990ce4f43e0857592b53
