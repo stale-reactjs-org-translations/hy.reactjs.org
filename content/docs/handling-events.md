@@ -9,8 +9,12 @@ redirect_from:
 ---
 Իրադարձությունների մշակումը React-ի էլեմենտներում շատ նման է իրադարձությունների մշակմանը DOM էլեմենտներում։ Կան որոշ շարահյուսական տարբերություններ։
 
+<<<<<<< HEAD
 * React-ում իրադարձությունների անունները փոքրատառի փոխարեն ուղտաԳիր են։
 * JSX-ում  տողային ֆունկցիայի փոխարեն, որպես իրադարձություն մշակող դուք փոխանցում եք ֆունկցիա։
+=======
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+>>>>>>> adfa67ad01b7e4c6114921cdf12e9e4cf1a1c786
 
 Օրինակ, HTML-ը\`
 
@@ -53,7 +57,11 @@ function ActionLink() {
 }
 ```
 
+<<<<<<< HEAD
 Այստեղ `e`-ն արհեստական իրադարձություն է։ React-ը սահմանում է այս արհեստական իրադարձությունները համաձայն [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/)<sub>`eng`</sub>-ին։ Այսպիսով դուք կարիք չունեք մտահոգվելու տարաբնույթ զննարկիչների համատեղելիության համար։ Տես\` [`SyntheticEvent`](/docs/events.html) ուղեցույցը ավելին իմանալու համար։
+=======
+Here, `e` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don't need to worry about cross-browser compatibility. React events do not work exactly the same as native events. See the [`SyntheticEvent`](/docs/events.html) reference guide to learn more.
+>>>>>>> adfa67ad01b7e4c6114921cdf12e9e4cf1a1c786
 
 Երբ օգտագործում եք React, դուք սովորաբար կարիք չունեք կանչելու addEventListener, որպեսզի ավելացնեք listener-ներ DOM էլեմնտներ վրա, վերջինիս ստեղծվելուց հետո։
 
@@ -130,8 +138,13 @@ class LoggingButton extends React.Component {
   render() {
     // Այս շարահյուսությունը ապահովում է `this`-ի կցված լինելը handleClick-ին
     return (
+<<<<<<< HEAD
       <button onClick={(e) => this.handleClick(e)}>
         Սեղմել այստեղ
+=======
+      <button onClick={() => this.handleClick()}>
+        Click me
+>>>>>>> adfa67ad01b7e4c6114921cdf12e9e4cf1a1c786
       </button>
     );
   }
