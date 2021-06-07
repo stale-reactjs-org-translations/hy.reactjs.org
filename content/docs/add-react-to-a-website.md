@@ -52,10 +52,17 @@ React-ը իսկզբանե նախագծված է եղել այնպես, որ հն
 ```html{5,6,9}
   <!-- ... ուրիշ HTML ... -->
 
+<<<<<<< HEAD
   <!-- Ներբեռնել React-ը։ -->
   <!-- Նշում: տեղակայման(deploy) ժամանակ, փոխարինեք «development.js»-ը «production.min.js»-ով։ -->
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+=======
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+>>>>>>> 68e4efcf93b6e589355f6aa3cbc3f3c811c0ad37
 
   <!-- Ներբեռնել մեր React կոմպոնենտը։ -->
   <script src="like_button.js"></script>
@@ -84,7 +91,11 @@ const domContainer = document.querySelector('#like_button_container');
 ReactDOM.render(e(LikeButton), domContainer);
 ```
 
+<<<<<<< HEAD
 Այս երկու տող կոդը գտնում է `<div>`-ը, որն առաջին քայլում ավելացրել էինք HTML-ում, և հետո ցույց է տալիս մեր React կոմպոնենտը\` «Like» կոճակը դրա ներսում։
+=======
+These two lines of code find the `<div>` we added to our HTML in the first step, and then display our "Like" button React component inside of it.
+>>>>>>> 68e4efcf93b6e589355f6aa3cbc3f3c811c0ad37
 
 ### Ահա և վերջ {#thats-it}
 
@@ -115,8 +126,8 @@ ReactDOM.render(e(LikeButton), domContainer);
 Եթե դուք արդեն մինիֆիկացրել եք հավելվածի սկրիպերը, ապա նաև եղեք համոզված, որ տեղակայված HTML-ը ներբեռնում է React-ի այն տարբերակները, որոնք վերջանում են `production.min.js`-ով.
 
 ```js
-<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
 Եթե դուք չեք մինիֆիկացրել ձեր սկրիպները, [ահա դա անելու տարբերակներից մեկը](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3)։
@@ -184,7 +195,7 @@ JSX-ի ավելացումը պրոյեկտում չի պահանջում bundler
 Ստեղծեք `src` անունով պանակ և աշխատեցրեք այս հրամանը տերմինալում.
 
 ```
-npx babel --watch src --out-dir . --presets react-app/prod 
+npx babel --watch src --out-dir . --presets react-app/prod
 ```
 
 >Խորհուրդ
