@@ -42,7 +42,11 @@ CSS կլասներն ընդհանուր առմամբ ավելի լավ են ար
 
 ### Ի՞նչ է CSS-in-JS-ը {#what-is-css-in-js}
 
+<<<<<<< HEAD
 «CSS-in-JS»-ը հղվում է ձևանմուշին, որտեղ CSS-ը արտաքին ֆայլերում սահմանվելու փոխարեն այն ստեղծվում է JavaScript-ի միջոցով։ Կարդա CSS-in-JS գրադարանների համեմատությունն [այստեղ](https://github.com/MicheleBertoli/css-in-js)<sub>eng</sub>։
+=======
+"CSS-in-JS" refers to a pattern where CSS is composed using JavaScript instead of defined in external files.
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 
 _Նկատի ունեցեք, որ այս գործառույթը React-ի մաս չի կազմում, այն տրամադրվում է կողմնակի գրադարանների կողմից։_ React-ը չգիտի, թե ինչպես են ձևավորումները սահմանված. եթե դեռ չեք կողմնորոշվել, ապա սկզբի համար կարող եք, սովորականի պես, սահմանել ձևավորումներն առանձնացված `*.css` ֆայլում և հղվել դրանց օգտագործելով [`className`](/docs/dom-elements.html#classname)։
 

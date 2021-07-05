@@ -39,7 +39,11 @@ React-ի թիմը նախ և առաջ խորհուրդ է տալիս այս լո�
 
 [Create React App](https://github.com/facebookincubator/create-react-app)<sub>`eng`</sub>-ը հարմար միջավայր է **React-ը սովորելու**  համար, և լավագույն տարբերակը React-ով **նոր [single-page](/docs/glossary.html#single-page-application) հավելված** կառուցելու համար։
 
+<<<<<<< HEAD
 Այն տեղադրում է ձեր կառուցման միջավայրը\` թույլ տալով օգտագործել վերջին JavaScript հատկությունները, տրամադրում է գեղեցիկ փոխազդեցության փորձ ծրագրավորողի համար, և օպտիմիզացնում է ձեր հավելվածը production-ի համար։ Դուք պետք է ունենաք Node >= 8.10 և npm >= 5.6 ձեր մեքենայի վրա։ Պրոյեկտ ստեղծելու համար աշխատեցրեք.
+=======
+It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production. You’ll need to have [Node >= 10.16 and npm >= 5.6](https://nodejs.org/en/) on your machine. To create a project, run:
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 
 ```bash
 npx create-react-app my-app
@@ -73,7 +77,13 @@ npm start
 
 - **[Neutrino](https://neutrinojs.org/)**<sub>`eng`</sub>-ն համատեղում է իր մեջ [webpack](https://webpack.js.org/)-ի հզորությունը և preset-ների պարզությունը. ներառում է preset [React հավելվածների](https://neutrinojs.org/packages/react/) և [React կոմպոնենտների](https://neutrinojs.org/packages/react-components/) համար։
 
+<<<<<<< HEAD
 - **[Parcel](https://parceljs.org/)**<sub>`eng`</sub>-ն արագ, զրո կարգավորումներով վեբ հավելվածների bundler է, որն աշխատում է [React-ի հետ](https://parceljs.org/recipes.html#react)<sub>`eng`</sub>։
+=======
+- **[Nx](https://nx.dev/react)** is a toolkit for full-stack monorepo development, with built-in support for React, Next.js, [Express](https://expressjs.com/), and more.
+
+- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes.html#react).
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 
 - **[Razzle](https://github.com/jaredpalmer/razzle)**<sub>`eng`</sub>-ը սերվերում արտապատկերող framework է, որը չի պահանջում որևէ կարգավորում, բայց առաջարկում է ավելի մեծ ճկունություն, քան Next.js-ը։
 

@@ -100,8 +100,6 @@
       title: SyntheticEvent
     - id: test-utils
       title: Test Utilities
-    - id: shallow-renderer
-      title: Shallow Renderer
     - id: test-renderer
       title: Test Renderer
     - id: javascript-environment-requirements
@@ -135,6 +133,7 @@
       title: Testing Recipes
     - id: testing-environments
       title: Testing Environments
+<<<<<<< HEAD
 - title: համաժամանակային ռեժիմ (էքսպերիմենտալ)
   isOrdered: true
   items:
@@ -149,6 +148,9 @@
     - id: concurrent-mode-reference
       title: Concurrent Mode API Reference
 - title: Աջակցում
+=======
+- title: Contributing
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
   items:
   - id: how-to-contribute
     title: How to Contribute
