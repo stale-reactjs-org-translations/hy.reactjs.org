@@ -410,12 +410,15 @@ this.setState(function(state, props) {
 Կոմպոնենտը կարող է փոխանցել իր state-ը ներքև, որպես props, իր զավակ կոմպոնենտներին.
 
 ```js
+<<<<<<< HEAD
 <h2>Ժամը {this.state.date.toLocaleTimeString()}-ն է։</h2>
 ```
 
 Սա նաև աշխատում է օգտագործողի կողմից հայտարարված կոմպոնենտների համար.
 
 ```js
+=======
+>>>>>>> a11c2534062bd79cc1e6e34db0e149f928df35bb
 <FormattedDate date={this.state.date} />
 ```
 
