@@ -9,8 +9,12 @@ redirect_from:
 ---
 Իրադարձությունների մշակումը React-ի էլեմենտներում շատ նման է իրադարձությունների մշակմանը DOM էլեմենտներում։ Կան որոշ շարահյուսական տարբերություններ։
 
+<<<<<<< HEAD
 * React-ում իրադարձությունների անունները փոքրատառի փոխարեն ուղտաԳիր են։
 * JSX-ում  տողային ֆունկցիայի փոխարեն, որպես իրադարձություն մշակող դուք փոխանցում եք ֆունկցիա։
+=======
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 
 Օրինակ, HTML-ը\`
 
@@ -28,20 +32,30 @@ React-ում մի փոքր այլ է\`
 </button>
 ```
 
+<<<<<<< HEAD
 Մեկ այլ տարբերությունն է այն, որ React-ում դուք չեք կարող վերադարձնել `false`, որպեսզի կանխեք լռությամբ սահմանված պահվածքը։ Անհրաժեշտ է բացահայտ կանչել `preventDefault`-ը։ Օրինակ\` դիտարկիչում հղումը նոր էջում բացելու գործողությունը կանխելու համար, սովորական HTML-ում, դուք կարող եք գրել\`
 
 ```html
 <a href="#" onclick="console.log('Հղումը սեղմվել է'); return false">
   Սեղմել այստեղ
 </a>
+=======
+Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. For example, with plain HTML, to prevent the default form behavior of submitting, you can write:
+
+```html
+<form onsubmit="console.log('You clicked submit.'); return false">
+  <button type="submit">Submit</button>
+</form>
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 ```
 
 React-ում դրա փոխարեն կարող է լինել\`
 
-```js{2-5,8}
-function ActionLink() {
-  function handleClick(e) {
+```js{3}
+function Form() {
+  function handleSubmit(e) {
     e.preventDefault();
+<<<<<<< HEAD
     console.log('Հղումը սեղմվել է');
   }
 
@@ -49,11 +63,24 @@ function ActionLink() {
     <a href="#" onClick={handleClick}>
       Սեղմել այստեղ
     </a>
+=======
+    console.log('You clicked submit.');
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
   );
 }
 ```
 
+<<<<<<< HEAD
 Այստեղ `e`-ն արհեստական իրադարձություն է։ React-ը սահմանում է այս արհեստական իրադարձությունները համաձայն [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/)<sub>`eng`</sub>-ին։ Այսպիսով դուք կարիք չունեք մտահոգվելու տարաբնույթ զննարկիչների համատեղելիության համար։ Տես\` [`SyntheticEvent`](/docs/events.html) ուղեցույցը ավելին իմանալու համար։
+=======
+Here, `e` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don't need to worry about cross-browser compatibility. React events do not work exactly the same as native events. See the [`SyntheticEvent`](/docs/events.html) reference guide to learn more.
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 
 Երբ օգտագործում եք React, դուք սովորաբար կարիք չունեք կանչելու addEventListener, որպեսզի ավելացնեք listener-ներ DOM էլեմնտներ վրա, վերջինիս ստեղծվելուց հետո։
 
@@ -70,8 +97,8 @@ class Toggle extends React.Component {
   }
 
   handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
     }));
   }
 
@@ -130,8 +157,13 @@ class LoggingButton extends React.Component {
   render() {
     // Այս շարահյուսությունը ապահովում է `this`-ի կցված լինելը handleClick-ին
     return (
+<<<<<<< HEAD
       <button onClick={(e) => this.handleClick(e)}>
         Սեղմել այստեղ
+=======
+      <button onClick={() => this.handleClick()}>
+        Click me
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
       </button>
     );
   }

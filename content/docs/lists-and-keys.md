@@ -185,9 +185,14 @@ function ListItem(props) {
 function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
+<<<<<<< HEAD
     // Ճիշտ. բանալին պետք է նշված լինի զանգվածի մեջ.
     <ListItem key={number.toString()}
               value={number} />
+=======
+    // Correct! Key should be specified inside the array.
+    <ListItem key={number.toString()} value={number} />
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
   );
   return (
     <ul>
@@ -209,7 +214,11 @@ ReactDOM.render(
 
 ### Բանալիները պետք է լինեն եզակի միայն հարևանների շրջանում {#keys-must-only-be-unique-among-siblings}
 
+<<<<<<< HEAD
 Բանալիները, որոնք օգտագործվում են զանգվածի մեջ, պետք է լինեն ունիկալ հարևան էլեմենտների մեջ։ Սակայն, նրանք պետք չէ որ լինեն գլոբալ ունիկալ։ Մենք կարող ենք օգտագործել նույն բանալիները երբ ներկայացնում ենք երկու տարբեր զանգվածներ\`
+=======
+Keys used within arrays should be unique among their siblings. However, they don't need to be globally unique. We can use the same keys when we produce two different arrays:
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {

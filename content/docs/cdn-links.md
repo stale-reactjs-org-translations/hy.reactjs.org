@@ -3,24 +3,28 @@ id: cdn-links
 title: CDN հղումներ
 permalink: docs/cdn-links.html
 prev: create-a-new-react-app.html
-next: hello-world.html
+next: release-channels.html
 ---
 
 Ե՛Վ React-ը, և՛ ReactDOM-ը հասանելի են CDN-ից։
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 ```
 
 Վերը նշված տարբերակները միայն կառուցման ընթացքի(development)-ի համար են և հարմար չեն production-ի համար։ React-ի մինիֆիկացված և օպտիմիզացված տարբերակները հասանելի են\`
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 ```
 
+<<<<<<< HEAD
 `react`-ի և `react-dom`-ի հատուկ տարբերակ բեռնելու համար, փոխարինեք `16`-ը տարբերակի համարով։
+=======
+To load a specific version of `react` and `react-dom`, replace `17` with the version number.
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 
 ### Ինչի՞ համար է `crossorigin` ատրիբուտը {#why-the-crossorigin-attribute}
 

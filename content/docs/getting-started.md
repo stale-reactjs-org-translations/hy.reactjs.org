@@ -36,9 +36,15 @@ React-ը իսկզբանե նախագծված է եղել այնպես, որ հն
 
 ### Ինտերակտիվ օնլայն խմբագրիչներ {#online-playgrounds}
 
+<<<<<<< HEAD
 Եթե ցանկանում եք խաղալ React-ի հետ, ապա կարող եք օգտագործել ինտերակտիվ օնլայն խմբագրիչներ։ Փորձիր «Ողջույն, աշխարհ» կաղապարը [CodePen-ում](codepen://hello-world), [CodeSandbox-ում](https://codesandbox.io/s/new) կամ [Glitch-ում](https://glitch.com/edit/#!/remix/starter-react-template)։
 
 Եթե նախընտրում եք օգտագործել ձեր սեփական տեքստային խմբագրիչը, ապա կարող եք նաև [ներբեռնել այս HTML ֆայլը](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html), փոփոխել այն և բացել լոկալ ֆայլային համակարգից ձեր զննարկչի մեջ։ Այն, runtime, կոդի փոխակերպում է իրականացնում, որը դանդաղ է. այդ իսկ պատճառով մենք կառաջարկենք այն օգտագործել միայն հասարակ ցուցադրությունների համար։
+=======
+If you're interested in playing around with React, you can use an online code playground. Try a Hello World template on [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), or [Stackblitz](https://stackblitz.com/fork/react).
+
+If you prefer to use your own text editor, you can also [download this HTML file](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html), edit it, and open it from the local filesystem in your browser. It does a slow runtime code transformation, so we'd only recommend using this for simple demos.
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 
 ### Ավելացնել React-ը կայքում {#add-react-to-a-website}
 
@@ -83,7 +89,11 @@ React-ի փաստաթղթավորումը ենթադրում է որոշ ծան�
 
 ### Գործնական ձեռնարկ {#practical-tutorial}
 
+<<<<<<< HEAD
 Եթե դուք նախընտրում եք **սովորել կիրառելով,** ապա կարդացեք մեր [գործնական ձեռնարկը](/tutorial/tutorial.html)։ Այս ձեռնարկում, մենք կառուցում ենք tic-tac-toe խաղը React-ով։ Միգուցե ցանկանաք այն բաց թողնել, քանի որ երբևիցե խաղեր չեք կառուցել, բայց խորհուրդ կտանք փորձել այն։ Գործելակերպերը, որոնք դուք կսովորեք ձեռնարկում հիմքային են\` *ցանկացած* React հավելվածների համար, և նրանց տիրապետումը ձեզ կտա ավելի խորը պատկերացում։
+=======
+If you prefer to **learn by doing,** check out our [practical tutorial](/tutorial/tutorial.html). In this tutorial, we build a tic-tac-toe game in React. You might be tempted to skip it because you're not into building games -- but give it a chance. The techniques you'll learn in the tutorial are fundamental to building *any* React apps, and mastering it will give you a much deeper understanding.
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 
 ### Քայլ-առ-քայլ ուղեցույց {#step-by-step-guide}
 
@@ -115,7 +125,11 @@ React-ի փաստաթղթավորումը ենթադրում է որոշ ծան�
 
 Դուք նաև կարող եք հետևել [@reactjs էջին](https://twitter.com/reactjs) Twitter-ում, բայց ոչ մի կերևոր բան բաց չեք թողնի\` կարդալով միայն բլոգը։
 
+<<<<<<< HEAD
 React-ի ոչ բոլոր թողարկումներն ունեն իրենց սեփական բլոգ փոստը, բայց դուք կարող եք գտնել մանրամասն changelog ամեն թողարկման համար\` [React-ի պահոցի `CHANGELOG.md` ֆայլում](https://github.com/facebook/react/blob/master/CHANGELOG.md), ինչպես նաև [Թողարկումներ](https://github.com/facebook/react/releases) էջում։
+=======
+Not every React release deserves its own blog post, but you can find a detailed changelog for every release in the [`CHANGELOG.md` file in the React repository](https://github.com/facebook/react/blob/main/CHANGELOG.md), as well as on the [Releases](https://github.com/facebook/react/releases) page.
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 
 ## Տարբերակված փաստաթղթավորում {#versioned-documentation}
 

@@ -44,7 +44,11 @@ class Welcome extends React.Component {
 
 Վերը նշված երկու կոմպոնենտները React-ի տեսանկյունից համարժեք են։
 
+<<<<<<< HEAD
 Կլասներն ունեն մի քանի լրացուցիչ հնարավորություններ, որոնց մասին մենք կխոսենք [հաջորդ բաժնում](/docs/state-and-lifecycle.html)։ Մինչ այդ, մենք կօգտագործենք ֆունկցիա-կոմպոնենտներ նրանց հակիրճության համար։
+=======
+Function and Class components both have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html).
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 
 ## Կոմպոնենտի արտապատկերում {#rendering-a-component}
 
@@ -60,7 +64,11 @@ const element = <div />;
 const element = <Welcome name="Անահիտ»" />;
 ```
 
+<<<<<<< HEAD
 Երբ React-ը տեսնում է էլեմենտ, որն իրենից ներկայացնում է օգտագործողի կողմից հայտարարված կոմպոնենտ, ապա փոխանցում է JSX ատրիբուտներ այդ կոմպոնենտին որպես մեկ օբյեկտ։ Մենք անվանում ենք այդ օբյեկտը «props»։
+=======
+When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object "props".
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 
 Օրինակ, այս կոդը կարտապատկերի «Ողջույն, Անահիտ».
 
@@ -233,7 +241,11 @@ function Comment(props) {
 
 [Փորձել CodePen-ում](codepen://components-and-props/extracting-components-continued)
 
+<<<<<<< HEAD
 Սկզբում, կոմպոնենտների տարանջատումը կարող է թվալ «անշնորհակալ» գործ, բայց բազմակի օգտագործվող կոմպոնենտների պալիտրա ունենալը կարդարացնի իրեն ավելի մեծ հավելվածներում։ Հիմնական սկզբունքն այն է, որ եթե ձեր UI-ի մի մասն օգտագործվում է բազում անգամներ (`Button`, `Panel`, `Avatar`) կամ բավականին բարդ է ինքն իրենով (`App`, `FeedStory`, `Comment`), ապա այն հարմար թեկնածու է բազմակի օգտագործման կոմպոնենտ դառնալու համար։
+=======
+Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be extracted to a separate component.
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 
 ## Prop-երը կարելի է միայն կարդալ (read-only) {#props-are-read-only}
 
