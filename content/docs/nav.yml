@@ -167,7 +167,7 @@
     - id: faq-functions
       title: Passing Functions to Components
     - id: faq-state
-      title: Component State
+      title: Կոմպոնենտի վիճակ
     - id: faq-styling
       title: Ձևավորում և CSS
     - id: faq-structure

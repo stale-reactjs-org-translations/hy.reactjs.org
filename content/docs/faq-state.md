@@ -1,106 +1,106 @@
 ---
 id: faq-state
-title: Component State
+title: Կոմպոնենտի վիճակ
 permalink: docs/faq-state.html
 layout: docs
 category: FAQ
 ---
 
-### What does `setState` do? {#what-does-setstate-do}
+### Ի՞նչ է `setState`-ը անում {#what-does-setstate-do}
 
-`setState()` schedules an update to a component's `state` object. When state changes, the component responds by re-rendering.
+`setState()`-ը պլանավորում է կոմպոնենտի `state` օբյեկտի թարմացում։ state-ի թարմացումից հետո կոմպոնենտը արտապատկերվում է։
 
-### What is the difference between `state` and `props`? {#what-is-the-difference-between-state-and-props}
+### Ի՞նչ տարբերություն կա `state`-ի և `props`-ի միջև {#what-is-the-difference-between-state-and-props}
 
-[`props`](/docs/components-and-props.html) (short for "properties") and [`state`](/docs/state-and-lifecycle.html) are both plain JavaScript objects. While both hold information that influences the output of render, they are different in one important way: `props` get passed *to* the component (similar to function parameters) whereas `state` is managed *within* the component (similar to variables declared within a function).
+[`props`](/docs/components-and-props.html)-ը («properties»-ի կրճատ տարբերակը) և [`state`](/docs/state-and-lifecycle.html)-ը պարզ օբյեկտներ են։ Չնայած երկուսն էլ պահում են ինֆորմացիա\` որը ազդում է արտապատկերման վրա, դրանք ունեն մեկ կարևոր տարբերություն. `props`-ը *փոխանցվում է* կոմպոնենտին (ինչպես ֆունկցիայի պարամետրերը),  մինչդեռ `state`-ը *տեղակայված է* կոմպոնենտի ներսում (ինչպես փոփոխականները հայտարարվում են ֆունկցիայի ներսում)։
 
-Here are some good resources for further reading on when to use `props` vs `state`:
-* [Props vs State](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
-* [ReactJS: Props vs. State](https://lucybain.com/blog/2016/react-state-vs-pros/)
+Ահա մի քանի օգտակար ռեսուրսներ լրացուցիչ ընթերցման համար, թե երբ օգտագործել `props` և երբ `state`։
+* [Props, թե State](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)<sub>eng</sub>
+* [ReactJS: Props, թե State](https://lucybain.com/blog/2016/react-state-vs-pros/)<sub>eng</sub>
 
-### Why is `setState` giving me the wrong value? {#why-is-setstate-giving-me-the-wrong-value}
+### Ի՞նչու է `setState`-ը վերադարձնում սխալ արժեք {#why-is-setstate-giving-me-the-wrong-value}
 
-In React, both `this.props` and `this.state` represent the *rendered* values, i.e. what's currently on the screen.
+React-ում `this.props`-ը և `this.state`-ը ներկայացնում են *արտապատկերված* արժեքներ, այսինքն\` այն ինչ տվյալ պահին երևում է էկրանին։
 
-Calls to `setState` are asynchronous - don't rely on `this.state` to reflect the new value immediately after calling `setState`. Pass an updater function instead of an object if you need to compute values based on the current state (see below for details).
+`setState`-ի կանչերը անսինխրոն են - `setState` կանչելուց հետո, երբ ուզում եք անմիջապես արտացոլել նոր արժեքը\` հույս մի դրեք `this.state`-ի վրա։ Եթե ուզում եք հաշվարկել արժեքները հիմնվելով ընթացիք state-ի վրա, օբյեկտի փոխարեն `setState`-ին փոխանցեք թարմացնող ֆունկցիա։ (ստորև ներկայացված է մանրամասն օրինակ)։
 
-Example of code that will *not* behave as expected:
+Կոդի օրինակ\` որը *չի* աշխատի այնպես, ինչպես ակնկալվում է.
 
 ```jsx
 incrementCount() {
-  // Note: this will *not* work as intended.
+  // Նշում. սա *չի* աշխատի նախատեսվածին պես։
   this.setState({count: this.state.count + 1});
 }
 
 handleSomething() {
-  // Let's say `this.state.count` starts at 0.
+  // Պատկերացնենք `this.state.count`-ը սկսվում է 0-ից։
   this.incrementCount();
   this.incrementCount();
   this.incrementCount();
-  // When React re-renders the component, `this.state.count` will be 1, but you expected 3.
+  // Երբ React-ը արտապատկերի կոմպոնենտը `this.state.count`-ի արժեքը կլինի 1, չնայած ակնկալում ենք 3:
 
-  // This is because `incrementCount()` function above reads from `this.state.count`,
-  // but React doesn't update `this.state.count` until the component is re-rendered.
-  // So `incrementCount()` ends up reading `this.state.count` as 0 every time, and sets it to 1.
+  // Պատճառը կայանում է նրանում, որ վերոնշյալ `incrementCount()`-ը վերցնում է `this.state.count`-ը,
+  // բայց React-ը չի թարմացնում `this.state.count`-ը, մինչև կոմպոնենտի արտապատկերումը։
+  // Այսինքն `incrementCount()`-ը ամեն անգամ ստանում է `this.state.count`-ի արժեքը` որպես 0, և դարձնում 1: 
 
-  // The fix is described below!
+  // Լուծումը նկարագրված է ստորև
 }
 ```
 
-See below for how to fix this problem.
+Ստորև ներկայացված է խնդրի լուծումը։
 
-### How do I update state with values that depend on the current state? {#how-do-i-update-state-with-values-that-depend-on-the-current-state}
+### Ինպե՞ս կարող եմ թարմացնել state-ը, օգտագործելով արժեքներ\` որոնք կախված են ընթացիք state-ից {#how-do-i-update-state-with-values-that-depend-on-the-current-state}
 
-Pass a function instead of an object to `setState` to ensure the call always uses the most updated version of state (see below). 
+Օբյեկտի փոխարեն, `setState`-ին փոխանցեք ֆունկցիա, համոզված լինելու համար, որ ֆունկցիայի կանչը միշտ օգտագործում է state-ի վերջին թարմացված տարբերակը (օրինակը\` ստորև)։ 
 
-### What is the difference between passing an object or a function in `setState`? {#what-is-the-difference-between-passing-an-object-or-a-function-in-setstate}
+### Ի՞նչ տարբերություն կա `setState`-ին օբյեկտ կամ ֆունկցիա փոխանցելու միջև {#what-is-the-difference-between-passing-an-object-or-a-function-in-setstate}
 
-Passing an update function allows you to access the current state value inside the updater. Since `setState` calls are batched, this lets you chain updates and ensure they build on top of each other instead of conflicting:
+Երբ մենք փոխանցում ենք թարմացնող ֆունկցիա, դա մեզ թույլ է տալիս դրա ներսում ունենալ ընթացիկ state-ի արժեքը։ Քանի որ `setState`-ի կանչերը խմբավորված էն, դա թույլ է տալիս ունենալ շղթայական թարմացումներ, և ապահովում է, որ առանց հակասությունների դրանք կատարվեն հաջորդականությամբ.
 
 ```jsx
 incrementCount() {
   this.setState((state) => {
-    // Important: read `state` instead of `this.state` when updating.
+    // Կարևոր է. թարմացման ժամանակ, `this.state`-ի փոխարեն օգտագործեք `state`։
     return {count: state.count + 1}
   });
 }
 
 handleSomething() {
-  // Let's say `this.state.count` starts at 0.
+  // Պատկերացնենք `this.state.count`-ը սկսվում է 0-ից։
   this.incrementCount();
   this.incrementCount();
   this.incrementCount();
 
-  // If you read `this.state.count` now, it would still be 0.
-  // But when React re-renders the component, it will be 3.
+  // Եթե օգտագործեք `this.state.count`-ը` հիմա, դրա արժեքը դեռևս 0 կլինի։
+  // Սակայն, երբ React-ը արտապատկերի կոմպոնենտը` արժեքը կլինի 3:
 }
 ```
 
-[Learn more about setState](/docs/react-component.html#setstate)
+[Կարդացեք ավելին setState-ի մասին](/docs/react-component.html#setstate)
 
-### When is `setState` asynchronous? {#when-is-setstate-asynchronous}
+### Ե՞րբ է `setState`-ը անսինխրոն {#when-is-setstate-asynchronous}
 
-Currently, `setState` is asynchronous inside event handlers.
+Ներկայումս `setState`-ը իրադարձության մշակողների ներսում աշխատում է անսինխրոն կերպով։
 
-This ensures, for example, that if both `Parent` and `Child` call `setState` during a click event, `Child` isn't re-rendered twice. Instead, React "flushes" the state updates at the end of the browser event. This results in significant performance improvements in larger apps.
+Սա երաշխավորում է, որ օրինակ, երբ և’ `Parent`-ը և’ `Child`-ը կանչեն `setState` սեղմման իրադարձության ժամանակ, `Child`-ը երկու անգամ չվերա-արտապատկերվի։ Փոխարենը, React-ը «հետաձգում» է state-ի թարմացումները մինչ զննարկչի իրադարձության ավարտը։ Այս արդյունքը էական է արտադրողականության բարելավումների տեսանկյունից\` խոշոր ծրագրերում։
 
-This is an implementation detail so avoid relying on it directly. In the future versions, React will batch updates by default in more cases.
+Սա իրականացման ընդամենը մի մասն է, հետեւաբար անմիջապես մի վստահեք դրան: React-ի հետագա տարբերակներում state-ի թարմացումները խմբավորված կլինեն լռելյայնորեն։
 
-### Why doesn't React update `this.state` synchronously? {#why-doesnt-react-update-thisstate-synchronously}
+### Ի՞նչու React-ը չի թարմացնում `this.state`-ը համաժամանակյա կերպով {#why-doesnt-react-update-thisstate-synchronously}
 
-As explained in the previous section, React intentionally "waits" until all components call `setState()` in their event handlers before starting to re-render. This boosts performance by avoiding unnecessary re-renders.
+Ինչպես ասվում է վերը նշվածում, մինչև, որ կսկսի վերա-արտապատկերումը, React-ը դիտավորյալ «սպասում է» մինչև բոլոր կոմպոնենտները իրենց իրադարձության մշակողի ներսում կանչեն `setState()`։ Դա խթանում է արտադրողականությանը\` խուսափելով ավելորդ վերա-արտապատկերումներից։
 
-However, you might still be wondering why React doesn't just update `this.state` immediately without re-rendering.
+Ամեն դեպքում, գուցե դեռ զարմացած եք, թե ինչի React-ը ուղղակի անմիջապես չի թարմացնում `this.state`-ը, առանց արտապատկերման։
 
-There are two main reasons:
+Այստեղ երկու հիմնական պատճառ կա.
 
-* This would break the consistency between `props` and `state`, causing issues that are very hard to debug.
-* This would make some of the new features we're working on impossible to implement.
+* Սա կխախտի `props`-ի և `state`-ի աշխատանքի տրամաբանությունը, կհանգեցնի չափազանց դժվար կարգաբերելի խնդրի։
+* Սա անհնար կդարձնի ինտեգրել մի շարք նոր գործառույթներ, որոնք այս պահին աշխատանքային փուլում են։ 
 
-This [GitHub comment](https://github.com/facebook/react/issues/11527#issuecomment-360199710) dives deep into the specific examples.
+Այս [GitHub-ի մեկնաբանությունը](https://github.com/facebook/react/issues/11527#issuecomment-360199710) հաշվի է առնում ավելի կոնկրետ օրինակներ, որոնք կօգնեն ավելի խորը ուսումնասիրելուն։։
 
-### Should I use a state management library like Redux or MobX? {#should-i-use-a-state-management-library-like-redux-or-mobx}
+### Արդյո՞ք պետք է օգտագործեմ վիճակի կառավարման գրադարան ինչպիսիք են Redux-ը կամ MobX-ը {#should-i-use-a-state-management-library-like-redux-or-mobx}
 
-[Maybe.](https://redux.js.org/faq/general#when-should-i-use-redux)
+[Միգուցե։](https://redux.js.org/faq/general#when-should-i-use-redux)<sub>eng</sub>
 
-It's a good idea to get to know React first, before adding in additional libraries. You can build quite complex applications using only React.
+Լավ գաղափար է սկզբից սովորել React, մինչև հավելյալ գրադարաններ ավելացնելը։ Դուք կարող եք կառուցել բավականին համալիր հավելվածներ օգտագործելով միայն React։
