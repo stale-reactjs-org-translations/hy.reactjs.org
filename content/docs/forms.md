@@ -9,7 +9,11 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
+<<<<<<< HEAD
 HTML form էլեմենտները React-ում ուրիշ DOM էլեմենտների հետ համեմատած մի փոքր այլ կերպ են աշխատում, որովհետև form էլեմենտներն իրականում պահում են որոշ ներքին վիճակ։ Դիտարկենք form-ի հետևյալ օրինակը.
+=======
+HTML form elements work a bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+>>>>>>> 78f78a664fcfaa2e5d9650d9662a67a8ab028661
 
 ```html
 <form>
@@ -31,7 +35,7 @@ HTML-ում, form էլեմենտները, ինչպիսիք են `<input>`-ը, `<
 
 Օրինակ. եթե մենք ցանկանում եք, որ նախորդ օրինակը հաստատման ժամանակ նաև տպի օգտագործողի անունը, մենք կարող ենք գրել form-ը որպես կառավարվող կոմպոնենտ.
 
-```javascript{4,10-12,24}
+```javascript{4,10-12,21,24}
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
@@ -68,6 +72,7 @@ class NameForm extends React.Component {
 
 Քանի որ `value` ատրիբուտը տեղադրված է մեր form էլեմենտի վրա, պատկերվող արժեքը միշտ կլինի `this.state.value`-ն\` դարձնելով React-ի վիճակը ճշմարտության աղբյուր։ Ու քանի որ օգտագործողի ամեն կոճակ սեղմելիս աշխատում է `handleChange`-ը, որը թարմացնում է React-ի state-ը, ապա պատկերվող արժեքը կթարմացվի հենց որ օգտագործողը սեղմի կոճակը։
 
+<<<<<<< HEAD
 Կառավարվող կոմպոնենտներում վիճակի ցանկացած փոփոխության կապված է մշակող ֆունկցիա։ Դա կհեշտացնի օգտագործողի մուտքագրած արժեքի փոփոխումը կամ վավերացումը։ Օրինակ. եթե ցանկանում ենք, որ օգտագործողի կողմից գրված անունները ամբողջությամբ լինեն մեծատառ, մենք կարող ենք գրել `handleChange`-ն այսպես.
 
 ```javascript{2}
@@ -75,6 +80,9 @@ handleChange(event) {
   this.setState({value: event.target.value.toUpperCase()});
 }
 ```
+=======
+With a controlled component, the input's value is always driven by the React state. While this means you have to type a bit more code, you can now pass the value to other UI elements too, or reset it from other event handlers.
+>>>>>>> 78f78a664fcfaa2e5d9650d9662a67a8ab028661
 
 ## textarea թեգ {#the-textarea-tag}
 
@@ -276,7 +284,11 @@ this.setState(partialState);
 
 ## Կառավարվող Input-ի null արժեք {#controlled-input-null-value}
 
+<<<<<<< HEAD
 Սահմանելով value prop-ը [կառավարվող կոմպոնենտի](/docs/forms.html#controlled-components) վրա\` կանխվում են օգտագործողի փոփոխությունները input-ում, քանի դեռ դուք չեք ցանկացել հակառակը։ Եթե դուք սահմանել եք `value`-ն, բայց input-ը մնացել է խմբագրելի(editable), ապա միգուցե `value`-ին պատահմամբ փոխանցել եք `undefined` կամ `null`։
+=======
+Specifying the `value` prop on a [controlled component](/docs/forms.html#controlled-components) prevents the user from changing the input unless you desire so. If you've specified a `value` but the input is still editable, you may have accidentally set `value` to `undefined` or `null`.
+>>>>>>> 78f78a664fcfaa2e5d9650d9662a67a8ab028661
 
 Հետևյալ կոդը ցուցադրում է վերը նշվածը։ (Այս input-ը սկզբում «կողպված» է, բայց փոքր-ինչ հետո այն կդառնա խմբագրելի։)
 
