@@ -39,7 +39,11 @@ React-ը JavaScrip գրադարան է, և այդ իսկ պատճառով, մե�
 
 >Նշում
 >
+<<<<<<< HEAD
 >Այս ուղեցույցի օրինակներում ժամանակ առ ժամանակ օգտագործվում է JavaScript-ի ավելի նոր շարահյուսություն։ Եթե դուք չեք աշխատել JavaScript-ի հետ վերջին մի քանի տարին, ապա [այս երեք կետերը](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) կօգնեն Ձեզ։
+=======
+>This guide occasionally uses some newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>>>>>>> b41b1dc35679c01c3252e7d512ce28c5e100d0a4
 
 
 ## Սկսենք! {#lets-get-started}
