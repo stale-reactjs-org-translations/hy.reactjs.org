@@ -42,10 +42,18 @@ CSS կլասներն ընդհանուր առմամբ ավելի լավ են ար
 
 ### Ի՞նչ է CSS-in-JS-ը {#what-is-css-in-js}
 
+<<<<<<< HEAD
 «CSS-in-JS»-ը հղվում է ձևանմուշին, որտեղ CSS-ը արտաքին ֆայլերում սահմանվելու փոխարեն այն ստեղծվում է JavaScript-ի միջոցով։ Կարդա CSS-in-JS գրադարանների համեմատությունն [այստեղ](https://github.com/MicheleBertoli/css-in-js)<sub>eng</sub>։
+=======
+"CSS-in-JS" refers to a pattern where CSS is composed using JavaScript instead of defined in external files.
+>>>>>>> 7994045415a9066f8663ee5403e874edbb4c5f83
 
 _Նկատի ունեցեք, որ այս գործառույթը React-ի մաս չի կազմում, այն տրամադրվում է կողմնակի գրադարանների կողմից։_ React-ը չգիտի, թե ինչպես են ձևավորումները սահմանված. եթե դեռ չեք կողմնորոշվել, ապա սկզբի համար կարող եք, սովորականի պես, սահմանել ձևավորումներն առանձնացված `*.css` ֆայլում և հղվել դրանց օգտագործելով [`className`](/docs/dom-elements.html#classname)։
 
 ### Կարո՞ղ եմ React-ում ստեղծել անիմացիաներ {#can-i-do-animations-in-react}
 
+<<<<<<< HEAD
 React-ը կարող է օգտագործվել անիմացիաներ ստեղծելու համար։ Օրինակ. տես\` [React Transition Group](https://reactcommunity.org/react-transition-group/)<sub>eng</sub>-ը և [React Motion](https://github.com/chenglou/react-motion)-ը կամ [React Spring](https://github.com/react-spring/react-spring)-ը։
+=======
+React can be used to power animations. See [React Transition Group](https://reactcommunity.org/react-transition-group/), [React Motion](https://github.com/chenglou/react-motion), [React Spring](https://github.com/react-spring/react-spring), or [Framer Motion](https://framer.com/motion), for example.
+>>>>>>> 7994045415a9066f8663ee5403e874edbb4c5f83
