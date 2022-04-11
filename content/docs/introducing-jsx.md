@@ -33,6 +33,7 @@ React-ը [չի պահանջում](/docs/react-without-jsx.html) JSX-ի օգտա
 Ստորև ներկայացված օրինակում մենք հայտարարում ենք `name` անունով փոփոխական և օգտագործում այն JSX-ի ներսում\` փաթաթելով այն ձևավոր փակագծերով.
 
 ```js{1,2}
+<<<<<<< HEAD
 const name = 'Պողոս Պողոսյան';
 const element = <h1>Ողջույն, {name}</h1>;
 
@@ -40,6 +41,10 @@ ReactDOM.render(
   element,
   document.getElementById('root')
 );
+=======
+const name = 'Josh Perez';
+const element = <h1>Hello, {name}</h1>;
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
 ```
 
 JSX-ում\` ձևավոր փակագծերի ներսում, դուք կարող եք տեղադրել ցանկացած վավեր [JavaScript արտահայտություն](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions)<sub>`eng`</sub>։ Օրինակ. `2 + 2`, `user.firstName`, կամ `formatName(user)`. սրանք բոլորը վավեր JavaScript արտահայտություններ են։
@@ -61,14 +66,13 @@ const element = (
     Ողջույն, {formatName(user)}!
   </h1>
 );
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
 ```
 
+<<<<<<< HEAD
 [Փորձել CodePen-ում](codepen://introducing-jsx)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/PGEjdG?editors=1010)**
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
 
 Մենք բաժանում ենք JSX-ը բազմաթիվ տողերի ընթեռնելիության համար։ Այդպիսի դեպքերում, չնայած դա պարտադիր չէ, մենք նաև խորհուրդ ենք տալիս դնել դրանց փակագծերի մեջ\` [կետ-ստորակետների ավտոմատ տեղադրման](https://stackoverflow.com/q/2846283)<sub>`eng`</sub> ժամանակ անկանխատեսելի խնդիրներից խուսափելու համար։
 
@@ -92,7 +96,7 @@ function getGreeting(user) {
 Դուք կարող եք օգտագործել ապաթարցեր\` հայտարարելու համար տողային լիտերալներ որպես ատրիբուտներ.
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <a href="https://www.reactjs.org"> link </a>;
 ```
 
 Դուք նաև կարող եք օգտագործել ձևավոր փակագծեր\` ներդնելու համար JavaScript արտահայտություններ ատրիբուտում.
@@ -177,8 +181,16 @@ const element = {
 
 Այս օբյեկտները կոչվում են «React էլեմենտներ»։ Դուք կարող եք դրանք համարել այն բաների նկարագրություն, որոնք ցանկանում եք տեսնել էկրանին։ React-ը կարդում է այդ օբյեկտները և օգտագործում է նրանց DOM-ը կառուցելու և այն թարմ պահելու համար։
 
+<<<<<<< HEAD
 Մենք կուսումնասիրենք React էլեմենտների արտապատկերումը DOM-ում հաջորդ գլխում։
+=======
+We will explore rendering React elements to the DOM in the [next section](/docs/rendering-elements.html).
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
 
 >**Խորհուրդ:**
 >
+<<<<<<< HEAD
 >Մենք խորհուրդ ենք տալիս օգտագործել [«Babel լեզվի սահմանում»](https://babeljs.io/docs/editors)-ը ձեր խմբագրիչի համար, որպեսզի ES6 և JSX կոդերն ընդգծվեն ինչպես հարկն է։
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
