@@ -34,12 +34,20 @@ const element = <h1>Ողջույն, աշխարհ</h1>;
 
 Սովորաբար React-ով ստեղծված հավելվածները ունեն մեկ արմատ (root) DOM հանգույց։ եթե դուք ինտեգրում եք React-ը արդեն գույություն ունեցող հավելվածին, ապա կարող եք ունենալ այնքան «root» DOM հանգույցներ որքան որ կցանկանաք։
 
+<<<<<<< HEAD
 
 React էլեմենտը արմատ DOM հանգույցում նկարելու համար, պետք է երկուսն էլ փոխանցել `ReactDOM.render()`-ին։
 
 `embed:rendering-elements/render-an-element.js`
 
 [Փորձել CodePen-ում](codepen://rendering-elements/render-an-element)
+=======
+To render a React element, first pass the DOM element to [`ReactDOM.createRoot()`](/docs/react-dom-client.html#createroot), then pass the React element to `root.render()`:
+
+`embed:rendering-elements/render-an-element.js`
+
+**[Try it on CodePen](https://codepen.io/gaearon/pen/ZpvBNJ?editors=1010)**
+>>>>>>> 1d21630e126af0f4c04ff392934dcee80fc54892
 
 Այն էջում ցույց կտա «Ողջույն, աշխարհ»
 
@@ -47,19 +55,33 @@ React էլեմենտը արմատ DOM հանգույցում նկարելու հ
 
 React էլեմենտները [անփոփոխ են](https://en.wikipedia.org/wiki/Immutable_object)։ Էլեմենտի ստեղծման պահից հետո դուք չեք կարող փոխել նրա ատրիբուտները կամ զավակներին։ Էլելեմենտը նման է ֆիլմի մեկ կադրին\` այն ներկայացնում է UI-ը ժամանակի որոշակի պահին։
 
+<<<<<<< HEAD
 Այս պահի մեր գիտելիքներով UI-ը թարմացնելու միակ ձևը նոր էլեմենտ ստեղծելն ու փոխանցելն է `ReactDOM.render()`-ին։
+=======
+With our knowledge so far, the only way to update the UI is to create a new element, and pass it to `root.render()`.
+>>>>>>> 1d21630e126af0f4c04ff392934dcee80fc54892
 
 Դիտարկեք այս ժամացույցի օրինակը.
 
 `embed:rendering-elements/update-rendered-element.js`
 
+<<<<<<< HEAD
 [Փորձել CodePen-ում](codepen://rendering-elements/update-rendered-element)
 
 Այն կանչում է `ReactDOM.render()`-ը [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval)-ի հետկանչ ֆունկցիայից\` յուրաքանչյուր վարկյանը մեկ։
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)**
+
+It calls [`root.render()`](/docs/react-dom.html#render) every second from a [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) callback.
+>>>>>>> 1d21630e126af0f4c04ff392934dcee80fc54892
 
 >**Նշում.**
 >
+<<<<<<< HEAD
 >Գործնականում, React հավելվածների մեծամասնությունը `ReactDOM.render()`-ը կանչում է մեկ անգամ։ Հաջորդ բաժիններում մենք կսովորենք թե ինչպես է նմանատիպ կոդը ինկապսուլացվում [վիճակով կոմպոնենտ](/docs/state-and-lifecycle.html)-ներով։
+=======
+>In practice, most React apps only call `root.render()` once. In the next sections we will learn how such code gets encapsulated into [stateful components](/docs/state-and-lifecycle.html).
+>>>>>>> 1d21630e126af0f4c04ff392934dcee80fc54892
 >
 >Խորհուրդ ենք տալիս բաց չթողնել թեմաները, քանի որ նրանք հիմնված են մեկը մյուսի վրա։
 
@@ -67,10 +89,20 @@ React էլեմենտները [անփոփոխ են](https://en.wikipedia.org/wiki
 
 React DOM-ը համեմատում է էլեմենտը և նրա զավակներին նախորդների հետ, և կիրառում է DOM-ի թարմացում միայն անհրաժեշտության դեպքում\` DOM-ը ցանկալի վիճակին հասցնելու համար։
 
+<<<<<<< HEAD
 Դուք կարող եք համոզվել ստուգելով [նախորդ օրինակը](codepen://rendering-elements/update-rendered-element) զննարկիչի գործիքների օգնությամբ:
+=======
+You can verify by inspecting the [last example](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) with the browser tools:
+>>>>>>> 1d21630e126af0f4c04ff392934dcee80fc54892
 
 ![DOM դիտարկիչը ցուց է տալիս յուրաքանչյուր թարմացում](../images/docs/granular-dom-updates.gif)
 
+<<<<<<< HEAD
 Չնայած նրան որ մեր ստեղծած էլեմենտը նկարագրում է ողջ UI ծառը յուրաքանչյուր tick-ի ժամանակ, React DOM-ը թարմացնում է միայն այն տեքստային հանգույցը, որի կոնտենտը ենթարկվել է փոփոխության։
 
 Փորձը ցույց է տալիս, որ մտածելը թե ինչ տեսք պետք է ունենա UI-ը յուրաքանչյուր պահին` վերացնում է սխալների մի ամբողջ դաս, քան մտածելը թե ինչպես փոխել UI-ը ժամանակի ընթացքում։
+=======
+Even though we create an element describing the whole UI tree on every tick, only the text node whose contents have changed gets updated by React DOM.
+
+In our experience, thinking about how the UI should look at any given moment, rather than how to change it over time, eliminates a whole class of bugs.
+>>>>>>> 1d21630e126af0f4c04ff392934dcee80fc54892

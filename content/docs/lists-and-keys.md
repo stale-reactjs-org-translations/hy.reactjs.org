@@ -33,13 +33,14 @@ const listItems = numbers.map((number) =>
 );
 ```
 
+<<<<<<< HEAD
 Մենք ողջ `listItems` զանգվածը ներդնում ենք `<ul>` էլեմենտի մեջ և [արտապատկերում այն DOM-ում](/docs/rendering-elements.html#rendering-an-element-into-the-dom)։
+=======
+Then, we can include the entire `listItems` array inside a `<ul>` element:
+>>>>>>> 1d21630e126af0f4c04ff392934dcee80fc54892
 
 ```javascript{2}
-ReactDOM.render(
-  <ul>{listItems}</ul>,
-  document.getElementById('root')
-);
+<ul>{listItems}</ul>
 ```
 
 [**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
@@ -64,10 +65,8 @@ function NumberList(props) {
 }
 
 const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<NumberList numbers={numbers} />);
 ```
 
 Երբ այս կոդը աշխատեցնեք, դուք կստանաք զգուշացում այն մասին, որ ցուցակի էլեմենտները պետք է ունենան բանալիներ։ «Բանալին» դա հատուկ տողային ատրիբուտ է, որը պետք է նշեք էլեմենտների ցուցակ ստեղծելիս։ Թե ինչի համար է դա կարևոր, կքննարկենք հաջորդ բաժնում։
@@ -86,12 +85,6 @@ function NumberList(props) {
     <ul>{listItems}</ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 [**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
@@ -166,12 +159,6 @@ function NumberList(props) {
     </ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 **Բանալու ճիշտ օգտագործոման օրինակ.**
@@ -185,9 +172,14 @@ function ListItem(props) {
 function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
+<<<<<<< HEAD
     // Ճիշտ. բանալին պետք է նշված լինի զանգվածի մեջ.
     <ListItem key={number.toString()}
               value={number} />
+=======
+    // Correct! Key should be specified inside the array.
+    <ListItem key={number.toString()} value={number} />
+>>>>>>> 1d21630e126af0f4c04ff392934dcee80fc54892
   );
   return (
     <ul>
@@ -195,12 +187,6 @@ function NumberList(props) {
     </ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 [**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
@@ -209,7 +195,11 @@ ReactDOM.render(
 
 ### Բանալիները պետք է լինեն եզակի միայն հարևանների շրջանում {#keys-must-only-be-unique-among-siblings}
 
+<<<<<<< HEAD
 Բանալիները, որոնք օգտագործվում են զանգվածի մեջ, պետք է լինեն ունիկալ հարևան էլեմենտների մեջ։ Սակայն, նրանք պետք չէ որ լինեն գլոբալ ունիկալ։ Մենք կարող ենք օգտագործել նույն բանալիները երբ ներկայացնում ենք երկու տարբեր զանգվածներ\`
+=======
+Keys used within arrays should be unique among their siblings. However, they don't need to be globally unique. We can use the same keys when we produce two different arrays:
+>>>>>>> 1d21630e126af0f4c04ff392934dcee80fc54892
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {
@@ -241,10 +231,9 @@ const posts = [
   {id: 1, title: 'Ողջույն աշխարհ', content: 'Բարի գալուստ React-ի ուսուցում։'},
   {id: 2, title: 'Տեղադրում', content: 'Դուք կարող եք React-ը տեղադրել npm-ից։'}
 ];
-ReactDOM.render(
-  <Blog posts={posts} />,
-  document.getElementById('root')
-);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Blog posts={posts} />);
 ```
 
 [**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
