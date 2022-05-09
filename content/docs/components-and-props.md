@@ -44,7 +44,11 @@ class Welcome extends React.Component {
 
 Վերը նշված երկու կոմպոնենտները React-ի տեսանկյունից համարժեք են։
 
+<<<<<<< HEAD
 Կլասներն ունեն մի քանի լրացուցիչ հնարավորություններ, որոնց մասին մենք կխոսենք [հաջորդ բաժնում](/docs/state-and-lifecycle.html)։ Մինչ այդ, մենք կօգտագործենք ֆունկցիա-կոմպոնենտներ նրանց հակիրճության համար։
+=======
+Function and Class components both have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html).
+>>>>>>> 26a870e1c6e232062b760d37620d85802750e985
 
 ## Կոմպոնենտի արտապատկերում {#rendering-a-component}
 
@@ -60,15 +64,20 @@ const element = <div />;
 const element = <Welcome name="Անահիտ»" />;
 ```
 
+<<<<<<< HEAD
 Երբ React-ը տեսնում է էլեմենտ, որն իրենից ներկայացնում է օգտագործողի կողմից հայտարարված կոմպոնենտ, ապա փոխանցում է JSX ատրիբուտներ այդ կոմպոնենտին որպես մեկ օբյեկտ։ Մենք անվանում ենք այդ օբյեկտը «props»։
+=======
+When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object "props".
+>>>>>>> 26a870e1c6e232062b760d37620d85802750e985
 
 Օրինակ, այս կոդը կարտապատկերի «Ողջույն, Անահիտ».
 
-```js{1,5}
+```js{1,6}
 function Welcome(props) {
   return <h1>Ողջույն, {props.name}</h1>;
 }
 
+<<<<<<< HEAD
 const element = <Welcome name="Անահիտ»" />;
 ReactDOM.render(
   element,
@@ -77,13 +86,28 @@ ReactDOM.render(
 ```
 
 [Փորձել CodePen-ում](codepen://components-and-props/rendering-a-component)
+=======
+const root = ReactDOM.createRoot(document.getElementById('root'));
+const element = <Welcome name="Sara" />;
+root.render(element);
+```
+
+**[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
+>>>>>>> 26a870e1c6e232062b760d37620d85802750e985
 
 Եկեք իմի բերենք այն ինչ տեղի է ունենում այս օրինակում.
 
+<<<<<<< HEAD
 1) Մենք կանչում ենք `ReactDOM.render()`-ը `<Welcome name="Անահիտ" />` էլեմենտով։
 2) React-ը կանչում է `Welcome` կոմպոնենտը `{name: 'Անահիտ'}` օբյեկտով, որպես props։
 3) Մեր `Welcome` կոմպոնենտը, որպես արդյունք, վերադարձնում է `<h1>Ողջույն, Անահիտ</h1>` էլեմենտը։
 4) React DOM-ը արդյունավետորեն թարմացնում է DOM-ը, որպեսզի ստանա `<h1>Ողջույն, Անահիտ</h1>`։
+=======
+1. We call `root.render()` with the `<Welcome name="Sara" />` element.
+2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
+3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
+4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+>>>>>>> 26a870e1c6e232062b760d37620d85802750e985
 
 >**Նշում:** Միշտ կոմպոնենտի անունը սկսիր մեծատառով։
 >
@@ -111,14 +135,13 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
+<<<<<<< HEAD
 [Փորձել CodePen-ում](codepen://components-and-props/composing-components)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
+>>>>>>> 26a870e1c6e232062b760d37620d85802750e985
 
 Որպես կանոն, նոր React հավելվածներն ունեն միակ `App` կոմպոնենտ ամենավերևում։ Այնուամենայնիվ, եթե դուք փորձեք ինտեգրել React-ը արդեն գոյություն ունեցող հավելվածի մեջ, դուք կարող եք սկսել փոքր կոմպոնենտներից, ինչպիսին է `Button`-ը և հիերարխիայով աստիճանաբար շարժվել դեպի «վեր»։
 
@@ -152,7 +175,11 @@ function Comment(props) {
 }
 ```
 
+<<<<<<< HEAD
 [Փորձել CodePen-ում](codepen://components-and-props/extracting-components)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
+>>>>>>> 26a870e1c6e232062b760d37620d85802750e985
 
 Այն ընդունում է `author` (օբյեկտ է), `text` (տող է) և `date` (date տիպի է) որպես props և նկարագրում է մեկնաբանություն (comment) սոցիալական կայքում։
 
@@ -231,9 +258,15 @@ function Comment(props) {
 }
 ```
 
+<<<<<<< HEAD
 [Փորձել CodePen-ում](codepen://components-and-props/extracting-components-continued)
 
 Սկզբում, կոմպոնենտների տարանջատումը կարող է թվալ «անշնորհակալ» գործ, բայց բազմակի օգտագործվող կոմպոնենտների պալիտրա ունենալը կարդարացնի իրեն ավելի մեծ հավելվածներում։ Հիմնական սկզբունքն այն է, որ եթե ձեր UI-ի մի մասն օգտագործվում է բազում անգամներ (`Button`, `Panel`, `Avatar`) կամ բավականին բարդ է ինքն իրենով (`App`, `FeedStory`, `Comment`), ապա այն հարմար թեկնածու է բազմակի օգտագործման կոմպոնենտ դառնալու համար։
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
+
+Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be extracted to a separate component.
+>>>>>>> 26a870e1c6e232062b760d37620d85802750e985
 
 ## Prop-երը կարելի է միայն կարդալ (read-only) {#props-are-read-only}
 
