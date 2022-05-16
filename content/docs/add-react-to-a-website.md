@@ -25,7 +25,11 @@ React-ը իսկզբանե նախագծված է եղել այնպես, որ հն
 
 Բարդ գործիքներ կամ տեղադրում չկա. **այս բաժինը վերջացնելու համար ձեզ միայն անհրաժեշտ է հասանելիություն համացանցին և հատկացնել մեկ րոպե ձեր ժամանակից։**
 
+<<<<<<< HEAD
 Ոչ պարտադիր. [Ներբեռնեք ամբողջ օրինակը (արխիվացրած վիճակով 2ԿԲ)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)
+=======
+Optional: [Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)
+>>>>>>> 951fae39f0e12dc061f1564d02b2f4707c0541c4
 
 ### Քայլ 1. Ավելացրեք DOM կոնտեյներ HTML-ում {#step-1-add-a-dom-container-to-the-html}
 
@@ -52,10 +56,17 @@ React-ը իսկզբանե նախագծված է եղել այնպես, որ հն
 ```html{5,6,9}
   <!-- ... ուրիշ HTML ... -->
 
+<<<<<<< HEAD
   <!-- Ներբեռնել React-ը։ -->
   <!-- Նշում: տեղակայման(deploy) ժամանակ, փոխարինեք «development.js»-ը «production.min.js»-ով։ -->
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+=======
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+>>>>>>> 951fae39f0e12dc061f1564d02b2f4707c0541c4
 
   <!-- Ներբեռնել մեր React կոմպոնենտը։ -->
   <script src="like_button.js"></script>
@@ -75,16 +86,28 @@ React-ը իսկզբանե նախագծված է եղել այնպես, որ հն
 >
 >Այս կոդը հայտարարում է `LikeButton` անունով React կոմպոնենտ։ Մի անհանգստացեք, եթե դուք դեռ չեք հասկանում այն. մենք կծածկենք React-ի կառուցողական բլոկները ավելի ուշ մեր [ձեռնարկում](/tutorial/tutorial.html) և [հիմանական գաղափարների ուղեցույցում](/docs/hello-world.html)։ Հիմա, եկեք ուղղակի նայենք, թե ինչպես է այն պատկերվում էկրանին։
 
+<<<<<<< HEAD
 **[Սկզբնական կոդից](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** հետո ավելացրեք ևս երկու տող `like_button.js`-ի վերջում.
 
 ```js{3,4}
 // ... տեղադրված սկզբնական կոդը ...
+=======
+After **[the starter code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, add three lines to the bottom of `like_button.js`:
+
+```js{3,4,5}
+// ... the starter code you pasted ...
+>>>>>>> 951fae39f0e12dc061f1564d02b2f4707c0541c4
 
 const domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(e(LikeButton), domContainer);
+const root = ReactDOM.createRoot(domContainer);
+root.render(e(LikeButton));
 ```
 
+<<<<<<< HEAD
 Այս երկու տող կոդը գտնում է `<div>`-ը, որն առաջին քայլում ավելացրել էինք HTML-ում, և հետո ցույց է տալիս մեր React կոմպոնենտը\` «Like» կոճակը դրա ներսում։
+=======
+These three lines of code find the `<div>` we added to our HTML in the first step, create a React app with it, and then display our "Like" button React component inside of it.
+>>>>>>> 951fae39f0e12dc061f1564d02b2f4707c0541c4
 
 ### Ահա և վերջ {#thats-it}
 
@@ -94,7 +117,11 @@ ReactDOM.render(e(LikeButton), domContainer);
 
 **[Նայեք օրինակի ամբողջ կոդը](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605)**
 
+<<<<<<< HEAD
 **[Ներբեռնեք ամբողջ օրինակը (արխիվացրած վիճակով 2ԿԲ)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)**
+=======
+**[Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)**
+>>>>>>> 951fae39f0e12dc061f1564d02b2f4707c0541c4
 
 ### Խորհուրդ. վերաօգտագործեք կոմպոնենտը {#tip-reuse-a-component}
 
@@ -102,7 +129,11 @@ ReactDOM.render(e(LikeButton), domContainer);
 
 [Նայեք օրինակի ամբողջ կոդը](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda)
 
+<<<<<<< HEAD
 [Ներբեռնեք ամբողջ օրինակը (արխիվացրած վիճակով 2ԿԲ)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip)
+=======
+[Download the full example (2KB zipped)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/279839cb9891bd41802ebebc5365e9dec08eeb9f.zip)
+>>>>>>> 951fae39f0e12dc061f1564d02b2f4707c0541c4
 
 >Խորհուրդ
 >
@@ -115,15 +146,19 @@ ReactDOM.render(e(LikeButton), domContainer);
 Եթե դուք արդեն մինիֆիկացրել եք հավելվածի սկրիպերը, ապա նաև եղեք համոզված, որ տեղակայված HTML-ը ներբեռնում է React-ի այն տարբերակները, որոնք վերջանում են `production.min.js`-ով.
 
 ```js
-<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
 Եթե դուք չեք մինիֆիկացրել ձեր սկրիպները, [ահա դա անելու տարբերակներից մեկը](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3)։
 
 ## Ոչ պարտադիր. փորձել React-ը JSX-ով {#optional-try-react-with-jsx}
 
+<<<<<<< HEAD
 Վերը նշված օրինակներում մենք միայն հիմնվեցինք այն հատկությունների վրա, որոնք բնականոն կերպով աջակցվում են զննարկչի կողմից։ Ահա թե ինչու մենք օգտագործեցինք JavaScript ֆունկցիայի կանչ\` React-ին ասելու համար, թե ինչ պատկերի.
+=======
+In the examples above, we only relied on features that are natively supported by browsers. This is why we used a JavaScript function call to tell React what to display:
+>>>>>>> 951fae39f0e12dc061f1564d02b2f4707c0541c4
 
 ```js
 const e = React.createElement;
@@ -149,7 +184,11 @@ return (
 
 Այս երկու կոդի կտորները համարժեք են։ Չնայած **JSX-ը [ամենևին պարտադիր չէ](/docs/react-without-jsx.html)**, շատ մարդիկ օգտակար են համարում գրել UI կոդ\` React-ի հետ օգտագործելով այլ գրադարաներ։
 
+<<<<<<< HEAD
 Դուք կարող եք խաղալ JSX-ի հետ\` օգտագործելով [այս առցանց փոխարկիչը](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3)։
+=======
+You can play with JSX using [this online converter](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.15.7).
+>>>>>>> 951fae39f0e12dc061f1564d02b2f4707c0541c4
 
 ### Արագ փորձել JSX-ը {#quickly-try-jsx}
 
@@ -159,7 +198,11 @@ return (
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
+<<<<<<< HEAD
 Հիմա կարող եք օգտագործել JSX ցանկացած `<script>` թեգում\` ավելացնելով `type="text/babel"` ատրիբուտը դրա վրա։ Ահա [JSX-ով HTML ֆայլի օրինակ](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html), որը կարող եք ներբեռնել և խաղալ։
+=======
+Now you can use JSX in any `<script>` tag by adding `type="text/babel"` attribute to it. Here is [an example HTML file with JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html) that you can download and play with.
+>>>>>>> 951fae39f0e12dc061f1564d02b2f4707c0541c4
 
 Այս մոտեցումը հիանալի է սովորելու և հասարակ ցուցադրություններ ստեղծելու համար։ Այնուամենայնիվ, այն դարձնում է ձեր վեբկայքը դանդաղ և **ոչ հարմար production-ի համար**։ Երբ դուք պատրաստ լինեք շարժվել առաջ, ջնջեք այս նոր `<script>` թեգը և `type="text/babel"`ատրիբուտը, որը դուք ավելացրել էիք։ Փոխարենը, հաջորդ բաժնում դուք կտեղադրեք JSX նախապրոցեսոր, որպեսզի ավտոմատ կերպով փոխարկեք ձեր բոլոր `<script>` թեգերը։
 
@@ -184,7 +227,7 @@ JSX-ի ավելացումը պրոյեկտում չի պահանջում bundler
 Ստեղծեք `src` անունով պանակ և աշխատեցրեք այս հրամանը տերմինալում.
 
 ```
-npx babel --watch src --out-dir . --presets react-app/prod 
+npx babel --watch src --out-dir . --presets react-app/prod
 ```
 
 >Խորհուրդ

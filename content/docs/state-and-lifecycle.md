@@ -10,9 +10,15 @@ next: handling-events.html
 
 Այս էջը ներկայացնում է վիճակի(state) և կյանքի ցիկլի(lifecycle) գաղափարը React կոմպոնենտում։ Դուք կարող եք գտնել կոմպոնենտի մանրամասն API հղումն [այստեղ](/docs/react-component.html)։
 
+<<<<<<< HEAD
 Դիտարկենք «ժամացույցի» աշխատանքի օրինակը\` նկարագրված [վերջին գլուխներից մեկում](/docs/rendering-elements.html#updating-the-rendered-element)։ [Էլեմենտների արտապատկերում](/docs/rendering-elements.html#rendering-an-element-into-the-dom) գլխում մենք UI-ը թարմացնելու միայն մեկ եղանակ ենք սովորել։ Մենք կանչում ենք `ReactDOM.render()`-ը\` փոփոխելու արտապատկերված ելքային արժեքը.
+=======
+Consider the ticking clock example from [one of the previous sections](/docs/rendering-elements.html#updating-the-rendered-element). In [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom), we have only learned one way to update the UI. We call `root.render()` to change the rendered output:
+>>>>>>> 951fae39f0e12dc061f1564d02b2f4707c0541c4
 
-```js{8-11}
+```js{10}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+  
 function tick() {
   const element = (
     <div>
@@ -20,10 +26,7 @@ function tick() {
       <h2>Ժամը {new Date().toLocaleTimeString()}-ն է։</h2>
     </div>
   );
-  ReactDOM.render(
-    element,
-    document.getElementById('root')
-  );
+  root.render(element);
 }
 
 setInterval(tick, 1000);
@@ -35,7 +38,9 @@ setInterval(tick, 1000);
 
 Սկզբում առանձնացնենք ժամանակը ցույց տվող կոմպոնենտը.
 
-```js{3-6,12}
+```js{5-8,13}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
 function Clock(props) {
   return (
     <div>
@@ -46,10 +51,7 @@ function Clock(props) {
 }
 
 function tick() {
-  ReactDOM.render(
-    <Clock date={new Date()} />,
-    document.getElementById('root')
-  );
+  root.render(<Clock date={new Date()} />);
 }
 
 setInterval(tick, 1000);
@@ -62,10 +64,7 @@ setInterval(tick, 1000);
 Լավագույն դեպքում մենք ցանկանում ենք գրել սա մեկ անգամ և ունենալ ինքնաթարմացվող `Clock`.
 
 ```js{2}
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+root.render(<Clock />);
 ```
 
 Սա իրականացնելու համար մենք կարիք ունենք ավելացնելու state `Clock` կոմպոնենտին։
@@ -154,10 +153,7 @@ class Clock extends React.Component {
 3) Ջնջել `date` prop-ը `<Clock />` էլեմենտից.
 
 ```js{2}
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+root.render(<Clock />);
 ```
 
 Փոքր-ինչ ավելի ուշ մենք Ժամաչափի կոդը կվերադարձնենք և կտեղադրենք կոմպոնենտի մեջ։
@@ -181,10 +177,8 @@ class Clock extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clock />);
 ```
 
 [**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
@@ -290,10 +284,8 @@ class Clock extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clock />);
 ```
 
 [**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
@@ -302,11 +294,15 @@ ReactDOM.render(
 
 Եկեք արագ իմի բերենք այն, թե ինչ է տեղի ունենում և ինչ հերթականությամբ են կանչվում մեթոդները.
 
+<<<<<<< HEAD
 1) Երբ `<Clock />`-ը փոխանցվում է `ReactDOM.render()`-ին, React-ը կանչում է `Clock` կոմպոնենտի կոնստրուկտորը։ Քանի որ `Clock`-ը կարիք ունի պատկերելու ընթացիկ ժամը, այն սկզբնարժեքավորում է `this.state`-ը օբյեկտով, որը պարունակում է ընթացիկ ժամը։ Ավելի ուշ մենք կթարմացնենք այս state-ը։
 2) Հետո React-ը կանչում է `Clock` կոմպոնենտի `render()` մեթոդը։ Ահա թե ինչպես է React-ն իմանում, թե ինչ պիտի պատկերի էկրանին։ Այնուհետև React-ը թարմացնում է DOM-ը , որպեսզի ստանա `Clock`-ի `render`-ի ելքային արժեքը։
 3) Երբ `Clock`-ի ելքային արժեքը ավելացված է DOM-ում, React-ը կանչում է `componentDidMount()` կյանքի ցիկլի մեթոդը։ Դրա ներսում `Clock` կոմպոնենտը հարցնում է զննարկչին ժամաչափ տեղադրելու համար, որպեսզի կանչի կամպոնենտի `tick()` մեթոդը վայրկյանը մեկ։
 4) Վայրկյանը մեկ զննարկիչը կանչում է `tick()` մեթոդը։ Դրա ներսում, `Clock` կոմպոնենտը պլանավորում է UI-ի թարմացումը\` կանչելով `setState()` ընթացիկ ժամը պարունակող օբյեկտով։ `setState()`-ի կանչի շնորհիվ React-ը գիտի, որ state-ը փոխվել է և կանչում է `render()` մեթոդը կրկին\` իմանալու համար, թե ինչը պետք է լինի էկրանին։ Այս անգամ, `render()`-ում `this.state.date`-ը կլինի ուրիշ, և այսպիսով, render-ի ելքային արժեքը կներառի թարմացված ժամանակը։ React-ը կթարմացնի DOM-ը համապատասխանաբար։
 5) Եթե `Clock` կոմպոնենտը երբևիցե ջնջվի DOM-ից, React-ը կկանչի `componentWillUnmount()` կյանքի ցիկլի մեթոդը, որի հետևանքով ժամաչափը կկանգնի։
+=======
+1) When `<Clock />` is passed to `root.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
+>>>>>>> 951fae39f0e12dc061f1564d02b2f4707c0541c4
 
 ## State-ի ճիշտ օգտագործում {#using-state-correctly}
 
@@ -410,12 +406,15 @@ this.setState(function(state, props) {
 Կոմպոնենտը կարող է փոխանցել իր state-ը ներքև, որպես props, իր զավակ կոմպոնենտներին.
 
 ```js
+<<<<<<< HEAD
 <h2>Ժամը {this.state.date.toLocaleTimeString()}-ն է։</h2>
 ```
 
 Սա նաև աշխատում է օգտագործողի կողմից հայտարարված կոմպոնենտների համար.
 
 ```js
+=======
+>>>>>>> 951fae39f0e12dc061f1564d02b2f4707c0541c4
 <FormattedDate date={this.state.date} />
 ```
 
@@ -445,11 +444,6 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
 [**Փորձել CodePen-ում**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)
